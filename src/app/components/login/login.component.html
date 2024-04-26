@@ -1,0 +1,86 @@
+<div class="flex-box-wrapper">
+  <div class="form-structor">
+    <form class="signup" [ngClass]="{ 'slide-up': condition }">
+      <h2 class="form-title" id="signup" (click)="openSignIn()">Регистрация</h2>
+      <div class="form-holder">
+        <input type="text" class="input" placeholder="Имя" />
+        <input type="email" class="input" placeholder="Email" />
+        <input type="password" class="input" placeholder="Пароль" />
+        <input type="password" class="input" placeholder="Повторите пароль" />
+      </div>
+      <div class="warning-info-login">
+        <p
+          *ngIf="
+            !this.loginForm.get('email')?.valid &&
+            this.loginForm.get('email')?.touched
+          "
+        >
+          Укажите имя!
+        </p>
+        <p
+          *ngIf="
+            !this.loginForm.get('email')?.valid &&
+            this.loginForm.get('email')?.touched
+          "
+        >
+          Некорректная почта почту!
+        </p>
+        <p
+          *ngIf="
+            !this.loginForm.get('password')?.valid &&
+            this.loginForm.get('password')?.touched
+          "
+        >
+          Слишком простой пароль!
+        </p>
+      </div>
+      <button class="submit-btn">Зарегестрироваться</button>
+    </form>
+
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="submitLogin()"
+      class="login"
+      [ngClass]="{ 'slide-up': !condition }"
+    >
+      <div class="center">
+        <h2 class="form-title" id="login" (click)="openLogin()">Авторизация</h2>
+        <div class="form-holder">
+          <input
+            formControlName="email"
+            type="email"
+            class="input"
+            placeholder="Email"
+          />
+          <input
+            formControlName="password"
+            type="password"
+            class="input"
+            placeholder="Пароль"
+          />
+        </div>
+        <div class="warning-info-sign">
+          <p
+            *ngIf="
+              !this.loginForm.get('email')?.valid &&
+              this.loginForm.get('email')?.touched
+            "
+          >
+            Проверьте введенную почту!
+          </p>
+          <p
+            *ngIf="
+              !this.loginForm.get('password')?.valid &&
+              this.loginForm.get('password')?.touched
+            "
+          >
+            Некорректный пароль
+          </p>
+        </div>
+        <button [disabled]="this.loginForm.invalid" class="submit-btn">
+          Войти
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

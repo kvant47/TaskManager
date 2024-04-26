@@ -1,0 +1,268 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+/* Сброс всех стандартных стилей */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+@font-face {
+	font-family: Hero-Bold;
+	src: url(../src/assets/fonts/Hero-Bold.ttf);
+}
+
+@font-face {
+  font-family: Hero-Light;
+  src: url(../src/assets/fonts/Hero-Light.ttf);
+}
+
+@font-face {
+  font-family: Hero-Regular;
+  src: url(../src/assets/fonts/Hero-Regular.ttf);
+}
+
+@font-face {
+  font-family: Nunito-Black ;
+  src: url(../src/assets/fonts/Nunito-Black.ttf);
+}
+
+@font-face {
+  font-family: Nunito-Bold ;
+	src: url(../src/assets/fonts/Nunito-Bold.ttf);
+}
+
+@font-face {
+	font-family: Nunito-Regular ;
+  src: url(../src/assets/fonts/Nunito-Regular.ttf);
+}
+
+:root {
+  --menu_button: #999;
+  --red_text: red;
+  --blue1: #00bfff;
+  --bg: #333333;
+  --blue2: #0099cc;
+  --bg1: #2b2f33;
+  --not_active: #595959;
+  --cool_orange: #ff4444;
+  --menu_button_rgba: #999;
+  --red_text: red;
+  --cool_orange_rgba: rgba(255,68,68,0.4);
+  --main_color: #999;
+
+  --avtive_color: #00bfff;;
+  --avtive_color_rgba: rgba(0, 191, 255, 0.4);;
+
+}
+
+
+html, body {
+  font-family: 'Comforta';
+  font-size: 20px;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.flexable_image{
+  width: 100%;
+  height: auto;
+}
+
+.flex-box-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+
+.main_wnd_btn{
+  border: none;
+  height: 30px;
+  color: var(--menu_button);
+  font-family: Hero-Bold;
+  cursor: pointer;
+  background: transparent;
+}
+
+
+.main_wnd_btn:hover {
+  transition: 0.15s;
+  border-radius: 15px;
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.4);
+  color: white;
+  text-shadow:  0 0 1em var(--avtive_color), 0 0 0.5em var(--avtive_color), 0 0 0.1em var(--avtive_color);
+}
+
+.main_wnd_btn:active {
+  transition: 0.1s;
+  transform: scale(0.98);
+}
+
+
+/*===================================================Модальное окно=================================================*/
+.mat-mdc-dialog-container{
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface{
+  background: linear-gradient(31deg,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(21, 21, 21, 0.95) 50%,
+      rgba(0, 0, 0, 0.95) 100%) !important;
+  padding: 10px;
+}
+
+.modal_wnd_form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.modal_wnd_form h2{
+  color: white;
+  font-size: 22px;
+  text-align: center;
+  font-family: Hero-Bold;
+  transform: scaleY(1.2);
+  background: transparent;
+  margin: 15px 20px 25px 20px;
+  padding-bottom: 5px;
+}
+
+
+#filtr_btn, #search_btn, #filtr_enter_btn, #filtr_reset_btn, .bell_btn {
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-left: 32px;
+}
+
+.button_section {
+  margin: 20px 0 10px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.form__group {
+  position: relative;
+  padding: 10px 0 10px;
+  width: 70%;
+}
+
+.form__field {
+  transition: 0.1s;
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #9b9b9b;
+  outline: 0;
+  font-size: 16px;
+  color: var(--main_color);
+  padding: 9px 0;
+  background-color: transparent;
+  transition: border-color 0.2s;
+  transition: 0.1s;
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 16px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  font-size: 14px;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  color: var(--main_color);
+}
+
+.form__field:focus {     /*Подчеркинвание активного поля ввода*/
+  padding-bottom: 9px;
+  transition: 0.1s;
+  padding-left: 10px;
+  width: calc(100% - 10px);
+  color: rgb(228, 228, 228);
+  border-width: 1px;
+  border-image: linear-gradient(to right, gray, white);
+  border-image-slice: 1;
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+}
+
+.form__field:focus ~ .form__label {   /*Заголвоок активного поля ввода*/
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 14px;
+  color: white;
+  /*text-shadow:  0 0 1em var(--avtive_color), 0 0 0.5em var(--avtive_color), 0 0 0.1em var(--avtive_color);*/
+
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+

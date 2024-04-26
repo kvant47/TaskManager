@@ -1,0 +1,185 @@
+#filtr_reset_btn {
+  background-image: url(../../../../../assets/image/reset.png);
+}
+
+#filtr_enter_btn {
+  background-size: 16px;
+  background-image: url(../../../../../assets/image/enter.png);
+}
+
+#filtr_reset_btn {
+  background-image: url(../../../../../assets/image/reset_hov.png);
+}
+
+#filtr_enter_btn {
+  background-size: 16px;
+  background-image: url(../../../../../assets/image/enter_hov.png);
+}
+
+/* ================================Поле описания===================================== */
+
+textarea{
+  width: 100%;
+  resize: vertical;
+  min-height: 30px;
+  max-height: 100px;
+}
+
+.form__group:hover > h4{
+  color: white;
+}
+
+/* ================================ДАТА===================================== */
+input[type=date] {
+  user-select: none;
+  color: var(--main_color);
+	&::-webkit-calendar-picker-indicator {
+		background-image: url("../../../../../assets/image/calendar_hov.png");
+	}
+}
+
+input[type=date]:focus .header_date{
+  color: white;
+}
+
+
+/* ================================Файл===================================== */
+
+input[type=file] {
+  display: none;
+}
+
+.field_input_file label {
+  border: 1px solid #d3d3d3;
+  background: rgba(0, 0, 0, 0);
+  text-align: center;
+  padding: 9px 30px 10px 7px;
+  border-radius: 20px;
+  transition: 0.2s;
+  font-size: 16px;
+  color: #d3d3d3;
+  background-image: url(../../../../../assets/image/upload.png);
+  background-position:  right 5px top 5px;
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+}
+
+.field_input_file label:hover, .field_input_file label:focus, .field_input_file label:active {
+  background: #d3d3d3;
+  color: black;
+  background-image: url(../../../../../assets/image/upload_hov.png);
+  background-repeat: no-repeat;
+  background-position:  right 5px top 5px;
+  background-size: 22px 22px;
+}
+
+.field_input_file{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+h4{
+  font-size: 14px;
+  transition: 0.2s;
+  color: var(--main_color);
+}
+
+
+
+
+/* ================================СЕЛЕКТ===================================== */
+
+
+
+
+
+input[type=radio] {
+  color: var(--main_color);
+  display: none;
+}
+
+
+label {
+	cursor: pointer;
+	border-radius: 6px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hover */
+ label:hover {
+	color: white;
+}
+
+* {
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+}
+
+.form__group__select{
+  position: relative;
+}
+
+.header-nav ul {
+  width: 100%;
+  z-index: 20;
+  height: auto;
+  position: absolute;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(31deg, rgba(0, 0, 0, 0.95) 0%, rgba(21, 21, 21, 0.95) 50%, rgba(0, 0, 0, 0.95) 100%);
+}
+
+.header-nav ul li{
+  z-index: 20;
+  height: 0;
+  font-size: 16px;
+  color: var(--main_color);
+  background-color: transparent;
+  padding: 0 10px;
+}
+
+.active ul {
+  border: 1px solid var(--main_color);
+}
+
+.active ul li{
+  height: 20px;
+  padding: 5px 10px;
+}
+
+.form__group__select p{
+  border-bottom: 1px solid #9b9b9b;
+  font-size: 16px;
+  color: var(--main_color);
+  padding: 9px 0;
+  background-color: transparent;
+}
+
+
+.form__group__select p::before{
+  content: '';
+  position: absolute;
+  transition: 0.3s;
+  top: 33px;
+  right: 5px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--main_color);
+  border-right-color: transparent;
+  border-top-color: transparent;
+  transform: rotate(-45deg);
+}
+
+.form__group__select .active::before{
+  transform: rotate(-225deg);
+  top: 42px;
+  transition: 0.3s;
+}
+
+#task_category_input, #task_status_input, #task_priority_input {
+  cursor: pointer;
+}

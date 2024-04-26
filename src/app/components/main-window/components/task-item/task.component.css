@@ -1,0 +1,259 @@
+
+:host {
+  margin-right: 10px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+  padding: 14px;
+  box-sizing: border-box;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  position:  relative;
+  cursor: pointer;
+}
+
+:host:hover {
+  background:  rgba(51,51,51,0.8) ;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: 0.2s;
+}
+
+.low_priority {
+  border-left: 5px solid var(--avtive_color);
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.task_title{
+  text-align: left;
+  font-family: Nunito-Regular;
+  font-size: 18px;
+  color: white;
+}
+
+.task_image{
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+audio {
+  height: 30px;
+  background: none;
+  width: 90%;
+}
+
+.audio_task{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.category_task, .priority_task {
+  font-size: 14px;
+  vertical-align: middle;
+  color: lightgray;
+}
+
+
+
+.task_first_line{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.information_task {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.deadline_btn{
+  display: block;
+  margin:  8px auto 0 auto;
+  font-size: 16px;
+}
+
+.main_wnd_btn{
+  border: none;
+  height: 30px;
+  color: var(--menu_button);
+  font-family: Hero-Bold;
+  cursor: pointer;
+  background: transparent;
+}
+
+.more_btn, #home_btn, #table_btn, #list_btn, .plus_btn{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  width: 30px;
+  height: 30px;
+}
+
+.main_wnd_btn:hover {
+  transition: 0.15s;
+  border-radius: 15px;
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.4);
+  color: white;
+  text-shadow:  0 0 1em var(--avtive_color), 0 0 0.5em var(--avtive_color), 0 0 0.1em var(--avtive_color);
+}
+
+.main_wnd_btn:active {
+  transition: 0.1s;
+  transform: scale(0.98);
+}
+
+.deadline_btn{
+  display: block;
+  margin:  8px auto 0 auto;
+  font-size: 16px;
+}
+
+#filtr_btn, #search_btn, #filtr_enter_btn, #filtr_reset_btn, .bell_btn{
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+
+.plus_btn {
+  background-image: url(../../../../../assets/image/plus.png);
+}
+
+.plus_btn:hover {
+  background-image: url(../../../../../assets/image/plus_hov.png);
+}
+
+
+.bell_btn{
+  padding-left: 33px;
+  background-position: 10px center;
+  background-image: url(../../../../../assets/image/bell.png);
+}
+
+.bell_btn:hover{
+  background-image: url(../../../../../assets/image/bell_hov.png);
+}
+
+
+.more_btn{
+  background-image: url(../../../../../assets/image/more.png);
+ }
+
+ .more_btn:hover{
+   background-image: url(../../../../../assets/image/more_hov.png);
+ }
+
+ .small_btn:hover{
+  z-index: 10;
+  box-shadow:  0 0 5px var(--avtive_color_rgba) inset, 0 0 5px var(--avtive_color_rgba) inset, 0 0 0.5em var(--avtive_color_rgba), 0 0 0.1em var(--avtive_color_rgba);
+}
+
+
+
+/*============================================ Dropwon Menu Task=========================================*/
+
+.dropworn_task_menu{
+  transition: 0.2s;
+  z-index: 4;
+  position: absolute;
+  width: 150px;
+  overflow: hidden;
+  background: linear-gradient(31deg, rgba(0,0,0,0.95) 0%, rgba(21,21,21,0.95) 50%, rgba(0,0,0,0.95) 100%);
+  top: 54px;
+  right: 30px;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.collapsed{
+  top: 0px;
+  height: 0;
+  right: 0;
+  transition: 0/2s;
+  width: 0px;
+  border: 1px solid transparent;
+  padding: 0;
+
+}
+
+
+.dropworn_task_item {
+  padding-left: 37px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position:  10px center;
+  background-size: 20px;
+}
+
+.dropworn_task_item_text {
+  height: 100%;
+  width: 100%;
+  display: block;
+  line-height: 30px;
+}
+
+.dropworn_task_item:hover{
+  transition: 0.15s;
+  border-radius: 10px;
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.4);
+  color: white;
+  text-shadow:  0 0 1em var(--avtive_color), 0 0 0.5em var(--avtive_color), 0 0 0.1em var(--avtive_color);
+}
+
+
+
+.dropworn_task_open {
+  background-image: url(../../../../../assets/image/open.png);
+}
+
+.dropworn_task_open:hover {
+  background-image: url(../../../../../assets/image/open_hov.png);
+}
+
+.dropworn_task_change {
+  background-image: url(../../../../../assets/image/edit.png);
+}
+
+.dropworn_task_change:hover {
+  background-image: url(../../../../../assets/image/edit_hov.png);
+}
+
+.dropworn_task_favorite {
+  background-image: url(../../../../../assets/image/favorite.png);
+}
+
+.dropworn_task_favorite:hover {
+  background-image: url(../../../../../assets/image/favorite_hov.png);
+}
+
+.dropworn_task_remind {
+  background-image: url(../../../../../assets/image/bell.png);
+}
+
+.dropworn_task_remind:hover {
+  background-image: url(../../../../../assets/image/bell_hov.png);
+}
+
+.dropworn_task_complete {
+  background-image: url(../../../../../assets/image/enter.png);
+}
+
+.dropworn_task_complete:hover {
+  background-image: url(../../../../../assets/image/enter_hov.png);
+}
+
+.dropworn_task_delete {
+  background-image: url(../../../../../assets/image/del.png);
+}
+
+.dropworn_task_delete:hover {
+  background-image: url(../../../../../assets/image/del_hov.png);
+}
+
+/*======================================= Конец Dropwon Menu Task=========================================*/

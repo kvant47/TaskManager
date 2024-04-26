@@ -1,0 +1,45 @@
+<div class="nav_wrapper" [ngClass]="{'hideMenu' : hideMenuMode}">
+  <div class="header_wrapper">
+    <div class="user_info_wrapper">
+      <img
+        src="./../../../../../assets/image/avatar.jpg"
+        class="image_avatar"
+        alt=""
+      />
+      <div class="text_block">
+        <div class="name">Таратухин Сергей</div>
+        <div class="status">Администратор</div>
+      </div>
+    </div>
+  </div>
+
+
+  <nav>
+    <a routerLinkActive="active"  routerLink="./todo" class="menu_btn" id="task_btn">
+      <h2>Задачи</h2>
+    </a>
+    <a routerLinkActive="active" routerLink="./statisic" class="menu_btn" id="statistic_btn">
+      <h2>Статистика</h2>
+    </a>
+    <a routerLinkActive="active" routerLink="./calendar" class="menu_btn" id="calendar_btn">
+      <h2>Календарь</h2>
+    </a>
+    <a routerLinkActive="active" routerLink="./profile" class="menu_btn" id="profile_btn">
+      <h2>Профиль</h2>
+    </a>
+    <a routerLinkActive="active" routerLink="./statisic" class="menu_btn" id="setting_bnt">
+      <h2>Настройки</h2>
+    </a>
+    <a routerLinkActive="active" routerLink="./statisic" class="menu_btn" id="edit_btn">
+      <h2>Редактирование</h2>
+    </a>
+
+    <button  class="menu_btn" id="hide_btn" (click)="HideMenu()">
+    </button>
+
+
+    <a class="menu_btn" id="exit_btn" (click)="logout()">
+      <h2>Выйти</h2>
+    </a>
+  </nav>
+</div>

@@ -1,0 +1,269 @@
+.task_conteiner::-webkit-scrollbar {
+  /* chrome based */
+  width: 0;
+}
+
+.task_conteiner {
+  display: flex;
+  gap: 12px;
+  box-sizing: border-box;
+  height: calc(100% - 40px);
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.task_conteiner::-webkit-scrollbar {
+  width: 5px;
+}
+
+.task_conteiner::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 20, 0.4);
+  border-radius: 10px;
+}
+
+.task_conteiner::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--menu_button);
+}
+
+.task_header {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task_list_name {
+  vertical-align: middle;
+  line-height: 35px;
+  flex-grow: 1;
+  font-family: Hero-Bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.main_content {
+  height: 80%;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+
+.low_priority {
+  border-left: 5px solid var(--avtive_color);
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.deadline_btn {
+  display: block;
+  margin: 8px auto 0 auto;
+  font-size: 16px;
+}
+
+.main_wnd_btn {
+  border: none;
+  height: 30px;
+  color: var(--menu_button);
+  font-family: Hero-Bold;
+  cursor: pointer;
+  background: transparent;
+}
+
+.more_btn,
+#home_btn,
+#table_btn,
+#list_btn,
+.plus_btn {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  width: 30px;
+  height: 30px;
+}
+
+.more_btn{
+  width: 35px;
+  height: 35px;
+}
+
+.main_wnd_btn:hover {
+  transition: 0.15s;
+  border-radius: 15px;
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.4);
+  color: white;
+  text-shadow: 0 0 1em var(--avtive_color), 0 0 0.5em var(--avtive_color),
+    0 0 0.1em var(--avtive_color);
+}
+
+.main_wnd_btn:active {
+  transition: 0.1s;
+  transform: scale(0.98);
+}
+
+.deadline_btn {
+  display: block;
+  margin: 8px auto 0 auto;
+  font-size: 16px;
+}
+
+#filtr_btn,
+#search_btn,
+#filtr_enter_btn,
+#filtr_reset_btn,
+.bell_btn {
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+
+.plus_btn {
+  background-image: url(../../../../../assets/image/plus.png);
+}
+
+.plus_btn:hover {
+  background-image: url(../../../../../assets/image/plus_hov.png);
+}
+
+.bell_btn {
+  padding-left: 33px;
+  background-position: 10px center;
+  background-image: url(../../../../../assets/image/bell.png);
+}
+
+.bell_btn:hover {
+  background-image: url(../../../../../assets/image/bell_hov.png);
+}
+
+.more_btn {
+  background-image: url(../../../../../assets/image/more.png);
+}
+
+.more_btn:hover {
+  background-image: url(../../../../../assets/image/more_hov.png);
+}
+
+
+
+
+
+/* ========================Выпадающий список и выдвижные кнопки======================= */
+
+* {
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+
+.header-nav {
+  position: relative;
+  float: left;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.header-nav ul {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.conteiner_for_bnt{
+  right: 0;
+}
+
+.line_btn{
+  display: flex;
+  justify-content: right;
+}
+
+.header-nav > ul {
+  position: relative;
+}
+/* сокрытие элементов списка*/
+ .header-nav > ul > li > .header-nav-link + ul li {
+  opacity: 0;
+  height: 0;
+  margin-top: -48px;
+}
+
+.header-nav > ul > li:hover .header-nav-link + ul > li {
+  opacity: 1;
+  height: auto;
+  margin-top: 0;
+}
+
+.header-nav > ul > li > .header-nav-top-link + ul {
+  padding-top: 40px;    /* отступ сверху для выпадающих элементов*/
+}
+
+
+.slide_bnt {
+  transition: 0.2s;
+  position: relative;
+  padding-right: 10px;
+  background-size: 23px;
+  overflow: hidden;
+  right: 0px;
+  margin-bottom: 4px;
+  box-shadow: 0px 5px 100px 98px rgba(21, 21, 21, 0.95) inset;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.slide_bnt h3 {
+  margin-left: 60px;
+  position: absolute;
+  top: 8px;
+}
+
+.image_bg_del,
+.image_bg_edit{
+  width: 20px;
+  height: 20px;
+  background-image: url(../../../../../assets/image/del_hov.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center center;
+}
+
+.slide_bnt:hover{
+  z-index: 10;
+  transition: 0.2s;
+  box-shadow: 0px 5px 100px 98px rgba(21, 21, 21, 0.95) inset,
+           0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  width: 110px;
+  padding-right: 15px;
+}
+
+.slide_bnt:hover h3 {
+  transition: 0.2s;
+  visibility: visible;
+  width: auto;
+  border-radius: 0;
+  margin-left: 25px;
+}
+
+
+.image_bg_edit {
+  background-image: url(../../../../../assets/image/edit.png);
+}
+
+.image_bg_edit:hover {
+  background-image: url(../../../../../assets/image/edit_hov.png);
+}
+
+
+.image_bg_del {
+  background-image: url(../../../../../assets/image/del_hov.png);
+}
+
+
+.image_bg_del:hover {
+  background-image: url(../../../../../assets/image/del_hov.png);
+}
+
+
+/* ========================Выпадающий список и выдвижные кнопки======================= */
+
+.sss {
+  background-image: url(../../../../../assets/image/plus.png);
+}

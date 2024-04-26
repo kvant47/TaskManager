@@ -1,0 +1,147 @@
+<div class="header_content_section">
+  <div class="content_header">
+    <h1>Список Задач</h1>
+    <button class="main_wnd_btn" id="filtr_btn" (click)="FilterBtnClick()">
+      <h3>Фильтры</h3>
+    </button>
+    <button class="main_wnd_btn more_btn small_btn" id="none" ></button>
+  </div>
+
+  <div class="content_filtres" [ngClass]="{ collapsed: !isCollapsed }">
+    <p class="filtr_title">Приоритет</p>
+    <div class="filtr_element_row">
+      <div>
+        <label class="filtr_checkbox">
+          <input type="checkbox" />
+          <span> Низкий </span>
+        </label>
+      </div>
+      <div>
+        <label class="filtr_checkbox">
+          <input type="checkbox" />
+          <span> Средний </span>
+        </label>
+      </div>
+      <div>
+        <label class="filtr_checkbox">
+          <input type="checkbox" />
+          <span> Высокий </span>
+        </label>
+      </div>
+      <div>
+        <label class="filtr_checkbox">
+          <input type="checkbox" />
+          <span> Максимальный </span>
+        </label>
+      </div>
+    </div>
+    <p class="filtr_title">Категория</p>
+    <div class="filtr_element_row">
+      <div>
+        <label class="filtr_checkbox">
+          <input type="checkbox" />
+          <span> Работа </span>
+        </label>
+      </div>
+      <div>
+        <label class="filtr_checkbox">
+          <input type="checkbox" />
+          <span> Учеба </span>
+        </label>
+      </div>
+      <div>
+        <label class="filtr_checkbox">
+          <input type="checkbox" />
+          <span> Семья </span>
+        </label>
+      </div>
+      <div>
+        <label class="filtr_checkbox">
+          <input type="checkbox" />
+          <span> Досуг </span>
+        </label>
+      </div>
+      <div>
+        <label class="filtr_checkbox">
+          <input type="checkbox" />
+          <span> Хобби </span>
+        </label>
+      </div>
+      <div>
+        <label class="filtr_checkbox">
+          <input type="checkbox" />
+          <span> Личное </span>
+        </label>
+      </div>
+      <div>
+        <label class="filtr_checkbox">
+          <input type="checkbox" />
+          <span> Отпуск </span>
+        </label>
+      </div>
+    </div>
+    <div class="button_section">
+      <button class="main_wnd_btn" id="filtr_reset_btn">
+        <h3>Сброс</h3>
+      </button>
+      <button class="main_wnd_btn" id="filtr_enter_btn">
+        <h3>Применить</h3>
+      </button>
+    </div>
+  </div>
+
+  <div class="content_view">
+    <div class="view">
+      <p>Вид:</p>
+      <button class="main_wnd_btn small_btn" id="home_btn"></button>
+      <button class="main_wnd_btn small_btn" id="table_btn"></button>
+      <button class="main_wnd_btn small_btn" id="list_btn"></button>
+    </div>
+
+    <div class="group_by">
+      <p>Группировать по:</p>
+      <button class="main_wnd_btn" id="group_by_btn">
+        <span>Кнопка</span>
+      </button>
+      <div class="dropworn_group_by_menu">
+        <ul>
+          <li class="dropworn_group_by_item">
+            <span class="dropworn_task_item_text">Приоритет</span>
+          </li>
+          <li class="dropworn_group_by_item">
+            <span class="dropworn_task_item_text">Статус</span>
+          </li>
+          <li class="dropworn_group_by_item">
+            <span class="dropworn_task_item_text">Категория</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <button class="main_wnd_btn" id="new_group_btn" (click)="AddNewList()">
+      <h3>Добавить группу</h3>
+    </button>
+
+    <button class="main_wnd_btn" id="new_group_btn" (click)="AddNewTaskItem()">
+      <h3>Добавить задачу</h3>
+    </button>
+
+
+    <div class="search_block">
+      <input type="text" placeholder="Поиск..." class="search_area" />
+      <button class="main_wnd_btn" id="search_btn"><h3>Поиск</h3></button>
+    </div>
+  </div>
+</div>
+
+<div class="main_content_section">
+  <div class="task_group_container">
+    <app-task-list
+      (update)="Update()"
+      [index]="i"
+      [taskList]="group"
+      *ngFor="let group of taskLists; let i = index"
+      class="task_list"
+    ></app-task-list>
+  </div>
+</div>

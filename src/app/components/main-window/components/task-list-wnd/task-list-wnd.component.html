@@ -1,0 +1,18 @@
+<form  class="modal_wnd_form"  [formGroup]="loginForm">
+  <h2>{{title}}</h2>
+
+  <div class="form__group field">
+    <input formControlName="title" id="title" type="text" class="form__field" placeholder="Название" name="title" autocomplete="off" />
+    <label for="title" class="form__label">Название</label>
+  </div>
+
+  <div class="button_section" >
+    <button
+      class="main_wnd_btn"  (click)="onNoClick()" id="filtr_reset_btn">
+      <h3>Отмена</h3>
+    </button>
+    <button class="main_wnd_btn" id="filtr_enter_btn" (click)="save()">
+      <h3>Применить</h3>
+    </button>
+  </div>
+</form>

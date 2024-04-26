@@ -1,0 +1,235 @@
+.header_wrapper{
+  height: 70px;
+  margin: 20px auto 0 auto;
+  padding: 10px 10px  0 10px;
+  border-bottom: 1px solid #3c434b;
+  overflow: hidden;
+}
+
+.user_info_wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text_block{
+  padding-left: 10px;
+}
+
+.image_avatar{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.name, .status{
+  font-family: Hero-Bold;
+  line-height: 15px;
+  font-size: 13px;
+  color: white;
+}
+
+.status{
+   padding-top: 5px;
+   color: var(--menu_button);
+   font-size: 12px;
+}
+
+nav{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/*====================Кнопки меню=========================*/
+
+
+.menu_btn {
+  margin-left: 10%;
+  width: 100%;
+  border: none;
+  height: 35px;
+  color: var(--menu_button);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: Hero-Regular;
+  cursor: pointer;
+  background: transparent;
+  background-position: 18% center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  text-decoration: none;
+}
+
+.menu_btn:hover {
+  transition: 0.15s;
+  color: white;
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.);
+  text-shadow:  0 0 1em var(--avtive_color), 0 0 0.5em var(--avtive_color), 0 0 0.1em var(--avtive_color);
+}
+
+.menu_btn:active {
+  transition: 0.1s;
+  transform: scale(0.98);
+}
+
+.active{
+  font-family: Hero-Regular;
+  color: white;
+}
+
+h2, h3{
+  text-align: start;
+  padding-left: 45px;
+}
+
+h3{
+   padding-left: 32px;
+}
+
+#task_btn, #statistic_btn, #profile_btn, #setting_bnt, #edit_btn, #exit_btn, #calendar_btn,
+#hide_menu_btn {
+  transition: all 0.3s ease-out;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  background-size: 23px;
+}
+
+#task_btn{
+  background-image: url(./../../../../../assets/image/task.png);
+}
+
+#task_btn:hover{
+  background-image: url(./../../../../../assets/image/task_hov.png);
+}
+
+#statistic_btn{
+  background-image: url(./../../../../../assets/image/statistic.png);
+}
+
+#statistic_btn:hover{
+  background-image: url(./../../../../../assets/image/statistic_hov.png);
+}
+
+#profile_btn{
+  background-image: url(./../../../../../assets/image/profile.png);
+}
+
+#profile_btn:hover{
+  background-image: url(./../../../../../assets/image/profile_hov.png);
+}
+
+#calendar_btn{
+  background-image: url(./../../../../../assets/image/calendar.png);
+}
+
+#calendar_btn:hover{
+  background-image: url(./../../../../../assets/image/calendar_hov.png);
+}
+
+#setting_bnt{
+  background-image: url(./../../../../../assets/image/settings.png);
+}
+
+#setting_bnt:hover{
+  background-image: url(./../../../../../assets/image/settings_hov.png);
+}
+
+#edit_btn{
+  background-image: url(./../../../../../assets/image/support.png);
+}
+
+#edit_btn:hover{
+  background-image: url(./../../../../../assets/image/support_hov.png);
+}
+
+#exit_btn {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  background-image: url(./../../../../../assets/image/logout.png);
+}
+
+#exit_btn:hover {
+  background-image: url(./../../../../../assets/image/logout_hov.png);
+}
+
+
+.nav_wrapper{
+  height: 100%;
+}
+
+.nav_wrapper:hover #hide_btn{
+  width: 40px;
+  height: 40px;
+}
+
+#hide_btn{
+  transition: 0.2s;
+  background-image: url(./../../../../../assets/image/arraow.png);
+  background-size: contain;
+  width: 0;
+  height: 0;
+  padding: 0;
+  background-position: center center;
+  position: absolute;
+  top: calc(50% - 20px);
+  margin-left: 0;
+}
+
+#hide_btn:hover{
+  background-image: url(./../../../../../assets/image/arraow_hov.png);
+}
+
+/*====================Скрытое меню=========================*/
+
+
+.hideMenu  #hide_btn{
+  width: 30px;
+  height: 30px;
+  transition: 0.2s;
+  transform: rotate(180deg);
+}
+
+.hideMenu h2, h3{
+  display: none;
+}
+
+.hideMenu a{
+  margin: 0;
+  width: calc(100% - 1px);
+  height: 40px;
+  border: 1px solid transparent;
+}
+
+.hideMenu a:hover{
+  box-shadow: 0 0 5px var(--avtive_color_rgba) inset, 0 0 5px var(--avtive_color_rgba) inset, 0 0 0.5em var(--avtive_color_rgba), 0 0 0.1em var(--avtive_color_rgba);
+}
+
+.hideMenu .header_wrapper{
+  width: 0px;
+  padding: 0;
+  transition: 0.2s;
+}
+
+.hideMenu:hover #hide_btn{
+  width: 30px;
+  height: 30px;
+}
+
+.hideMenu  #task_btn, .hideMenu  #statistic_btn, .hideMenu  #profile_btn, .hideMenu  #setting_bnt, .hideMenu  #edit_btn, .hideMenu  #exit_btn, .hideMenu  #calendar_btn,
+.hideMenu  #hide_menu_btn {
+  transition: all 0.3s ease-out;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+}
+
+
+.hideMenu .active{
+  border-right: 1px solid rgba(255, 255, 255, 0.205);
+  background: rgba(0, 0, 0, 0.6);
+}

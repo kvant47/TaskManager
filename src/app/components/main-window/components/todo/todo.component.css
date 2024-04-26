@@ -1,0 +1,478 @@
+:host{
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  flex-grow: 1;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  overflow: hidden;
+  background: linear-gradient(31deg, rgba(0,0,0,0.8) 0%, rgba(22,21,21,0.8) 50%, rgba(0,0,0,0.8) 100%);
+  backdrop-filter: blur(1px);
+}
+
+.content_header{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.first_section {
+  height: 20%;
+}
+
+h1 {
+   flex-grow: 1;
+  height: 90px;
+  line-height: 90px;
+  text-align: left;
+  font-family: Hero-Regular;
+  font-size: 30px;
+  color: white;
+}
+
+
+
+
+
+
+
+/*============================================ Dropwon Menu GroupBy=========================================*/
+
+.view, .group_by {
+  display: flex;
+  align-items: center;
+}
+
+.dropworn_task_item_text{
+  display: inline-block;
+}
+
+.group_by {
+  margin-left: 30px;
+  position: relative;
+}
+
+.dropworn_group_by_menu{
+  position: absolute;
+  z-index: -2;
+  width: 73px;
+  background: linear-gradient(31deg, rgba(0,0,0,0.95) 0%, rgba(21,21,21,0.95) 50%, rgba(0,0,0,0.95) 100%);
+  top: 30px;
+  right: -18px;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.group_by.active > #group_by_btn + .dropworn_group_by_menu {
+  opacity: 1;
+  z-index: 3;
+  transform: translateY(0);
+}
+
+
+.dropworn_group_by_item {
+  height: 30px;
+  cursor: pointer;
+}
+
+
+.dropworn_group_by_item:hover{
+  transition: 0.15s;
+  border-radius: 10px;
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.4);
+  color: white;
+  text-shadow:  0 0 1em var(--avtive_color), 0 0 0.5em var(--avtive_color), 0 0 0.1em var(--avtive_color);
+}
+
+/*======================================= Конец Dropwon Menu GroupBy=========================================*/
+
+
+
+
+#filtr_btn, #search_btn, #filtr_enter_btn, #filtr_reset_btn, .bell_btn, #new_group_btn{
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+
+#search_btn {
+  position: absolute;
+  padding-right: 20px;
+  padding-left: 35px;
+  border-radius: 25px;
+  background-image: url(../../../../../assets/image/search.png);
+}
+
+#search_btn:hover {
+   background-image: url(../../../../../assets/image/search_hov.png);
+}
+
+.small_btn:hover{
+  box-shadow:  0 0 5px var(--avtive_color_rgba) inset, 0 0 5px var(--avtive_color_rgba) inset, 0 0 0.5em var(--avtive_color_rgba), 0 0 0.1em var(--avtive_color_rgba);
+}
+
+#filtr_btn{
+  width: 130px;
+  background-image: url(../../../../../assets/image/filter.png);
+}
+
+#filtr_btn:hover{
+  background-image: url(../../../../../assets/image/filter_hov.png);
+}
+
+.more_btn{
+ background-image: url(../../../../../assets/image/more.png);
+}
+
+.more_btn:hover{
+  background-image: url(../../../../../assets/image/more_hov.png);
+}
+
+#home_btn{
+  background-size: 20px;
+  background-image: url(../../../../../assets/image/home.png);
+}
+
+#home_btn:hover{
+  background-image: url(../../../../../assets/image/home_hov.png);
+}
+
+#table_btn{
+  background-image: url(../../../../../assets/image/table.png);
+}
+
+#table_btn:hover{
+  background-image: url(../../../../../assets/image/table_hov.png);
+}
+
+
+#list_btn{
+  background-image: url(../../../../../assets/image/grid.png);
+}
+
+#list_btn:hover{
+  background-image: url(../../../../../assets/image/grid_hov.png);
+}
+
+
+
+
+
+.content_view {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search_block{
+  flex-grow: 1;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search_area{
+  max-width: 350px;
+  min-width: 100px;
+  width: 100%;
+  margin-right: 100px;
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  color: var(--menu_button);;
+}
+
+.search_area:hover {
+  border-bottom: 1px solid #ccc;
+}
+
+.search_area:focus {
+  border-bottom: 1px solid transparent;
+  outline: none;
+  border: none;
+}
+
+
+.content_filtres{
+  height: 150px;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.collapsed{
+  height: 0px;
+  transition: 0.3s;
+}
+
+.filtr_element_row {
+  display: flex;
+  margin: 10px 0;
+}
+
+#filtr_btn, #search_btn, #filtr_enter_btn, #filtr_reset_btn, .bell_btn {
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-left: 35px;
+}
+
+
+.small_btn:hover {
+  box-shadow: 0 0 5px var(--avtive_color_rgba) inset, 0 0 5px var(--avtive_color_rgba) inset, 0 0 0.5em var(--avtive_color_rgba), 0 0 0.1em var(--avtive_color_rgba);
+}
+
+
+.more_btn, #home_btn, #table_btn, #list_btn, .plus_btn {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  width: 30px;
+  height: 30px;
+}
+
+
+
+
+
+
+.small_btn:hover {
+  box-shadow: 0 0 5px var(--avtive_color_rgba) inset, 0 0 5px var(--avtive_color_rgba) inset, 0 0 0.5em var(--avtive_color_rgba), 0 0 0.1em var(--avtive_color_rgba);
+}
+
+
+
+
+
+
+.button_section {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#filtr_reset_btn {
+  background-image: url(../../../../../assets/image/reset.png);
+}
+
+#filtr_enter_btn {
+  background-size: 16px;
+  background-image: url(../../../../../assets/image/enter.png);
+}
+
+#filtr_reset_btn {
+  background-image: url(../../../../../assets/image/reset_hov.png);
+}
+
+#filtr_enter_btn {
+  background-size: 16px;
+  background-image: url(../../../../../assets/image/enter_hov.png);
+}
+
+
+
+.task_group_container::-webkit-scrollbar { /* chrome based */
+  height: 5px;
+}
+
+.task_group_container::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 20, 0.4);
+  border-radius: 10px;
+}
+
+.task_group_container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background:  var(--menu_button);
+}
+
+.task_group_container{
+  padding-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  height: 96%;
+  flex-wrap: nowrap;
+  gap: 30px;
+  overflow-y: hidden;   /*горизонтальный скролл*/
+}
+
+
+
+
+
+.task_list {
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  min-width: 220px;
+}
+
+.task_header {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.task_name{
+  vertical-align: middle;
+  line-height: 25px;
+  flex-grow: 1;
+  font-family: Hero-Bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/*============================================ Dropwon Menu Task=========================================*/
+
+.dropworn_task_menu{
+  z-index: 4;
+  position: absolute;
+  width: 150px;
+  background: linear-gradient(31deg, rgba(0,0,0,0.95) 0%, rgba(21,21,21,0.95) 50%, rgba(0,0,0,0.95) 100%);
+  top: 54px;
+  right: 0;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+.dropworn_task_item {
+  padding-left: 37px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position:  10px center;
+  background-size: 20px;
+}
+
+.dropworn_task_item_text {
+  height: 100%;
+  width: 100%;
+  display: block;
+  line-height: 30px;
+}
+
+.dropworn_task_item:hover{
+  transition: 0.15s;
+  border-radius: 10px;
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.4);
+  color: white;
+  text-shadow:  0 0 1em var(--avtive_color), 0 0 0.5em var(--avtive_color), 0 0 0.1em var(--avtive_color);
+}
+
+
+
+.dropworn_task_open {
+  background-image: url(../../../../../assets/image/open.png);
+}
+
+.dropworn_task_open:hover {
+  background-image: url(../../../../../assets/image/open_hov.png);
+}
+
+.dropworn_task_change {
+  background-image: url(../../../../../assets/image/edit.png);
+}
+
+.dropworn_task_change:hover {
+  background-image: url(../../../../../assets/image/edit_hov.png);
+}
+
+.dropworn_task_favorite {
+  background-image: url(../../../../../assets/image/favorite.png);
+}
+
+.dropworn_task_favorite:hover {
+  background-image: url(../../../../../assets/image/favorite_hov.png);
+}
+
+.dropworn_task_remind {
+  background-image: url(../../../../../assets/image/bell.png);
+}
+
+.dropworn_task_remind:hover {
+  background-image: url(../../../../../assets/image/bell_hov.png);
+}
+
+.dropworn_task_complete {
+  background-image: url(../../../../../assets/image/enter.png);
+}
+
+.dropworn_task_complete:hover {
+  background-image: url(../../../../../assets/image/enter_hov.png);
+}
+
+.dropworn_task_delete {
+  background-image: url(../../../../../assets/image/del.png);
+}
+
+.dropworn_task_delete:hover {
+  background-image: url(../../../../../assets/image/del_hov.png);
+}
+
+#new_group_btn{
+  margin-left: 20px;
+  padding-left: 40px;
+  padding-right: 20px;
+  background-image: url(../../../../../assets/image/plus.png);
+}
+
+#new_group_btn:hover{
+  background-image: url(../../../../../assets/image/plus_hov.png);
+}
+
+
+
+.task_group_container::-webkit-scrollbar { /* chrome based */
+  height: 5px;
+}
+
+.task_group_container::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 20, 0.4);
+  border-radius: 10px;
+}
+
+.task_group_container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background:  var(--menu_button);
+}
+
+.task_group_container{
+  padding-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  height: 96%;
+  flex-wrap: nowrap;
+  gap: 30px;
+  overflow-y: hidden;   /*горизонтальный скролл*/
+}
+
+.main_content_section{
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+
+.task_list {
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  min-width: 220px;
+}
+
+
+
+#none{
+  background-image: none;
+}

@@ -1,0 +1,77 @@
+/*=================================== Это главное окно ======================================*/
+
+.app_wnd {
+  border-radius: 20px;
+  display: flex;
+  background-size: cover;
+  min-width: 900px;
+  width: 90%;
+  height: 90%;
+  overflow: hidden;
+  transition: 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.205);
+}
+
+
+.app_wnd_fullscreen{
+  transition: 0.2s;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+}
+
+
+/*=================================== Это сайдбар с навигацией ======================================*/
+
+.side_bar_wrapper {
+  background: linear-gradient(31deg, rgba(0,0,0,0.6) 0%, rgba(22,21,21,0.7) 50%, rgba(0,0,0,0.6) 100%);
+  backdrop-filter: blur(1px);
+  width: 20%;
+  max-width: 300px;
+  height: 100%;
+  position: relative;
+  border-right: none;
+  transition: all 0.3s ease-out;
+}
+
+
+/*=================================== Кнопка разворачивания окна ======================================*/
+
+.app_wnd {
+  position: relative;
+}
+
+.fullscreenBtn{
+  position: absolute;
+  top: 31px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../../../../assets/image/maximize.png);
+}
+
+.fullscreenBtn:hover {
+  background-image: url(../../../../../assets/image/maximize_hov.png);
+  box-shadow:  0 0 5px var(--avtive_color_rgba) inset, 0 0 5px var(--avtive_color_rgba) inset, 0 0 0.5em var(--avtive_color_rgba), 0 0 0.1em var(--avtive_color_rgba);
+}
+
+.main_wnd_btn_fullscreen{
+  background-image: url(../../../../../assets/image/fullscreen.png);
+}
+
+.main_wnd_btn_fullscreen:hover {
+  background-image: url(../../../../../assets/image/fullscreen_hov.png);
+}
+
+/*=================================== Сворачивание меню ======================================*/
+
+.hideMenuMode{
+  transition: all 0.3s ease-out;
+  max-width: 60px;
+  border-right: 1px solid rgba(255, 255, 255, 0.205);
+}
+

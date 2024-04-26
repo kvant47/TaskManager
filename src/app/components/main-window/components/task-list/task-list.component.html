@@ -1,0 +1,47 @@
+<div class="task_header">
+  <h4 class="task_list_name">{{ taskList.title }}</h4>
+  <div class="header-nav">
+    <ul>
+      <li>
+        <button class="main_wnd_btn more_btn header-nav header-nav-link header-nav-top-link"></button>
+        <ul class="conteiner_for_bnt">
+
+          <li class="line_btn">
+            <button class="main_wnd_btn more_btn slide_bnt" (click)="EditTaskList()">
+              <div class="image_bg_edit sss"></div>
+              <h3>Задача</h3>
+            </button>
+         </li>
+
+          <li class="line_btn">
+              <button class="main_wnd_btn more_btn slide_bnt" (click)="EditTaskList()">
+                <div class="image_bg_edit"></div>
+                <h3>Изменить</h3>
+              </button>
+          </li>
+
+          <li class="line_btn">
+            <button class="main_wnd_btn more_btn slide_bnt " (click)="DeleteTaskList()">
+              <div class="image_bg_del"></div>
+              <h3>Удалить</h3>
+            </button>
+          </li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+
+  </div>
+
+  <div class="task_conteiner">
+    <app-task-item
+      class="low_priority"
+      [index]="i"
+      [taskItem]="item"
+      *ngFor="let item of taskList.items; let i = index"
+      (editTaskEmitter)="editTask($event)"
+      (deleteTaskEmitter)="deleteTask($event)"
+    ></app-task-item>
+  </div>

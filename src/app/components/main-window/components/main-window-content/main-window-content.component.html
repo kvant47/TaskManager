@@ -1,0 +1,12 @@
+<div class="flex-box-wrapper">
+  <div class="app_wnd" [ngClass]="{'app_wnd_fullscreen': fullscreenMode }">
+    <app-nav-bar
+    class="side_bar_wrapper"
+    (hideMenu)="HideMenu($event)"
+    [ngClass]="{'hideMenuMode': hideMenuMode }"
+    >
+  </app-nav-bar>
+      <router-outlet></router-outlet>
+      <button [ngClass]="{'main_wnd_btn_fullscreen': fullscreenMode }" class="main_wnd_btn more_btn small_btn  fullscreenBtn"  (click)="fullscreenMode = !fullscreenMode"></button>
+  </div>
+</div>
