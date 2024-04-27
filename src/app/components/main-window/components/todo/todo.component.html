@@ -140,7 +140,7 @@
       (update)="Update()"
       [index]="i"
       [taskList]="group"
-      *ngFor="let group of taskLists; let i = index"
+      *ngFor="let group of taskLists | search:value; let i = index"
       class="task_list"
     ></app-task-list>
   </div>

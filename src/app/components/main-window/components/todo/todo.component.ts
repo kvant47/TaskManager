@@ -8,6 +8,7 @@ import { TaskListService } from '../../../../services/task-list.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TaskListWndComponent } from '../task-list-wnd/task-list-wnd.component';
 import { TaskItemWndComponent } from '../task-item-wnd/task-item-wnd.component';
+import { SearchPipe } from '../../../../pipes/search';
 
 @Component({
   selector: 'app-todo',
@@ -23,7 +24,7 @@ export class TodoComponent implements OnInit {
 
   public taskLists: any = [];
   public taskItems: any = [];
-
+  public value = '';
   constructor(
     private dialog: MatDialog,
     private taskListService: TaskListService,
@@ -35,12 +36,12 @@ export class TodoComponent implements OnInit {
 
   public defMass: any = []
   FilterByName(event: Event) {
-    const value = (event.target as HTMLInputElement).value;
-    console.log('Значение для фильтрации ' + value);
+    this.value = (event.target as HTMLInputElement).value;
+    console.log('Значение для фильтрации ' + this.value);
     console.log('Массив до фильтрации ' + this.taskLists);
 
 
-    this.taskLists = this.defMass.filter((taskList: TaskList) => taskList.title.includes(value))  // Работает как надо, списки филтруются. Но массив портится, его элементы удаляются
+    //this.taskLists = this.defMass.filter((taskList: TaskList) => taskList.title.includes(value))  // Работает как надо, списки филтруются. Но массив портится, его элементы удаляются
 
 
     //this.taskLists.filter = value.trim().toLowerCase();    // Работает, но только в консоли. Сами списки не меняются
