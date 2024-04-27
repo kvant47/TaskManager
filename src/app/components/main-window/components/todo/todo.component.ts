@@ -1,5 +1,7 @@
+import { __values } from 'tslib';
+import { TaskItem } from './../../../../interfaces/task-list.interface';
 import { TaskItemService } from './../../../../services/task-item.service';
-import { Component, Inject, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, Inject, OnInit, EventEmitter, Output, ChangeDetectorRef } from '@angular/core';
 import { TaskCategory, TaskList, TaskPriority, TaskStatus } from '../../../../interfaces/task-list.interface';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { TaskListService } from '../../../../services/task-list.service';
@@ -25,22 +27,44 @@ export class TodoComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private taskListService: TaskListService,
-    private taskItemService: TaskItemService
+    private taskItemService: TaskItemService,
   ){
     this.isCollapsed = false;
-   // this.taskItemService.getAllTaskItem().subscribe(data => this.taskItems = data)
+
   }
 
+  public defMass: any = []
+  FilterByName(event: Event) {
+    const value = (event.target as HTMLInputElement).value;
+    console.log('Значение для фильтрации ' + value);
+    console.log('Массив до фильтрации ' + this.taskLists);
+
+
+    this.taskLists = this.defMass.filter((taskList: TaskList) => taskList.title.includes(value))  // Работает как надо, списки филтруются. Но массив портится, его элементы удаляются
+
+
+    //this.taskLists.filter = value.trim().toLowerCase();    // Работает, но только в консоли. Сами списки не меняются
+
+    console.log(this.taskLists.filter);
+    console.log('Массив после ' + this.taskLists);
+  }
 
 
   FilterBtnClick() {
     this.isCollapsed = !this.isCollapsed;
   }
 
+
   Update(){
     this.taskListService.getAllTaskList().subscribe(data => this.taskLists = data)              //инициализация списков с задачами
-    this.taskItemService.getAllTaskItem().subscribe(data => this.taskItems = data)     //инициализация задач
+    this.taskItemService.getAllTaskItem().subscribe(data => this.taskItems = data)              //инициализация задач
     this.taskItemService.getAllTaskItem().subscribe(data => this.taskLists[1].items = data)
+
+    this.taskListService.getAllTaskList().subscribe(data => {                                 //поптыка решить проблему фильтра через создание доп массива с дефолтными значениями
+      this.taskLists = data;
+      this.defMass = data;
+  })
+
   }
 
 

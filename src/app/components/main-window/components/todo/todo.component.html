@@ -128,7 +128,7 @@
 
 
     <div class="search_block">
-      <input type="text" placeholder="Поиск..." class="search_area" />
+      <input type="text" placeholder="Поиск..." class="search_area"  (keyup)="FilterByName($event)" />
       <button class="main_wnd_btn" id="search_btn"><h3>Поиск</h3></button>
     </div>
   </div>
