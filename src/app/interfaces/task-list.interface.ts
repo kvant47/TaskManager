@@ -17,25 +17,17 @@ export interface TaskItem {
   audioPath?: string;
 }
 
-export enum TaskStatus {
-  NOT_STARTED = 'Сделать',
-  IN_PROGRESS = 'В процессе',
-  DONE = 'Выполнено'
+export interface TaskStatus {
+  id?: number,
+  title?: string;
 }
 
-export enum TaskCategory {
-  WORK = 'Работа',
-  STUDY = 'Учеба',
-  FAMILY = 'Семья',
-  LEISURE = 'Хобби',
-  PERSONAL  = 'Личное',
-  VACATION = 'Досуг',
-  OTHER = 'Другое',
+export interface TaskCategory {
+  id?: number,
+  title: string;
 }
 
-export enum TaskPriority {
-  LOW = 'Не срочно',
-  MEDIUN = 'Не тянуть',
-  HIGH = 'Поторопиться',
-  MAX = 'Срочно',
+export interface TaskPriority {
+  id?: number,
+  title: string;
 }

@@ -13,7 +13,7 @@ import { TaskItemComponent } from './components/task-item/task.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TaskItemWndComponent } from './components/task-item-wnd/task-item-wnd.component';
 import { DeleteWndComponent } from './components/delete-wnd/delete-wnd.component';
-import { SearchPipe } from '../../pipes/search';
+import { FilterPipe } from '../../pipes/search';
 
 
 
@@ -29,7 +29,7 @@ import { SearchPipe } from '../../pipes/search';
     TaskItemComponent,
     TaskItemWndComponent,
     DeleteWndComponent,
-    SearchPipe
+    FilterPipe
   ],
   imports: [
     CommonModule,

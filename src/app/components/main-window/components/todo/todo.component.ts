@@ -1,14 +1,14 @@
+import { TaskCategoryService } from './../../../../services/task-category.service';
+import { TaskPriorityService } from './../../../../services/task-priority.service';
 import { __values } from 'tslib';
-import { TaskItem } from './../../../../interfaces/task-list.interface';
+import { TaskItem, TaskCategory, TaskPriority } from './../../../../interfaces/task-list.interface';
 import { TaskItemService } from './../../../../services/task-item.service';
 import { Component, Inject, OnInit, EventEmitter, Output, ChangeDetectorRef } from '@angular/core';
-import { TaskCategory, TaskList, TaskPriority, TaskStatus } from '../../../../interfaces/task-list.interface';
+import { TaskList } from '../../../../interfaces/task-list.interface';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { TaskListService } from '../../../../services/task-list.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TaskListWndComponent } from '../task-list-wnd/task-list-wnd.component';
 import { TaskItemWndComponent } from '../task-item-wnd/task-item-wnd.component';
-import { SearchPipe } from '../../../../pipes/search';
 
 @Component({
   selector: 'app-todo',
@@ -22,32 +22,23 @@ export class TodoComponent implements OnInit {
 
   @Output() fullscren = new EventEmitter<{}>();
 
-  public taskLists: any = [];
-  public taskItems: any = [];
-  public value = '';
+  public taskLists: TaskList[];
+  public taskItems: TaskItem[];
+  search: string = '';
+
+
+  public taskPriority: TaskPriority[] = []
+  public taskCategory: TaskCategory[] = []
+
   constructor(
     private dialog: MatDialog,
     private taskListService: TaskListService,
     private taskItemService: TaskItemService,
+    private taskPriorityService: TaskPriorityService,
+    private taskCategoryService: TaskCategoryService,
   ){
     this.isCollapsed = false;
 
-  }
-
-  public defMass: any = []
-  FilterByName(event: Event) {
-    this.value = (event.target as HTMLInputElement).value;
-    console.log('Значение для фильтрации ' + this.value);
-    console.log('Массив до фильтрации ' + this.taskLists);
-
-
-    //this.taskLists = this.defMass.filter((taskList: TaskList) => taskList.title.includes(value))  // Работает как надо, списки филтруются. Но массив портится, его элементы удаляются
-
-
-    //this.taskLists.filter = value.trim().toLowerCase();    // Работает, но только в консоли. Сами списки не меняются
-
-    console.log(this.taskLists.filter);
-    console.log('Массив после ' + this.taskLists);
   }
 
 
@@ -57,21 +48,17 @@ export class TodoComponent implements OnInit {
 
 
   Update(){
-    this.taskListService.getAllTaskList().subscribe(data => this.taskLists = data)              //инициализация списков с задачами
-    this.taskItemService.getAllTaskItem().subscribe(data => this.taskItems = data)              //инициализация задач
-    this.taskItemService.getAllTaskItem().subscribe(data => this.taskLists[1].items = data)
-
-    this.taskListService.getAllTaskList().subscribe(data => {                                 //поптыка решить проблему фильтра через создание доп массива с дефолтными значениями
-      this.taskLists = data;
-      this.defMass = data;
-  })
-
+    this.taskListService.getAllTaskList().subscribe(data => this.taskLists.push(data))              //инициализация списков с задачами
+    this.taskItemService.getAllTaskItem().subscribe(data => this.taskLists[1].items.push(data))
   }
 
 
   ngOnInit(): void {
     this.Update();
-  }
+
+    this.taskPriority=this.taskPriorityService.getAllPriority();
+    this.taskCategory=this.taskCategoryService.getAllCategory();
+    }
 
 
 

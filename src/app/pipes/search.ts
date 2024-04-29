@@ -1,21 +1,20 @@
-import { Pipe, PipeTransform } from "@angular/core";
-import { TaskList } from "../interfaces/task-list.interface";
+import { Pipe, PipeTransform } from '@angular/core';
+import {TaskItem} from "../interfaces/task-list.interface";
 
 @Pipe({
-  name: 'search'
+  name: 'filter'
 })
-export class SearchPipe implements PipeTransform{
+export class FilterPipe implements PipeTransform {
 
-  // transform(taskLists, value) {
-  //   return taskLists.filter(taskList => {
-  //     return taskList.title.toLowerCase().includes(value.toLowerCase())
-  //   })
-  // }
+  transform(taskItems: TaskItem[], search: string = ''): TaskItem[] {
 
-  transform(tasks, value) {
-    return tasks.filter(taskList => {
-      return tasks.title.toLowerCase().includes(value.toLowerCase())
+    if(!taskItems || !search.trim()) {
+      return taskItems
+    }
+    return taskItems.filter(taskItem => {
+      return taskItem.title.trim().toLowerCase().includes(search.trim().toLowerCase())
     })
+
   }
 
 }

@@ -10,75 +10,27 @@
   <div class="content_filtres" [ngClass]="{ collapsed: !isCollapsed }">
     <p class="filtr_title">Приоритет</p>
     <div class="filtr_element_row">
-      <div>
+
+      <div *ngFor="let item of taskPriority">
         <label class="filtr_checkbox">
-          <input type="checkbox" />
-          <span> Низкий </span>
+          <input type="checkbox" name="{{item.title}}"/>
+          <span> {{item.title}} </span>
         </label>
       </div>
-      <div>
-        <label class="filtr_checkbox">
-          <input type="checkbox" />
-          <span> Средний </span>
-        </label>
-      </div>
-      <div>
-        <label class="filtr_checkbox">
-          <input type="checkbox" />
-          <span> Высокий </span>
-        </label>
-      </div>
-      <div>
-        <label class="filtr_checkbox">
-          <input type="checkbox" />
-          <span> Максимальный </span>
-        </label>
-      </div>
+
     </div>
+
     <p class="filtr_title">Категория</p>
     <div class="filtr_element_row">
-      <div>
+
+
+      <div *ngFor="let item of taskCategory">
         <label class="filtr_checkbox">
-          <input type="checkbox" />
-          <span> Работа </span>
+          <input type="checkbox" name="{{item.title}}"/>
+          <span> {{item.title}} </span>
         </label>
       </div>
-      <div>
-        <label class="filtr_checkbox">
-          <input type="checkbox" />
-          <span> Учеба </span>
-        </label>
-      </div>
-      <div>
-        <label class="filtr_checkbox">
-          <input type="checkbox" />
-          <span> Семья </span>
-        </label>
-      </div>
-      <div>
-        <label class="filtr_checkbox">
-          <input type="checkbox" />
-          <span> Досуг </span>
-        </label>
-      </div>
-      <div>
-        <label class="filtr_checkbox">
-          <input type="checkbox" />
-          <span> Хобби </span>
-        </label>
-      </div>
-      <div>
-        <label class="filtr_checkbox">
-          <input type="checkbox" />
-          <span> Личное </span>
-        </label>
-      </div>
-      <div>
-        <label class="filtr_checkbox">
-          <input type="checkbox" />
-          <span> Отпуск </span>
-        </label>
-      </div>
+
     </div>
     <div class="button_section">
       <button class="main_wnd_btn" id="filtr_reset_btn">
@@ -128,7 +80,7 @@
 
 
     <div class="search_block">
-      <input type="text" placeholder="Поиск..." class="search_area"  (keyup)="FilterByName($event)" />
+      <input type="text" placeholder="Поиск..." class="search_area"  [(ngModel)]="search" />
       <button class="main_wnd_btn" id="search_btn"><h3>Поиск</h3></button>
     </div>
   </div>
@@ -138,9 +90,9 @@
   <div class="task_group_container">
     <app-task-list
       (update)="Update()"
-      [index]="i"
       [taskList]="group"
-      *ngFor="let group of taskLists | search:value; let i = index"
+      [search]="search"
+      *ngFor="let group of taskLists"
       class="task_list"
     ></app-task-list>
   </div>

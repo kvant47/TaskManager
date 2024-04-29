@@ -1,6 +1,5 @@
 import { TaskList } from './../interfaces/task-list.interface';
 import { Injectable } from '@angular/core';
-import { TaskCategory, TaskPriority, TaskStatus } from '../interfaces/task-list.interface';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
