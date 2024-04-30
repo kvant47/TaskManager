@@ -21,6 +21,7 @@ export class TaskListComponent {
   @Input() taskList!: TaskList;
   @Input() index!: number;
   @Input() search: string
+  @Input() enterFilterFlag: boolean
   @Input() categoryesSearch: string[]
   @Input() priorotiesSearch: string[]
 
@@ -42,8 +43,8 @@ export class TaskListComponent {
 
 
   editTask(taskItem: TaskItem) {
-    console.log(this.categoryesSearch)
-    console.log(this.priorotiesSearch)
+    console.log(this.categoryesSearch)  //Убрать
+    console.log(this.priorotiesSearch)  //Убрать
     const dialogAddingNewTask = this.dialog.open(TaskItemWndComponent, {
       data: taskItem
     });

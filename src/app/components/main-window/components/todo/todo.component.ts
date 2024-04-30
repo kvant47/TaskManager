@@ -30,8 +30,10 @@ export class TodoComponent implements OnInit {
   search: string = '';
 
 
-  public taskPriority: TaskPriority[] = []
-  public taskCategory: TaskCategory[] = []
+  public taskPriority: TaskPriority[] = [];
+  public taskCategory: TaskCategory[] = [];
+  public enterFilterFlag: boolean = false;
+
 
   constructor(
     private dialog: MatDialog,
@@ -70,6 +72,13 @@ export class TodoComponent implements OnInit {
     }
   }
 
+  UncheckAll(){
+
+  }
+
+  enterFilter(){
+    this.enterFilterFlag = !this.enterFilterFlag   // двойное нажатие - это нужно исправить
+  }
 
   FilterBtnClick() {                //показать/скрыть фильтры
     this.isCollapsed = !this.isCollapsed;
