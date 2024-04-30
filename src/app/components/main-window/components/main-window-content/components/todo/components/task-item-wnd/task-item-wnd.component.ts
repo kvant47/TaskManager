@@ -1,15 +1,15 @@
-import { TaskCategory, TaskPriority, TaskStatus } from './../../../../interfaces/task-list.interface';
-import { TaskCategoryService } from './../../../../services/task-category.service';
+import { TaskCategory, TaskPriority, TaskStatus } from '../../../../../../../../interfaces/task-list.interface';
+import { TaskCategoryService } from '../../../../../../../../services/task-category.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TaskListWndComponent } from '../task-list-wnd/task-list-wnd.component';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { TaskItem } from '../../../../interfaces/task-list.interface';
+import { TaskItem } from '../../../../../../../../interfaces/task-list.interface';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { TaskStatusService } from '../../../../services/task-status.service';
-import { TaskPriorityService } from '../../../../services/task-priority.service';
+import { TaskStatusService } from '../../../../../../../../services/task-status.service';
+import { TaskPriorityService } from '../../../../../../../../services/task-priority.service';
 
 @Component({
   selector: 'app-task-item-wnd',
