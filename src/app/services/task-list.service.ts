@@ -12,8 +12,8 @@ export class TaskListService {
   constructor(private http: HttpClient) {}
 
 
-  getAllTaskList():  Observable<TaskList> {
-    return this.http.get<TaskList>(this.url)
+  getAllTaskList():  Observable<TaskList[]> {
+    return this.http.get<TaskList[]>(this.url)
   }
 
   addNewList(taskList: TaskList): Observable<TaskList> {

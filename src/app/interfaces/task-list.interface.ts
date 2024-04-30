@@ -19,7 +19,7 @@ export interface TaskItem {
 
 export interface TaskStatus {
   id?: number,
-  title?: string;
+  title: string;
 }
 
 export interface TaskCategory {

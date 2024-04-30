@@ -4,7 +4,7 @@ import { TaskStatus } from '../interfaces/task-list.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class TaskPriorityService {
+export class TaskStatusService {
 
   constructor() { }
 

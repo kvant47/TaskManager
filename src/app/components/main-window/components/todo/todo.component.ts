@@ -22,8 +22,11 @@ export class TodoComponent implements OnInit {
 
   @Output() fullscren = new EventEmitter<{}>();
 
-  public taskLists: TaskList[];
-  public taskItems: TaskItem[];
+   public taskLists: TaskList[];
+   public taskItems: TaskItem[];
+
+  //public taskLists: any;
+  //public taskItems: any;
   search: string = '';
 
 
@@ -48,8 +51,13 @@ export class TodoComponent implements OnInit {
 
 
   Update(){
-    this.taskListService.getAllTaskList().subscribe(data => this.taskLists.push(data))              //инициализация списков с задачами
-    this.taskItemService.getAllTaskItem().subscribe(data => this.taskLists[1].items.push(data))
+     this.taskListService.getAllTaskList().subscribe(data => this.taskLists = data)            //инициализация списков с задачами
+     this.taskItemService.getAllTaskItem().subscribe(data => this.taskLists[1].items= data)
+
+
+    //this.taskListService.getAllTaskList().subscribe(data => this.taskLists = data)              //инициализация списков с задачами
+    //this.taskItemService.getAllTaskItem().subscribe(data => this.taskItems = data)              //инициализация задач
+    //this.taskItemService.getAllTaskItem().subscribe(data => this.taskLists[1].items = data)
   }
 
 

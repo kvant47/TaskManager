@@ -11,8 +11,8 @@ export class TaskItemService {
   url = "http://localhost:3001/TaskItem";
   constructor(private http: HttpClient) {}
 
-  getAllTaskItem(): Observable<TaskItem>  {
-    return this.http.get<TaskItem>(this.url)
+  getAllTaskItem(): Observable<TaskItem[]>  {
+    return this.http.get<TaskItem[]>(this.url)
  }
 
  addNewItem(taskList: TaskList): Observable<TaskList> {

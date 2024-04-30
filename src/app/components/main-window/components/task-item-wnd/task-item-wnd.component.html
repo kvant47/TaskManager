@@ -44,43 +44,14 @@
     <h4 >Категория</h4>
     <p id="task_category_input" [ngClass]="{'active' : active[0]}" (click)="active[0] = !active[0]; active[1] = false; active[2] = false;">Не выбрано</p>
     <div class="header-nav" [ngClass]="{'active' : active[0]}" >
-      <ul>
-        <li class="line_btn">
-            <label for="radio1" > Работа</label>
-            <input id="radio1" formControlName="category"  name="category" value="Работа" (change)=" handleRadioLabelClick($event)" type="radio"/>
+
+      <ul >
+        <li class="line_btn" *ngFor="let item of taskCategory">
+            <label for="{{item.title}}" > {{item.title}}</label>
+            <input id="{{item.title}}" formControlName="category"  name="category" value="{{item.title}}" (change)=" handleRadioLabelClick($event)" type="radio"/>
         </li>
-
-        <li class="line_btn">
-           <label for="radio2" > Учеба</label>
-           <input id="radio2"  formControlName="category" name="category" value="Учеба" (change)=" handleRadioLabelClick($event)" type="radio"/>
-        </li>
-
-        <li class="line_btn">
-          <label for="radio4" > Семья</label>
-          <input id="radio4"  formControlName="category" name="category" value="Семья" (change)=" handleRadioLabelClick($event)" type="radio"/>
-        </li>
-
-        <li class="line_btn">
-          <label for="radio5"  > Хобби</label>
-          <input id="radio5"  formControlName="category" name="category" value="Хобби" (change)=" handleRadioLabelClick($event)" type="radio"/>
-        </li>
-
-        <li class="line_btn">
-          <label for="radio6"  > Личное</label>
-          <input id="radio6"  formControlName="category" name="category" value="Личное" (change)=" handleRadioLabelClick($event)" type="radio"/>
-        </li>
-
-        <li class="line_btn">
-          <label for="radio7"  > Досуг</label>
-          <input id="radio7"  formControlName="category" name="category" value="Досуг" (change)=" handleRadioLabelClick($event)" type="radio"/>
-        </li>
-
-        <li class="line_btn">
-          <label for="radio8" > Другое</label>
-          <input id="radio8"  formControlName="category" name="category" value="Другое" (change)=" handleRadioLabelClick($event)" type="radio"/>
-         </li>
-
       </ul>
+
     </div>
   </div>
 
@@ -90,20 +61,11 @@
     <p id="task_status_input" [ngClass]="{'active' : active[1]}" (click)="active[1] = !active[1]; active[0] = false; active[2] = false;">Не выбрано</p>
     <div class="header-nav" [ngClass]="{'active' : active[1]}" >
       <ul>
-        <li class="line_btn">
-            <label for="radio9" > Сделать</label>
-            <input id="radio9" formControlName="status"  name="status" value="Сделать" (change)=" handleRadioLabelClick($event)" type="radio"/>
+        <li class="line_btn" *ngFor="let item of taskStatus">
+            <label for="{{item.title}}" > {{item.title}}</label>
+            <input id="{{item.title}}" formControlName="status"  name="status" value="{{item.title}}" (change)=" handleRadioLabelClick($event)" type="radio"/>
         </li>
 
-        <li class="line_btn">
-           <label for="radio10" > Выполняется</label>
-           <input id="radio10"  formControlName="status" name="status" value="Выполняется" (change)=" handleRadioLabelClick($event)" type="radio"/>
-        </li>
-
-        <li class="line_btn">
-          <label for="radio11" > Выполнено</label>
-          <input id="radio11"  formControlName="status" name="status" value="Выполнено" (change)=" handleRadioLabelClick($event)" type="radio"/>
-        </li>
 
       </ul>
     </div>
@@ -115,24 +77,10 @@
     <p id="task_priority_input" [ngClass]="{'active' : active[2]}" (click)="active[2] = !active[2]; active[1] = false; active[0] = false;">Не выбрано</p>
     <div class="header-nav" [ngClass]="{'active' : active[2]}" >
       <ul>
-        <li class="line_btn">
-            <label for="radio12" > Несрочно</label>
-            <input id="radio12" formControlName="priority"  name="priority" value="Несрочно" (change)=" handleRadioLabelClick($event)" type="radio"/>
-        </li>
 
-        <li class="line_btn">
-           <label for="radio13" > Не затягивать</label>
-           <input id="radio13"  formControlName="priority" name="priority" value="Не затягивать" (change)=" handleRadioLabelClick($event)" type="radio"/>
-        </li>
-
-        <li class="line_btn">
-          <label for="radio14" > Поторопиться</label>
-          <input id="radio14"  formControlName="priority" name="priority" value="Поторопиться" (change)=" handleRadioLabelClick($event)" type="radio"/>
-        </li>
-
-        <li class="line_btn">
-          <label for="radio15" > Срочно</label>
-          <input id="radio15"  formControlName="priority" name="priority" value="Срочно" (change)=" handleRadioLabelClick($event)" type="radio"/>
+        <li class="line_btn" *ngFor="let item of taskPriority; let i = index">
+            <label for="{{item.title}}" > {{item.title}}</label>
+            <input id="{{item.title}}" formControlName="priority"  name="priority" value="{{item.title}}" (change)=" handleRadioLabelClick($event)" type="radio"/>
         </li>
 
       </ul>

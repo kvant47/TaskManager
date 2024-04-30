@@ -33,7 +33,7 @@
 <p *ngIf="taskItem.imagePath != null && taskItem.imagePath != ''" class="task_image">
   <img src="{{ taskItem.imagePath }}" class="flexable_image" alt="" />
 </p>
-<div *ngIf="(taskItem.category != null && taskItem.category != '') || (taskItem.priority != null && taskItem.priority != '')" class="information_task">
+<div *ngIf="(taskItem.category  != null && taskItem.category != '') || (taskItem.priority != null && taskItem.priority != '')" class="information_task">
   <p class="category_task">{{ taskItem.category }}</p>
   <p class="priority_task">{{ taskItem.priority }}</p>
 </div>
