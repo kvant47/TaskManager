@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { TaskList } from '../../../../interfaces/task-list.interface';
+import { TaskList } from '../../../../../../../../interfaces/task-list.interface';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -24,9 +24,7 @@ export class TaskListWndComponent implements OnInit {
   ngOnInit(): void {
     if(!this.data){
       this.title = 'Новая группа задач';
-      this.loginForm = new FormGroup({
-        title: new FormControl('', [Validators.required]),
-    })}
+    }
     else
       this.title = 'Редактирование группы задач';
       this.loginForm = new FormGroup({
