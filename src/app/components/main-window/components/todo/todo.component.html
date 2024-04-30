@@ -13,7 +13,7 @@
 
       <div *ngFor="let item of taskPriority">
         <label class="filtr_checkbox">
-          <input type="checkbox" name="{{item.title}}"/>
+          <input type="checkbox" name="task_priority_check" (change)="ChangePriorotyes($event)"/>
           <span> {{item.title}} </span>
         </label>
       </div>
@@ -26,7 +26,7 @@
 
       <div *ngFor="let item of taskCategory">
         <label class="filtr_checkbox">
-          <input type="checkbox" name="{{item.title}}"/>
+          <input type="checkbox" name="task_category_check" (change)="ChangeCategoryes($event)"/>
           <span> {{item.title}} </span>
         </label>
       </div>
@@ -36,7 +36,7 @@
       <button class="main_wnd_btn" id="filtr_reset_btn">
         <h3>Сброс</h3>
       </button>
-      <button class="main_wnd_btn" id="filtr_enter_btn">
+      <button class="main_wnd_btn" id="filtr_enter_btn" >
         <h3>Применить</h3>
       </button>
     </div>
@@ -92,6 +92,8 @@
       (update)="Update()"
       [taskList]="group"
       [search]="search"
+      [priorotiesSearch]="priorotiesSearch"
+      [categoryesSearch]="categoryesSearch"
       *ngFor="let group of taskLists"
       class="task_list"
     ></app-task-list>

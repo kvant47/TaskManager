@@ -44,8 +44,34 @@ export class TodoComponent implements OnInit {
 
   }
 
+  public priorotiesSearch: string[] = [];
 
-  FilterBtnClick() {
+  ChangePriorotyes($event){
+    const checkbox = $event.target as HTMLInputElement
+    if (checkbox.checked) {
+      console.log('Добавили элемент' + checkbox.nextElementSibling.innerHTML)
+      this.priorotiesSearch.push(checkbox.nextElementSibling.innerHTML)
+    } else {
+      console.log('Удалили элемент' + checkbox.nextElementSibling.innerHTML)
+      this.priorotiesSearch.splice(this.priorotiesSearch.indexOf(checkbox.nextElementSibling.innerHTML), 1);
+    }
+  }
+
+  public categoryesSearch: string[] = [];
+
+  ChangeCategoryes($event){
+    const checkbox = $event.target as HTMLInputElement
+    if (checkbox.checked) {
+      console.log('Добавили элемент' + checkbox.nextElementSibling.innerHTML)
+      this.categoryesSearch.push(checkbox.nextElementSibling.innerHTML)
+    } else {
+      console.log('Удалили элемент' + checkbox.nextElementSibling.innerHTML)
+      this.categoryesSearch.splice(this.categoryesSearch.indexOf(checkbox.nextElementSibling.innerHTML), 1);
+    }
+  }
+
+
+  FilterBtnClick() {                //показать/скрыть фильтры
     this.isCollapsed = !this.isCollapsed;
   }
 

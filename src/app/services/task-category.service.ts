@@ -34,6 +34,10 @@ export class TaskCategoryService {
      {
       id: 6,
       title: 'Другое',
+     },
+     {
+      id: 7,
+      title: 'Все в одной куче',
      }
   ]
 

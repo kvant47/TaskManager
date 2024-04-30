@@ -57,37 +57,15 @@
       "id": "2bbb"
     },
     {
-      "id": "eb40",
-      "title": "Название таски",
-      "description": "",
-      "date": "",
-      "category": "",
-      "status": "",
-      "priority": "",
-      "imagePath": "",
-      "audioPath": ""
-    },
-    {
-      "id": "530b",
-      "title": "А если я напишу какое то длинное название",
-      "description": "",
-      "date": "",
-      "category": "",
-      "status": "",
-      "priority": "",
-      "imagePath": "",
-      "audioPath": ""
-    },
-    {
       "title": "",
       "description": "",
       "date": "",
-      "category": "Личное",
-      "status": "",
-      "priority": "Поторопиться",
+      "category": "Хобби",
+      "status": "Выполняется",
+      "priority": "Не затягивать",
       "imagePath": "",
       "audioPath": "",
-      "id": "4f51"
+      "id": "0932"
     }
   ],
   "TaskList": [
