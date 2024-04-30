@@ -1,6 +1,6 @@
 import { Component, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
-import { TaskItem } from '../../../../../../../../interfaces/task-list.interface';
-import { TaskItemService } from '../../../../../../../../services/task-item.service';
+import { TaskItem } from '../../../../interfaces/task-list.interface';
+import { TaskItemService } from '../../../../services/task-item.service';
 
 @Component({
   selector: 'app-task-item',

@@ -1,14 +1,14 @@
-import { TaskCategoryService } from '../../../../../../services/task-category.service';
-import { TaskPriorityService } from '../../../../../../services/task-priority.service';
+import { TaskCategoryService } from './../../../../services/task-category.service';
+import { TaskPriorityService } from './../../../../services/task-priority.service';
 import { __values } from 'tslib';
-import { TaskItem, TaskCategory, TaskPriority } from '../../../../../../interfaces/task-list.interface';
-import { TaskItemService } from '../../../../../../services/task-item.service';
+import { TaskItem, TaskCategory, TaskPriority } from './../../../../interfaces/task-list.interface';
+import { TaskItemService } from './../../../../services/task-item.service';
 import { Component, Inject, OnInit, EventEmitter, Output, ChangeDetectorRef } from '@angular/core';
-import { TaskList } from '../../../../../../interfaces/task-list.interface';
+import { TaskList } from '../../../../interfaces/task-list.interface';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { TaskListService } from '../../../../../../services/task-list.service';
-import { TaskListWndComponent } from './components/task-list-wnd/task-list-wnd.component';
-import { TaskItemWndComponent } from './components/task-item-wnd/task-item-wnd.component';
+import { TaskListService } from '../../../../services/task-list.service';
+import { TaskListWndComponent } from '../task-list-wnd/task-list-wnd.component';
+import { TaskItemWndComponent } from '../task-item-wnd/task-item-wnd.component';
 
 @Component({
   selector: 'app-todo',
