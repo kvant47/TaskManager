@@ -9,7 +9,7 @@ import { FormGroupDirective, FormsModule, ReactiveFormsModule } from '@angular/f
 import { MatDialogModule } from '@angular/material/dialog';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TaskListWndComponent } from './components/main-window/components/task-list-wnd/task-list-wnd.component';
+import { TaskListWndComponent } from './components/main-window/components/main-window-content/components/todo/components/task-list-wnd/task-list-wnd.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({

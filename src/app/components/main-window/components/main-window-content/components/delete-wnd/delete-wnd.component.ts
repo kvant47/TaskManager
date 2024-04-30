@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { TaskListWndComponent } from '../task-list-wnd/task-list-wnd.component';
+import { TaskListWndComponent } from '../todo/components/task-list-wnd/task-list-wnd.component';
 
 @Component({
   selector: 'app-delete-wnd',

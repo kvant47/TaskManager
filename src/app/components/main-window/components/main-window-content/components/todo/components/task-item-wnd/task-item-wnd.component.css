@@ -1,19 +1,19 @@
 #filtr_reset_btn {
-  background-image: url(../../../../../assets/image/reset.png);
+  background-image: url(../../../../../../../../../assets/image/reset.png);
 }
 
 #filtr_enter_btn {
   background-size: 16px;
-  background-image: url(../../../../../assets/image/enter.png);
+  background-image: url(../../../../../../../../../assets/image/enter.png);
 }
 
 #filtr_reset_btn {
-  background-image: url(../../../../../assets/image/reset_hov.png);
+  background-image: url(../../../../../../../../../assets/image/reset_hov.png);
 }
 
 #filtr_enter_btn {
   background-size: 16px;
-  background-image: url(../../../../../assets/image/enter_hov.png);
+  background-image: url(../../../../../../../../../assets/image/enter_hov.png);
 }
 
 /* ================================Поле описания===================================== */
@@ -34,7 +34,7 @@ input[type=date] {
   user-select: none;
   color: var(--main_color);
 	&::-webkit-calendar-picker-indicator {
-		background-image: url("../../../../../assets/image/calendar_hov.png");
+		background-image: url("../../../../../../../../../assets/image/calendar_hov.png");
 	}
 }
 
@@ -58,7 +58,7 @@ input[type=file] {
   transition: 0.2s;
   font-size: 16px;
   color: #d3d3d3;
-  background-image: url(../../../../../assets/image/upload.png);
+  background-image: url(../../../../../../../../../assets/image/upload.png);
   background-position:  right 5px top 5px;
   background-repeat: no-repeat;
   background-size: 22px 22px;
@@ -67,7 +67,7 @@ input[type=file] {
 .field_input_file label:hover, .field_input_file label:focus, .field_input_file label:active {
   background: #d3d3d3;
   color: black;
-  background-image: url(../../../../../assets/image/upload_hov.png);
+  background-image: url(../../../../../../../../../assets/image/upload_hov.png);
   background-repeat: no-repeat;
   background-position:  right 5px top 5px;
   background-size: 22px 22px;

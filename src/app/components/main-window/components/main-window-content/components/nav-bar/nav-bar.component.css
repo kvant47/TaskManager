@@ -99,62 +99,62 @@ h3{
 }
 
 #task_btn{
-  background-image: url(./../../../../../assets/image/task.png);
+  background-image: url(../../../../../../../assets/image/task.png);
 }
 
 #task_btn:hover{
-  background-image: url(./../../../../../assets/image/task_hov.png);
+  background-image: url(./../../../../../../../assets/image/task_hov.png);
 }
 
 #statistic_btn{
-  background-image: url(./../../../../../assets/image/statistic.png);
+  background-image: url(./../../../../../../../assets/image/statistic.png);
 }
 
 #statistic_btn:hover{
-  background-image: url(./../../../../../assets/image/statistic_hov.png);
+  background-image: url(./../../../../../../../assets/image/statistic_hov.png);
 }
 
 #profile_btn{
-  background-image: url(./../../../../../assets/image/profile.png);
+  background-image: url(./../../../../../../../assets/image/profile.png);
 }
 
 #profile_btn:hover{
-  background-image: url(./../../../../../assets/image/profile_hov.png);
+  background-image: url(./../../../../../../../assets/image/profile_hov.png);
 }
 
 #calendar_btn{
-  background-image: url(./../../../../../assets/image/calendar.png);
+  background-image: url(./../../../../../../../assets/image/calendar.png);
 }
 
 #calendar_btn:hover{
-  background-image: url(./../../../../../assets/image/calendar_hov.png);
+  background-image: url(./../../../../../../../assets/image/calendar_hov.png);
 }
 
 #setting_bnt{
-  background-image: url(./../../../../../assets/image/settings.png);
+  background-image: url(./../../../../../../../assets/image/settings.png);
 }
 
 #setting_bnt:hover{
-  background-image: url(./../../../../../assets/image/settings_hov.png);
+  background-image: url(./../../../../../../../assets/image/settings_hov.png);
 }
 
 #edit_btn{
-  background-image: url(./../../../../../assets/image/support.png);
+  background-image: url(./../../../../../../../assets/image/support.png);
 }
 
 #edit_btn:hover{
-  background-image: url(./../../../../../assets/image/support_hov.png);
+  background-image: url(./../../../../../../../assets/image/support_hov.png);
 }
 
 #exit_btn {
   position: absolute;
   bottom: 5px;
   left: 0;
-  background-image: url(./../../../../../assets/image/logout.png);
+  background-image: url(./../../../../../../../assets/image/logout.png);
 }
 
 #exit_btn:hover {
-  background-image: url(./../../../../../assets/image/logout_hov.png);
+  background-image: url(./../../../../../../../assets/image/logout_hov.png);
 }
 
 
@@ -169,7 +169,7 @@ h3{
 
 #hide_btn{
   transition: 0.2s;
-  background-image: url(./../../../../../assets/image/arraow.png);
+  background-image: url(./../../../../../../../assets/image/arraow.png);
   background-size: contain;
   width: 0;
   height: 0;
@@ -181,7 +181,7 @@ h3{
 }
 
 #hide_btn:hover{
-  background-image: url(./../../../../../assets/image/arraow_hov.png);
+  background-image: url(./../../../../../../../assets/image/arraow_hov.png);
 }
 
 /*====================Скрытое меню=========================*/
