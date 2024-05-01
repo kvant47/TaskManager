@@ -1,18 +1,18 @@
 
 #filtr_reset_btn {
-  background-image: url(../../../../../assets/image/reset.png);
+  background-image: url(../../../../../../../assets/image/reset.png);
 }
 
 #filtr_enter_btn {
   background-size: 16px;
-  background-image: url(../../../../../assets/image/enter.png);
+  background-image: url(../../../../../../../assets/image/enter.png);
 }
 
 #filtr_reset_btn {
-  background-image: url(../../../../../assets/image/reset_hov.png);
+  background-image: url(../../../../../../../assets/image/reset_hov.png);
 }
 
 #filtr_enter_btn {
   background-size: 16px;
-  background-image: url(../../../../../assets/image/enter_hov.png);
+  background-image: url(../../../../../../../assets/image/enter_hov.png);
 }
