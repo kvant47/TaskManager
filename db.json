@@ -35,8 +35,12 @@
     {
       "title": "Выложить фотку!",
       "description": "описание",
-      "date": "какая то дата",
+      "date": "2024-05-02",
+      "category": null,
+      "status": null,
+      "priority": null,
       "imagePath": "../../../../../assets/image/bg.jpg",
+      "audioPath": null,
       "id": "24ce"
     },
     {

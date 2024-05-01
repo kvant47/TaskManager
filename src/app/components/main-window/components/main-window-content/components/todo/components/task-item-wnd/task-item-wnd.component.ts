@@ -73,7 +73,7 @@ export class TaskItemWndComponent implements OnInit{
       this.loginForm = new FormGroup({
         title: new FormControl('', [Validators.required]),
         description: new FormControl('', [Validators.required]),
-        date: new FormControl('', [Validators.required]),
+        deadline: new FormControl('', [Validators.required]),
         category: new FormControl('', []),
         status: new FormControl('', [Validators.required]),
         priority: new FormControl('', [Validators.required]),
@@ -86,7 +86,7 @@ export class TaskItemWndComponent implements OnInit{
       this.loginForm = new FormGroup({
         title: new FormControl(this.data.title, [Validators.required]),
         description: new FormControl(this.data.description, []),
-        date: new FormControl(this.data.date, []),
+        deadline: new FormControl(this.data.deadline, []),
         category: new FormControl(this.data.category, []),
         status: new FormControl(this.data.status, [Validators.required]),
         priority: new FormControl(this.data.priority, [Validators.required]),
@@ -105,15 +105,18 @@ export class TaskItemWndComponent implements OnInit{
   }
 
   save() {
+    let date = new Date;
     const taskItem :TaskItem = {
       title: this.loginForm.get('title').value,
       description: this.loginForm.get('description').value,
-      date: this.loginForm.get('date').value,
+      deadline: this.loginForm.get('deadline').value,
       category: this.loginForm.get('category').value,
       status: this.loginForm.get('status').value,
       priority: this.loginForm.get('priority').value,
       imagePath: this.loginForm.get('imagePath').value,
       audioPath: this.loginForm.get('audioPath').value,
+      dateCreate: date.getDay() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear(),
+
     }
     if (this.imgPath){  taskItem.imagePath = this.imgPath;
         console.log('Путь к картинке');
@@ -124,10 +127,6 @@ export class TaskItemWndComponent implements OnInit{
       taskItem.id = this.data.id;
     }
     console.log(taskItem);
-    console.log('Дата' + this.loginForm.get('date').value);
-    console.log('Категория' + this.loginForm.get('category').value);
-    console.log('Статус' + this.loginForm.get('status').value);
-    console.log('Приоритет' + this.loginForm.get('priority').value);
     this.dialogRef.close(taskItem);
   }
 

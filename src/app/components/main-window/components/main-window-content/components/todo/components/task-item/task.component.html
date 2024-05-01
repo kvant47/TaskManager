@@ -43,6 +43,8 @@
     src="{{taskItem.audioPath}}"
   ></audio>
 </p>
-<button *ngIf="taskItem.date != null && taskItem.date != ''" class="deadline_btn main_wnd_btn bell_btn">
-  <h3>{{ taskItem.date }}</h3>
+<button *ngIf="taskItem.deadline != null && taskItem.deadline != ''" class="deadline_btn main_wnd_btn bell_btn">
+  <h3>{{ taskItem.deadline }}</h3>
 </button>
+
+<h3>{{ taskItem.dateCreate }}</h3>

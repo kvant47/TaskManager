@@ -11,9 +11,9 @@
     <p class="filtr_title">Приоритет</p>
     <div class="filtr_element_row">
 
-      <div *ngFor="let item of taskPriority">
+      <div *ngFor="let item of taskPriority; let i = index">
         <label class="filtr_checkbox">
-          <input type="checkbox" name="task_priority_check" (change)="ChangePriorotyes($event)"/>
+          <input type="checkbox" name="task_priority_check"  [id]="getUniqueID('priority', i)" (change)="ChangePriorotyes($event)"/>
           <span> {{item.title}} </span>
         </label>
       </div>
@@ -24,9 +24,9 @@
     <div class="filtr_element_row">
 
 
-      <div *ngFor="let item of taskCategory">
+      <div *ngFor="let item of taskCategory; let i = index">
         <label class="filtr_checkbox">
-          <input type="checkbox" name="task_category_check" (change)="ChangeCategoryes($event)"/>
+          <input type="checkbox" name="task_category_check" [id]="getUniqueID('category', i)" (change)="ChangeCategoryes($event)"/>
           <span> {{item.title}} </span>
         </label>
       </div>
@@ -51,8 +51,8 @@
     </div>
 
     <div class="group_by">
-      <p>Группировать по:</p>
-      <button class="main_wnd_btn" id="group_by_btn">
+      <p>Сортировать по:</p>
+      <button class="main_wnd_btn" id="group_by_btn" (click)="test()">
         <span>Кнопка</span>
       </button>
       <div class="dropworn_group_by_menu">

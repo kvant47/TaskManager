@@ -27,13 +27,14 @@ export class TodoComponent implements OnInit {
 
   //public taskLists: any;
   //public taskItems: any;
-  search: string = '';
+  search: string = '';                        //строка поиска
 
+  public taskPriority: TaskPriority[] = [];   //массив с существующими приоритетами
+  public taskCategory: TaskCategory[] = [];   //массив с существующими категориями
+  public enterFilterFlag: number = 0;         //переменная разрешает филтрацию по чекбоксам
 
-  public taskPriority: TaskPriority[] = [];
-  public taskCategory: TaskCategory[] = [];
-  public enterFilterFlag: number = 0;
-
+  public categoryesSearch: string[] = [];     //массив хранит категории для фильтров
+  public priorotiesSearch: string[] = [];     //массив хранит приоритеты для фильтров
 
   constructor(
     private dialog: MatDialog,
@@ -46,8 +47,6 @@ export class TodoComponent implements OnInit {
 
   }
 
-  public priorotiesSearch: string[] = [];
-
   ChangePriorotyes($event){
     const checkbox = $event.target as HTMLInputElement
     if (checkbox.checked) {
@@ -59,7 +58,6 @@ export class TodoComponent implements OnInit {
     }
   }
 
-  public categoryesSearch: string[] = [];
 
   ChangeCategoryes($event){
     const checkbox = $event.target as HTMLInputElement
@@ -72,8 +70,42 @@ export class TodoComponent implements OnInit {
     }
   }
 
-  UncheckAll(){
+  test(){
+    this.taskLists.forEach(list => {
+      list.items.sort((a, b) => a.title.localeCompare(b.title));          //сортировка по имени
+      list.items.sort((a, b) => a.category.localeCompare(b.category));    //сортировка по категории
+      list.items.sort((a, b) => a.priority.localeCompare(b.priority));    //сортировка по приоритету
+      list.items.sort((a, b) => a.status.localeCompare(b.status));        //сортировка по статусу
 
+      // Создание объекта даты
+let currentDate: Date = new Date();
+
+// Получение дня, месяца и года
+let day: number = currentDate.getDate(); // Получение дня
+let month: number = currentDate.getMonth() + 1; // Получение месяца (начиная с 0, поэтому добавляем 1)
+let year: number = currentDate.getFullYear(); // Получение года
+
+// Вывод полученных значений
+console.log(`День: ${day}, Месяц: ${month}, Год: ${year}`);
+    });
+  }
+
+  UncheckAll(){
+    for(let i = 0; i < this.taskPriority.length; i++){
+      let checkbox = document.getElementById('priority' + i) as HTMLInputElement;
+      checkbox.checked = false;
+    }
+    for(let i = 0; i < this.taskCategory.length; i++){
+      let checkbox = document.getElementById('category' + i) as HTMLInputElement;
+      checkbox.checked = false;
+    }
+    this.categoryesSearch = []
+    this.priorotiesSearch = []
+    this.enterFilterFlag = 0;
+  }
+
+  getUniqueID(name: string, i: number): string {
+    return name + i;
   }
 
   enterFilter(){
@@ -88,11 +120,6 @@ export class TodoComponent implements OnInit {
   Update(){
      this.taskListService.getAllTaskList().subscribe(data => this.taskLists = data)            //инициализация списков с задачами
      this.taskItemService.getAllTaskItem().subscribe(data => this.taskLists[1].items= data)
-
-
-    //this.taskListService.getAllTaskList().subscribe(data => this.taskLists = data)              //инициализация списков с задачами
-    //this.taskItemService.getAllTaskItem().subscribe(data => this.taskItems = data)              //инициализация задач
-    //this.taskItemService.getAllTaskItem().subscribe(data => this.taskLists[1].items = data)
   }
 
 

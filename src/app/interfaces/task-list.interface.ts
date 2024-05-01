@@ -10,11 +10,12 @@ export interface TaskItem {
   title: string;
   priority: string;
   category?: string;
-  date?: string;
+  deadline?: string;
   status: string;
   description?:string;
   imagePath?: string;
   audioPath?: string;
+  dateCreate?: string;
 }
 
 export interface TaskStatus {
