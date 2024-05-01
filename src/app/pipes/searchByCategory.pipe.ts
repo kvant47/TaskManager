@@ -6,17 +6,18 @@ import { TaskItem } from '../interfaces/task-list.interface';
 })
 export class SearchByCategory implements PipeTransform {
 
-  transform(taskItems: TaskItem[], categoryesSearch: string[]=[], searchFlag: boolean = false): TaskItem[] {
+  transform(taskItems: TaskItem[], categoryesSearch: string[]=[], searchFlag: number): TaskItem[] {
 
-    if(!taskItems || categoryesSearch.length === 0  || searchFlag == false) {
+    if(!taskItems || categoryesSearch.length === 0  || searchFlag == 0) {
       return taskItems
     }
-
+    else
     return taskItems.filter(taskItem => {
       return categoryesSearch.some(category => {
         return taskItem.category?.trim().toLowerCase().includes(category.trim().toLowerCase())
       })
     });
+
   }
 }
 

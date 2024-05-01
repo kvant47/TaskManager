@@ -6,20 +6,21 @@ import { TaskItem } from '../interfaces/task-list.interface';
 })
 export class SearchByPriority implements PipeTransform {
 
-  transform(taskItems: TaskItem[], priorotiesSearch: string[]=[], searchFlag: boolean = false): TaskItem[] {
+  transform(taskItems: TaskItem[], priorotiesSearch: string[]=[], searchFlag: number): TaskItem[] {
 
-    if(!taskItems || priorotiesSearch.length === 0 || priorotiesSearch === null || searchFlag == false) {
-    console.log('Вызвался и ниче не возваращает')
-    return taskItems
+    if(!taskItems || priorotiesSearch.length === 0 || priorotiesSearch === null || searchFlag == 0) {
+      console.log('Вызвался и ниче не возваращает')
+      return taskItems
     }
 
+    else
     return taskItems.filter(taskItem => {
       return priorotiesSearch.some(priority => {
         return taskItem.priority?.trim().toLowerCase().includes(priority.trim().toLowerCase())
       })
     });
 
-  }
 
+  }
 }
 
