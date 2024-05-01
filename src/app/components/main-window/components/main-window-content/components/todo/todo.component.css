@@ -476,3 +476,22 @@ h1 {
 #none{
   background-image: none;
 }
+
+
+input[type='checkbox'] {
+  display: none;
+ }
+
+input~span{
+  text-decoration: line-through;
+  color: gray;
+  transition: 0.2s;
+  padding: 5px;
+}
+
+input:checked~span {
+  color: white;
+  text-shadow:  0 0 10px var(--avtive_color), 0 0 0.5em var(--avtive_color), 0 0 0.1em var(--avtive_color);
+  transition: 0.2s;
+  text-decoration: none;
+}
