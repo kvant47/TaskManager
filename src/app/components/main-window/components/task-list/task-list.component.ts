@@ -1,15 +1,15 @@
-import { TaskListService } from '../../../../../../../../services/task-list.service';
+import { TaskListService } from './../../../../services/task-list.service';
 import { MatDialog } from '@angular/material/dialog';
 import {
   TaskItem,
   TaskList,
-} from '../../../../../../../../interfaces/task-list.interface';
+} from './../../../../interfaces/task-list.interface';
 import { Component, Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { TaskItemWndComponent } from '../task-item-wnd/task-item-wnd.component';
 import { __values } from 'tslib';
-import { TaskItemService } from '../../../../../../../../services/task-item.service';
-import { DeleteWndComponent } from '../../../delete-wnd/delete-wnd.component';
+import { TaskItemService } from '../../../../services/task-item.service';
+import { DeleteWndComponent } from '../delete-wnd/delete-wnd.component';
 import { TaskListWndComponent } from '../task-list-wnd/task-list-wnd.component';
 
 @Component({

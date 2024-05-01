@@ -105,11 +105,11 @@ h1 {
   padding-right: 20px;
   padding-left: 35px;
   border-radius: 25px;
-  background-image: url(../../../../../../../assets/image/search.png);
+  background-image: url(../../../../../assets/image/search.png);
 }
 
 #search_btn:hover {
-   background-image: url(../../../../../../../assets/image/search_hov.png);
+   background-image: url(../../../../../assets/image/search_hov.png);
 }
 
 .small_btn:hover{
@@ -118,45 +118,45 @@ h1 {
 
 #filtr_btn{
   width: 130px;
-  background-image: url(../../../../../../../assets/image/filter.png);
+  background-image: url(../../../../../assets/image/filter.png);
 }
 
 #filtr_btn:hover{
-  background-image: url(../../../../../../../assets/image/filter_hov.png);
+  background-image: url(../../../../../assets/image/filter_hov.png);
 }
 
 .more_btn{
- background-image: url(../../../../../../../assets/image/more.png);
+ background-image: url(../../../../../assets/image/more.png);
 }
 
 .more_btn:hover{
-  background-image: url(../../../../../../../assets/image/more_hov.png);
+  background-image: url(../../../../../assets/image/more_hov.png);
 }
 
 #home_btn{
   background-size: 20px;
-  background-image: url(../../../../../../../assets/image/home.png);
+  background-image: url(../../../../../assets/image/home.png);
 }
 
 #home_btn:hover{
-  background-image: url(../../../../../../../assets/image/home_hov.png);
+  background-image: url(../../../../../assets/image/home_hov.png);
 }
 
 #table_btn{
-  background-image: url(../../../../../../../assets/image/table.png);
+  background-image: url(../../../../../assets/image/table.png);
 }
 
 #table_btn:hover{
-  background-image: url(../../../../../../../assets/image/table_hov.png);
+  background-image: url(../../../../../assets/image/table_hov.png);
 }
 
 
 #list_btn{
-  background-image: url(../../../../../../../assets/image/grid.png);
+  background-image: url(../../../../../assets/image/grid.png);
 }
 
 #list_btn:hover{
-  background-image: url(../../../../../../../assets/image/grid_hov.png);
+  background-image: url(../../../../../assets/image/grid_hov.png);
 }
 
 
@@ -261,21 +261,21 @@ h1 {
 }
 
 #filtr_reset_btn {
-  background-image: url(../../../../../../../assets/image/reset.png);
+  background-image: url(../../../../../assets/image/reset.png);
 }
 
 #filtr_enter_btn {
   background-size: 16px;
-  background-image: url(../../../../../../../assets/image/enter.png);
+  background-image: url(../../../../../assets/image/enter.png);
 }
 
 #filtr_reset_btn {
-  background-image: url(../../../../../../../assets/image/reset_hov.png);
+  background-image: url(../../../../../assets/image/reset_hov.png);
 }
 
 #filtr_enter_btn {
   background-size: 16px;
-  background-image: url(../../../../../../../assets/image/enter_hov.png);
+  background-image: url(../../../../../assets/image/enter_hov.png);
 }
 
 
@@ -373,62 +373,62 @@ h1 {
 
 
 .dropworn_task_open {
-  background-image: url(../../../../../../../assets/image/open.png);
+  background-image: url(../../../../../assets/image/open.png);
 }
 
 .dropworn_task_open:hover {
-  background-image: url(../../../../../../../assets/image/open_hov.png);
+  background-image: url(../../../../../assets/image/open_hov.png);
 }
 
 .dropworn_task_change {
-  background-image: url(../../../../../../../assets/image/edit.png);
+  background-image: url(../../../../../assets/image/edit.png);
 }
 
 .dropworn_task_change:hover {
-  background-image: url(../../../../../../../assets/image/edit_hov.png);
+  background-image: url(../../../../../assets/image/edit_hov.png);
 }
 
 .dropworn_task_favorite {
-  background-image: url(../../../../../../../assets/image/favorite.png);
+  background-image: url(../../../../../assets/image/favorite.png);
 }
 
 .dropworn_task_favorite:hover {
-  background-image: url(../../../../../../../assets/image/favorite_hov.png);
+  background-image: url(../../../../../assets/image/favorite_hov.png);
 }
 
 .dropworn_task_remind {
-  background-image: url(../../../../../../../assets/image/bell.png);
+  background-image: url(../../../../../assets/image/bell.png);
 }
 
 .dropworn_task_remind:hover {
-  background-image: url(../../../../../../../assets/image/bell_hov.png);
+  background-image: url(../../../../../assets/image/bell_hov.png);
 }
 
 .dropworn_task_complete {
-  background-image: url(../../../../../../../assets/image/enter.png);
+  background-image: url(../../../../../assets/image/enter.png);
 }
 
 .dropworn_task_complete:hover {
-  background-image: url(../../../../../../../assets/image/enter_hov.png);
+  background-image: url(../../../../../assets/image/enter_hov.png);
 }
 
 .dropworn_task_delete {
-  background-image: url(../../../../../../../assets/image/del.png);
+  background-image: url(../../../../../assets/image/del.png);
 }
 
 .dropworn_task_delete:hover {
-  background-image: url(../../../../../../../assets/image/del_hov.png);
+  background-image: url(../../../../../assets/image/del_hov.png);
 }
 
 #new_group_btn{
   margin-left: 20px;
   padding-left: 40px;
   padding-right: 20px;
-  background-image: url(../../../../../../../assets/image/plus.png);
+  background-image: url(../../../../../assets/image/plus.png);
 }
 
 #new_group_btn:hover{
-  background-image: url(../../../../../../../assets/image/plus_hov.png);
+  background-image: url(../../../../../assets/image/plus_hov.png);
 }
 
 
