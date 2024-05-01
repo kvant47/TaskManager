@@ -21,7 +21,7 @@ export class TaskListComponent {
   @Input() taskList!: TaskList;
   @Input() index!: number;
   @Input() search: string
-  @Input() enterFilterFlag: boolean
+  @Input() enterFilterFlag: number
   @Input() categoryesSearch: string[]
   @Input() priorotiesSearch: string[]
 

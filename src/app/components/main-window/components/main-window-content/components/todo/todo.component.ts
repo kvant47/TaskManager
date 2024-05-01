@@ -32,7 +32,7 @@ export class TodoComponent implements OnInit {
 
   public taskPriority: TaskPriority[] = [];
   public taskCategory: TaskCategory[] = [];
-  public enterFilterFlag: boolean = false;
+  public enterFilterFlag: number = 0;
 
 
   constructor(
@@ -77,7 +77,7 @@ export class TodoComponent implements OnInit {
   }
 
   enterFilter(){
-    this.enterFilterFlag = !this.enterFilterFlag   // двойное нажатие - это нужно исправить
+    this.enterFilterFlag <= 2 ? this.enterFilterFlag++ : this.enterFilterFlag = 1   // двойное нажатие - это нужно исправить
   }
 
   FilterBtnClick() {                //показать/скрыть фильтры
