@@ -150,7 +150,7 @@ sortByDeadline($event) {
     this.enterValueInInput($event);
 
     this.taskLists.forEach(list => {
-      list.items?.sort((a, b) => a.dateCreate.localeCompare(b.dateCreate));
+      list.items?.sort((a, b) => a.dateCreate?.localeCompare(b.dateCreate));
     })
   }
 
