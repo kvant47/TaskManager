@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output, OnInit } from '@angular/core';
 import { TaskItem } from '../../../../../../../../interfaces/task-list.interface';
 import { TaskItemService } from '../../../../../../../../services/task-item.service';
 
@@ -7,22 +7,25 @@ import { TaskItemService } from '../../../../../../../../services/task-item.serv
   templateUrl: './task.component.html',
   styleUrl: './task.component.css'
 })
-export class TaskItemComponent {
+export class TaskItemComponent implements OnInit{
   @Input() taskItem!: TaskItem;
   @Input() index!: number;
 
   @Output() editTaskEmitter = new EventEmitter();
   @Output() deleteTaskEmitter = new EventEmitter();
 
-
+  public day: string;
+  public month: string;
+  public year: string;
 
   private wasInside = false;
   isCollapsed: boolean = false;
 
-  testClick(){
+  moreClick(){
     this.isCollapsed = !this.isCollapsed;
     this.wasInside = true;
   }
+
 
   @HostListener('document:click')
   clickout() {
@@ -36,6 +39,9 @@ export class TaskItemComponent {
     private eRef: ElementRef,
     private taskItemService: TaskItemService) {
     this.isCollapsed = false;
+  }
+
+  ngOnInit(): void {
   }
 
   editTask() {
