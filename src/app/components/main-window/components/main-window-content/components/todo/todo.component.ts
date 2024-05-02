@@ -7,8 +7,8 @@ import { Component, Inject, OnInit, EventEmitter, Output, ChangeDetectorRef, Hos
 import { TaskList } from '../../../../../../interfaces/task-list.interface';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { TaskListService } from '../../../../../../services/task-list.service';
-import { TaskListWndComponent } from './components/task-list-wnd/task-list-wnd.component';
 import { TaskItemWndComponent } from './components/task-item-wnd/task-item-wnd.component';
+import { TaskListWndComponent } from './components/task-list-wnd/task-list-wnd.component';
 
 @Component({
   selector: 'app-todo',

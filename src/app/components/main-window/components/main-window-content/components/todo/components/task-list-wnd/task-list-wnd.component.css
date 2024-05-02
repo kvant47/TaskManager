@@ -1,33 +1,17 @@
 #filtr_reset_btn {
-<<<<<<< HEAD
-  background-image: url(../../../../../assets/image/reset.png);
-=======
   background-image: url(../../../../../../../../../assets/image/reset.png);
->>>>>>> 4bd8b25 (Наведен порядок)
 }
 
 #filtr_enter_btn {
   background-size: 16px;
-<<<<<<< HEAD
-  background-image: url(../../../../../assets/image/enter.png);
-}
-
-#filtr_reset_btn:hover {
-  background-image: url(../../../../../assets/image/reset_hov.png);
-=======
   background-image: url(../../../../../../../../../assets/image/enter.png);
 }
 
 #filtr_reset_btn:hover {
   background-image: url(../../../../../../../../../assets/image/reset_hov.png);
->>>>>>> 4bd8b25 (Наведен порядок)
 }
 
 #filtr_enter_btn:hover {
   background-size: 16px;
-<<<<<<< HEAD
-  background-image: url(../../../../../assets/image/enter_hov.png);
-=======
   background-image: url(../../../../../../../../../assets/image/enter_hov.png);
->>>>>>> 4bd8b25 (Наведен порядок)
 }
