@@ -478,6 +478,11 @@ h1 {
 }
 
 
+/* ===================================ЧЕКБОКСЫ===================================== */
+.filtr_checkbox {
+  cursor: pointer;
+}
+
 input[type='checkbox'] {
   display: none;
  }
@@ -489,12 +494,23 @@ input~span{
   padding: 5px;
 }
 
+input:hover~span{
+  text-decoration: none;
+  color: white;
+  transition: 0.2s;
+  text-shadow:  0 0 10px var(--avtive_color), 0 0 0.5em var(--avtive_color), 0 0 0.1em var(--avtive_color);
+  padding: 5px;
+}
+
 input:checked~span {
   color: white;
   text-shadow:  0 0 10px var(--avtive_color), 0 0 0.5em var(--avtive_color), 0 0 0.1em var(--avtive_color);
   transition: 0.2s;
   text-decoration: none;
 }
+
+
+/* ===================================Выпадающий список сортировки===================================== */
 
 
 #task_sort_input{
