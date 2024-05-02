@@ -1,3 +1,4 @@
+import { Data } from "@angular/router";
 
 export interface TaskList {
   id?: number,

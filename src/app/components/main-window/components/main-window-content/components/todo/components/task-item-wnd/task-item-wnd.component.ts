@@ -105,7 +105,6 @@ export class TaskItemWndComponent implements OnInit{
   }
 
   save() {
-    let date = new Date;
     const taskItem :TaskItem = {
       title: this.loginForm.get('title').value,
       description: this.loginForm.get('description').value,
@@ -115,12 +114,14 @@ export class TaskItemWndComponent implements OnInit{
       priority: this.loginForm.get('priority').value,
       imagePath: this.loginForm.get('imagePath').value,
       audioPath: this.loginForm.get('audioPath').value,
-      dateCreate: date.getDay() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear(),
-
     }
     if (this.imgPath){  taskItem.imagePath = this.imgPath;
         console.log('Путь к картинке');
         console.log(this.imgPath);
+    }
+
+    if(this.data?.dateCreate) {
+      taskItem.dateCreate = this.data?.dateCreate;
     }
 
     if(this.data) {

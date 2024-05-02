@@ -3,7 +3,7 @@ import { TaskPriorityService } from '../../../../../../services/task-priority.se
 import { __values } from 'tslib';
 import { TaskItem, TaskCategory, TaskPriority } from '../../../../../../interfaces/task-list.interface';
 import { TaskItemService } from '../../../../../../services/task-item.service';
-import { Component, Inject, OnInit, EventEmitter, Output, ChangeDetectorRef } from '@angular/core';
+import { Component, Inject, OnInit, EventEmitter, Output, ChangeDetectorRef, HostListener } from '@angular/core';
 import { TaskList } from '../../../../../../interfaces/task-list.interface';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { TaskListService } from '../../../../../../services/task-list.service';
@@ -36,6 +36,9 @@ export class TodoComponent implements OnInit {
   public categoryesSearch: string[] = [];     //массив хранит категории для фильтров
   public priorotiesSearch: string[] = [];     //массив хранит приоритеты для фильтров
 
+  public activeSort = false;                  //переменная для открытия/закрытия списка сортировки
+  wasInside: boolean;                         //переменная для закрытия окна сорировки при клике вне
+
   constructor(
     private dialog: MatDialog,
     private taskListService: TaskListService,
@@ -44,8 +47,27 @@ export class TodoComponent implements OnInit {
     private taskCategoryService: TaskCategoryService,
   ){
     this.isCollapsed = false;
-
   }
+
+
+//===========================Методы для открытия списка сортировки и закрытия окна при клике вне его====================
+
+  sortClick(){
+    this.activeSort = !this.activeSort;
+    this.wasInside = true;
+  }
+
+
+  @HostListener('document:click')
+  clickout() {
+    if (!this.wasInside) {
+      this.activeSort = false;
+    }
+    this.wasInside = false;
+  }
+
+
+//===========================Методы для добавления/удаления позиций для фильтров через чекбоксы====================
 
   ChangePriorotyes($event){
     const checkbox = $event.target as HTMLInputElement
@@ -70,25 +92,8 @@ export class TodoComponent implements OnInit {
     }
   }
 
-  test(){
-    this.taskLists.forEach(list => {
-      list.items.sort((a, b) => a.title.localeCompare(b.title));          //сортировка по имени
-      list.items.sort((a, b) => a.category.localeCompare(b.category));    //сортировка по категории
-      list.items.sort((a, b) => a.priority.localeCompare(b.priority));    //сортировка по приоритету
-      list.items.sort((a, b) => a.status.localeCompare(b.status));        //сортировка по статусу
 
-      // Создание объекта даты
-let currentDate: Date = new Date();
-
-// Получение дня, месяца и года
-let day: number = currentDate.getDate(); // Получение дня
-let month: number = currentDate.getMonth() + 1; // Получение месяца (начиная с 0, поэтому добавляем 1)
-let year: number = currentDate.getFullYear(); // Получение года
-
-// Вывод полученных значений
-console.log(`День: ${day}, Месяц: ${month}, Год: ${year}`);
-    });
-  }
+//===========================Метод сброса фильтров====================
 
   UncheckAll(){
     for(let i = 0; i < this.taskPriority.length; i++){
@@ -104,12 +109,79 @@ console.log(`День: ${day}, Месяц: ${month}, Год: ${year}`);
     this.enterFilterFlag = 0;
   }
 
+
+//===========================Методы сортировок====================
+
+enterValueInInput($event){
+  let input = document.getElementById('task_sort_input') as HTMLInputElement;
+  let value = event.target as HTMLInputElement;
+  input.innerHTML = value.innerHTML
+}
+
+sortByDeadline($event) {
+
+  this.enterValueInInput($event);
+
+  this.taskLists.forEach(list => {
+    list.items?.sort((a, b) => a.deadline?.localeCompare(b.deadline));
+  })
+  }
+
+  sortByPriority($event) {
+
+    this.enterValueInInput($event);
+
+    this.taskLists.forEach(list => {
+      list.items?.sort((a, b) => a.priority?.localeCompare(b.priority));
+    })
+  }
+
+  sortByCategory($event) {
+
+    this.enterValueInInput($event);
+
+    this.taskLists.forEach(list => {
+      list.items?.sort((a, b) => a.category?.localeCompare(b.category));
+    })
+  }
+
+  sortByDate($event) {
+
+    this.enterValueInInput($event);
+
+    this.taskLists.forEach(list => {
+      list.items?.sort((a, b) => a.dateCreate.localeCompare(b.dateCreate));
+    })
+  }
+
+  sortByTitle($event) {
+
+    this.enterValueInInput($event);
+
+    this.taskLists.forEach(list => {
+      list.items?.sort((a, b) => a.title.localeCompare(b.title));
+    });
+  }
+
+  sortCustom($event) {
+
+    this.enterValueInInput($event);
+
+    this.taskLists.forEach(list => {
+      list.items?.sort();
+    });
+  }
+
+
+
+//===========================Методы раздачи уникальных ID, движения переменной для фильтрации, открытия/закрытия окна фильтров====================
+
   getUniqueID(name: string, i: number): string {
     return name + i;
   }
 
   enterFilter(){
-    this.enterFilterFlag <= 2 ? this.enterFilterFlag++ : this.enterFilterFlag = 1   // двойное нажатие - это нужно исправить
+    this.enterFilterFlag <= 2 ? this.enterFilterFlag++ : this.enterFilterFlag = 1
   }
 
   FilterBtnClick() {                //показать/скрыть фильтры
@@ -138,15 +210,22 @@ console.log(`День: ${day}, Месяц: ${month}, Год: ${year}`);
       width: '300px'
     });
 
-    dialogAddingNewListItem.afterClosed().subscribe(
-      data => {
-        if (data)
-          this.taskItemService.addNewItem(data).subscribe( data => {
-          console.log(data);
-          this.Update()
+    dialogAddingNewListItem.afterClosed().subscribe(data => {
+      if (data) {
+        let date = new Date();
+        let day: string = (date.getDate() < 10 ? '0' : '') + date.getDate();
+        let month: string = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
+        let hour: string = (date.getHours() < 10 ? '0' : '') + date.getHours();
+        let minut: string = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+        let second: string = (date.getSeconds() < 10 ? '0' : '') + date.getSeconds();
+
+        data.dateCreate = `${date.getFullYear()}.${month}.${day} ${hour}:${minut}:${second}`;
+        this.taskItemService.addNewItem(data).subscribe(response => {
+          console.log(response);
+          this.Update();
         });
-  }
-  );}
+      }
+    });}
 
 
   AddNewList(): void{

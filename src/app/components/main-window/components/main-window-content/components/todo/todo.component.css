@@ -495,3 +495,59 @@ input:checked~span {
   transition: 0.2s;
   text-decoration: none;
 }
+
+
+#task_sort_input{
+  padding-top: 1px;
+  min-width: 120px;
+  padding-left: 10px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+#task_sort_input:hover{
+  color: white;
+  transition: 0.2s;
+  text-shadow:  0 0 10px var(--avtive_color), 0 0 0.5em var(--avtive_color), 0 0 0.1em var(--avtive_color);
+}
+
+.header-nav{
+  position: absolute;
+  top: 25px;
+  right: 2px;
+  padding: 0 20px;
+  border-radius: 10px;
+  z-index: 20;
+  height: auto;
+  position: absolute;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  overflow: hidden;
+  background: linear-gradient(31deg, rgba(0, 0, 0, 0.95) 0%, rgba(21, 21, 21, 0.95) 50%, rgba(0, 0, 0, 0.95) 100%);
+}
+
+
+.header-nav li{
+  height: 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.header-nav li:hover{
+  color: white;
+  transition: 0.2s;
+}
+
+.header-nav.active{
+  border: 1px solid var(--main_color);
+}
+
+.active ul li{
+  height: 25px;
+  line-height: 25px;
+  transition: 0.3s;
+}
+
+
+
+

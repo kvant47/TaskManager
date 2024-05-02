@@ -52,23 +52,31 @@
 
     <div class="group_by">
       <p>Сортировать по:</p>
-      <button class="main_wnd_btn" id="group_by_btn" (click)="test()">
-        <span>Кнопка</span>
-      </button>
-      <div class="dropworn_group_by_menu">
-        <ul>
-          <li class="dropworn_group_by_item">
-            <span class="dropworn_task_item_text">Приоритет</span>
+      <p id="task_sort_input" [ngClass]="{'active' : activeSort}" (click)="sortClick()">Не выбрано</p>
+      <div class="header-nav" [ngClass]="{'active' : activeSort}" >
+
+        <ul >
+          <li class="line_btn" (click)="sortCustom($event)">
+            Свой порядок
           </li>
-          <li class="dropworn_group_by_item">
-            <span class="dropworn_task_item_text">Статус</span>
+          <li class="line_btn" (click)="sortByTitle($event)">
+            Название
           </li>
-          <li class="dropworn_group_by_item">
-            <span class="dropworn_task_item_text">Категория</span>
+          <li class="line_btn" (click)="sortByDate($event)">
+            Дата
+          </li>
+          <li class="line_btn" (click)="sortByCategory($event)">
+            Категория
+          </li>
+          <li class="line_btn" (click)="sortByPriority($event)">
+            Приоритет
+          </li>
+          <li class="line_btn" (click)="sortByDeadline($event)">
+            Крайний срок
           </li>
         </ul>
+        </div>
       </div>
-    </div>
 
     <button class="main_wnd_btn" id="new_group_btn" (click)="AddNewList()">
       <h3>Добавить группу</h3>
