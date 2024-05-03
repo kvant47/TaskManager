@@ -196,6 +196,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   justify-content: center;
 }
 
+/* =======================поля ввода======================= */
 
 .form__group {
   position: relative;

@@ -16,6 +16,7 @@ import { DeleteWndComponent } from './components/main-window-content/components/
 import { FilterPipe } from '../../pipes/searchByTitle.pipe';
 import { SearchByCategory } from '../../pipes/searchByCategory.pipe';
 import { SearchByPriority } from '../../pipes/searchByPriority.pipe';
+import { SortTaskByPipe } from '../../pipes/sort-task-by.pipe';
 
 
 
@@ -33,7 +34,8 @@ import { SearchByPriority } from '../../pipes/searchByPriority.pipe';
     DeleteWndComponent,
     FilterPipe,
     SearchByCategory,
-    SearchByPriority
+    SearchByPriority,
+    SortTaskByPipe
   ],
   imports: [
     CommonModule,

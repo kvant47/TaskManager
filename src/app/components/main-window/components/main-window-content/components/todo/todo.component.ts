@@ -17,16 +17,16 @@ import { TaskListWndComponent } from './components/task-list-wnd/task-list-wnd.c
 })
 export class TodoComponent implements OnInit {
 
-  name!: string;
-  isCollapsed: boolean;
+
 
   @Output() fullscren = new EventEmitter<{}>();
 
-   public taskLists: TaskList[];
-   public taskItems: TaskItem[];
+  name!: string;
+  isCollapsed: boolean;
 
-  //public taskLists: any;
-  //public taskItems: any;
+  public taskLists: TaskList[];
+  public taskItems: TaskItem[];
+
   search: string = '';                        //строка поиска
 
   public taskPriority: TaskPriority[] = [];   //массив с существующими приоритетами
@@ -38,6 +38,8 @@ export class TodoComponent implements OnInit {
 
   public activeSort = false;                  //переменная для открытия/закрытия списка сортировки
   wasInside: boolean;                         //переменная для закрытия окна сорировки при клике вне
+
+  public sortBy: number = 0;
 
   constructor(
     private dialog: MatDialog,
@@ -118,58 +120,49 @@ enterValueInInput($event){
   input.innerHTML = value.innerHTML
 }
 
-sortByDeadline($event) {
-
-  this.enterValueInInput($event);
-
-  this.taskLists.forEach(list => {
-    list.items?.sort((a, b) => a.deadline?.localeCompare(b.deadline));
-  })
+  sortByDeadline($event) {
+    this.enterValueInInput($event);
+    this.sortBy = 5;
   }
 
   sortByPriority($event) {
 
     this.enterValueInInput($event);
 
-    this.taskLists.forEach(list => {
-      list.items?.sort((a, b) => a.priority?.localeCompare(b.priority));
-    })
+    this.sortBy = 4;
+
   }
 
   sortByCategory($event) {
 
     this.enterValueInInput($event);
 
-    this.taskLists.forEach(list => {
-      list.items?.sort((a, b) => a.category?.localeCompare(b.category));
-    })
+    this.sortBy = 3;
+
   }
 
   sortByDate($event) {
 
     this.enterValueInInput($event);
 
-    this.taskLists.forEach(list => {
-      list.items?.sort((a, b) => a.dateCreate?.localeCompare(b.dateCreate));
-    })
+    this.sortBy = 2;
+
   }
 
   sortByTitle($event) {
 
     this.enterValueInInput($event);
 
-    this.taskLists.forEach(list => {
-      list.items?.sort((a, b) => a.title.localeCompare(b.title));
-    });
+    this.sortBy = 1;
+
   }
 
   sortCustom($event) {
 
     this.enterValueInInput($event);
 
-    this.taskLists.forEach(list => {
-      list.items?.sort();
-    });
+    this.sortBy = 0;
+
   }
 
 

@@ -40,7 +40,8 @@
       class="low_priority"
       [index]="i"
       [taskItem]="item"
-      *ngFor="let item of taskList.items | searchByPriority:priorotiesSearch:enterFilterFlag | searchByCategory:categoryesSearch:enterFilterFlag | filter:search ;  let i = index"
+      *ngFor="let item of taskList.items | searchByPriority:priorotiesSearch:enterFilterFlag | searchByCategory:categoryesSearch:enterFilterFlag
+                                         | filter:search | sortBy:sortBy;  let i = index"
       (editTaskEmitter)="editTask($event)"
       (deleteTaskEmitter)="deleteTask($event)"
     ></app-task-item>

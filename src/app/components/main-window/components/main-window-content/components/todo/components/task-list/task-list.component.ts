@@ -20,6 +20,8 @@ import { TaskListWndComponent } from '../task-list-wnd/task-list-wnd.component';
 export class TaskListComponent {
   @Input() taskList!: TaskList;
   @Input() index!: number;
+
+  @Input() sortBy!: number;
   @Input() search: string
   @Input() enterFilterFlag: number
   @Input() categoryesSearch: string[]
