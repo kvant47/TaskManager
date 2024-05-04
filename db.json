@@ -1,17 +1,6 @@
 {
   "TaskItem": [
     {
-      "title": "Поехать в отпуск",
-      "description": "Какое то развернутое описание",
-      "deadline": null,
-      "category": "Досуг",
-      "status": "Выполняется",
-      "priority": "Не к спеху",
-      "imagePath": "../../../../../assets/image/bg2.jpg",
-      "audioPath": null,
-      "id": "5"
-    },
-    {
       "title": "Выучить песню",
       "description": "Какое то развернутое описание",
       "deadline": null,
@@ -42,7 +31,7 @@
       "category": null,
       "status": null,
       "priority": null,
-      "imagePath": "../../../../../assets/image/bg.jpg",
+      "imagePath": "../../../../../assets/image/bg4.jpg",
       "audioPath": null,
       "dateCreate": "2024.05.02 04:10:52",
       "id": "24ce"
@@ -72,16 +61,28 @@
       "id": "2bbb"
     },
     {
-      "id": "2383",
-      "title": "",
-      "description": "",
+      "title": "Название",
+      "description": "Я хочу проверить как моя таcка будет выглядеть при разных способах отображения",
+      "deadline": "2024-05-04",
+      "category": "Учеба",
+      "status": "Выполняется",
+      "priority": "Поторопиться",
+      "imagePath": "../../../../../assets/image/bg11.png",
+      "audioPath": "",
+      "dateCreate": "2024.05.04 20:56:52",
+      "id": "34ea"
+    },
+    {
+      "id": "941f",
+      "title": "Проверить как выглядит таска с описанием",
+      "description": "Я просто добавлю таску, ничего не буду в нее  вносить, только напишу описание  и проверю.\n",
       "deadline": "",
       "category": "",
       "status": "",
       "priority": "",
       "imagePath": "",
       "audioPath": "",
-      "dateCreate": "2024.05.04 04:23:29"
+      "dateCreate": "2024.05.04"
     }
   ],
   "TaskList": [
@@ -98,10 +99,6 @@
     {
       "title": "Выполнено",
       "id": "3"
-    },
-    {
-      "id": "7040",
-      "title": "Групповые задачи"
     }
   ]
 }

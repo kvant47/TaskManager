@@ -49,26 +49,8 @@
   padding-bottom: 20px;
 }
 
-.low_priority {
-  border-left: 5px solid var(--avtive--color--glow);
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-}
 
-.deadline_btn {
-  display: block;
-  margin: 8px auto 0 auto;
-  font-size: 16px;
-}
 
-.main_wnd_btn {
-  border: none;
-  height: 30px;
-  color: var(--main--color);
-  font-family: Hero-Bold;
-  cursor: pointer;
-  background: transparent;
-}
 
 .more_btn,
 #home_btn,
@@ -336,8 +318,11 @@
 
 
 /* ========================Стили для табличного отображения======================= */
-
+slide_bnt
 /* Контейнер для выпадающих кнопок */
+.table--view.task_conteiner{
+  overflow-y: hidden;
+}
 
 .table--view .conteiner_for_bnt{
   margin-right: 5px;
@@ -367,10 +352,17 @@
 }
 
 .table--view .slide_bnt{
-  height: 30px;
+  height: 0;
+  padding: 0;
+  border: none;
   width: 30px;
   top: 6px;
   padding-left: 3px;
+}
+
+:host:hover .table--view  .slide_bnt{
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .table--view .slide_bnt h3{

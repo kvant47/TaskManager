@@ -286,12 +286,12 @@ h1 {
 
 
 
-.task_list {
-  align-items: center;
+.task_group_container .task_list {
   width: 100%;
   max-width: 500px;
-  min-width: 220px;
+  min-width: 300px;
 }
+
 
 .task_header {
   padding-bottom: 10px;
@@ -346,7 +346,7 @@ h1 {
   flex-wrap: nowrap;
   gap: 30px;
   overflow-y: hidden;   /*горизонтальный скролл*/
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 .main_content_section{
@@ -354,13 +354,6 @@ h1 {
   overflow: hidden;
 }
 
-
-.task_list {
-  align-items: center;
-  width: 100%;
-  max-width: 600px;
-  min-width: 220px;
-}
 
 
 
@@ -472,7 +465,8 @@ input:checked~span {
 .form--field {
   box-sizing: border-box;
   font-family: inherit;
-  width: 300px;
+  max-width: 300px;
+  min-width: 100px;
   border: 0;
   outline: 0;
   margin-right: 40px;
@@ -562,7 +556,10 @@ input:checked~span {
 }
 
 
-.task_group_container .task_list{
-  max-width: 100%;
+
+
+.task_group_container.table--view .task_list {
   width: 100%;
+  max-width: none;
+  min-width: none;
 }

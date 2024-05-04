@@ -24,6 +24,7 @@
 
 .name, .status{
   font-family: Hero-Bold;
+  white-space: nowrap; /* Запрет на перенос текста */
   line-height: 15px;
   font-size: 13px;
   color: var(--avtive--color);

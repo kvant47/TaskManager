@@ -14,7 +14,7 @@ export class SortTaskByPipe implements PipeTransform {
         return taskItems.sort((a, b) => a.title.localeCompare(b.title));            // по имени
       case 2:
         console.log('фильтр по дате')
-        return taskItems.sort((a, b) => a.dateCreate?.localeCompare(b.dateCreate)); // по дате
+        return taskItems.sort((a, b) => b.dateCreate?.localeCompare(a.dateCreate)); // по дате
       case 3:
         console.log('фильтр по категории')
         return taskItems.sort((a, b) => a.category?.localeCompare(b.category));     // по категории

@@ -10,6 +10,7 @@ import { TaskItemService } from '../../../../../../../../services/task-item.serv
 export class TaskItemComponent implements OnInit{
   @Input() taskItem!: TaskItem;
   @Input() index!: number;
+  @Input() tableView: boolean;
 
   @Output() editTaskEmitter = new EventEmitter();
   @Output() deleteTaskEmitter = new EventEmitter();

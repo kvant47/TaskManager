@@ -3,12 +3,13 @@ import { TaskPriorityService } from '../../../../../../services/task-priority.se
 import { __values } from 'tslib';
 import { TaskItem, TaskCategory, TaskPriority } from '../../../../../../interfaces/task-list.interface';
 import { TaskItemService } from '../../../../../../services/task-item.service';
-import { Component, Inject, OnInit, EventEmitter, Output, ChangeDetectorRef, HostListener } from '@angular/core';
+import { Component, Inject, OnInit, EventEmitter, Output, ChangeDetectorRef, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { TaskList } from '../../../../../../interfaces/task-list.interface';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { TaskListService } from '../../../../../../services/task-list.service';
 import { TaskItemWndComponent } from './components/task-item-wnd/task-item-wnd.component';
 import { TaskListWndComponent } from './components/task-list-wnd/task-list-wnd.component';
+import { TaskListComponent } from './components/task-list/task-list.component';
 
 @Component({
   selector: 'app-todo',
@@ -16,8 +17,6 @@ import { TaskListWndComponent } from './components/task-list-wnd/task-list-wnd.c
   styleUrl: './todo.component.css'
 })
 export class TodoComponent implements OnInit {
-
-
 
   @Output() fullscren = new EventEmitter<{}>();
 
@@ -51,6 +50,7 @@ export class TodoComponent implements OnInit {
   ){
     this.isCollapsed = false;
   }
+
 
 //===========================Методы для открытия списка сортировки и закрытия окна при клике вне его====================
 
@@ -126,43 +126,28 @@ enterValueInInput($event){
   }
 
   sortByPriority($event) {
-
     this.enterValueInInput($event);
-
     this.sortBy = 4;
-
   }
 
   sortByCategory($event) {
-
     this.enterValueInInput($event);
-
     this.sortBy = 3;
-
   }
 
   sortByDate($event) {
-
     this.enterValueInInput($event);
-
     this.sortBy = 2;
-
   }
 
   sortByTitle($event) {
-
     this.enterValueInInput($event);
-
     this.sortBy = 1;
-
   }
 
   sortCustom($event) {
-
     this.enterValueInInput($event);
-
     this.sortBy = 0;
-
   }
 
 
@@ -208,11 +193,12 @@ enterValueInInput($event){
         let date = new Date();
         let day: string = (date.getDate() < 10 ? '0' : '') + date.getDate();
         let month: string = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
-        let hour: string = (date.getHours() < 10 ? '0' : '') + date.getHours();
-        let minut: string = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
-        let second: string = (date.getSeconds() < 10 ? '0' : '') + date.getSeconds();
+        // let hour: string = (date.getHours() < 10 ? '0' : '') + date.getHours();
+        // let minut: string = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+        // let second: string = (date.getSeconds() < 10 ? '0' : '') + date.getSeconds();
 
-        data.dateCreate = `${date.getFullYear()}.${month}.${day} ${hour}:${minut}:${second}`;
+        // data.dateCreate = `${date.getFullYear()}.${month}.${day} ${hour}:${minut}:${second}`;
+        data.dateCreate = `${date.getFullYear()}.${month}.${day}`;
         this.taskItemService.addNewItem(data).subscribe(response => {
           console.log(response);
           this.Update();

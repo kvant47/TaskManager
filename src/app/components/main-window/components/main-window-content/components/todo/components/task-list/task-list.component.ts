@@ -20,7 +20,6 @@ import { TaskListWndComponent } from '../task-list-wnd/task-list-wnd.component';
 export class TaskListComponent {
   @Input() taskList!: TaskList;
   @Input() index!: number;
-
   @Input() sortBy!: number;
   @Input() search: string
   @Input() tableView: boolean;
@@ -29,21 +28,18 @@ export class TaskListComponent {
   @Input() priorotiesSearch: string[]
 
 
-
   @Output() addNewTaskItem = new EventEmitter<{
     item: TaskItem;
     index: number;
   }>();
-
   @Output() update = new EventEmitter<{}>();
+
 
 
   constructor(
     private dialog: MatDialog,
     private taskItemService: TaskItemService,
     private taskListService: TaskListService) {}
-
-
 
 
   editTask(taskItem: TaskItem) {

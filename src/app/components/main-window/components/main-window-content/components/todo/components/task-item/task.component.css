@@ -3,91 +3,305 @@
   margin-right: 10px;
   background: rgba(0,0,0,0.3);
   border-radius: 10px;
-  padding: 14px;
   box-sizing: border-box;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  position:  relative;
   cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  font-family: Hero-Regular;
 }
 
 :host:hover {
   background:  rgba(51,51,51,0.8) ;
-  border: 1px solid rgba(255, 255, 255, 0.3);
   transition: 0.2s;
 }
 
-.low_priority {
-  border-left: 5px solid var(--avtive--color--glow);
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
+
+
+
+.task__wrapper{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto auto  auto auto auto auto auto;
+  padding: 14px;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  grid-template-areas:
+    "title title "
+    "status ."
+    "image image"
+    "priority category"
+    "deadline date"
+    "description description"
+    "audio audio";
 }
+
+
+
+.task__wrapper:before {
+  content: ""; /* отображает псевдоэлемент */
+  position: absolute; /* абсолютное позиционирование */
+  top: 0; /* верхняя координата */
+  left: -800px; /* левая координата */
+  width: 40px; /* относительная ширина */
+  height: 100%; /* высота как у оригинала */
+  background-color: rgba(255, 255, 255, 0.3); /* белый цвет с полупрозрачностью */
+  transform: translateX(-4em) skewX(-45deg);
+}
+
+
+
+.task__wrapper:hover:before {
+  animation: moveLight 1s;
+}
+
+       @keyframes moveLight {
+from {
+  transform: translateX(-150px) skewX(-45deg);
+}
+to {
+  transform: translateX(4000px) skewX(-45deg);
+}
+}
+
+
+
+
+
+#task_more_btn{
+  z-index: 10;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+
+/* ======================== Заголовок ======================== */
 
 .task_title{
+  grid-area: title;
+  grid-column: span 2;
   text-align: left;
-  font-family: Nunito-Regular;
+  font-family: inherit;
+  margin-right: 40px;
   font-size: 18px;
   color: var(--avtive--color);
+  justify-self: left;
+  padding-bottom: 5px;
 }
 
+/* ======================== Статус ======================== */
+
+.task_status{
+  grid-area: status;
+  justify-self: left;
+  font-size: 15px;
+  font-family: Hero-Regular;
+}
+
+/* ======================== Картинка ======================== */
+
 .task_image{
+  grid-area: image;
+  grid-column: span 2;
   margin-top: 10px;
   overflow: hidden;
   border-radius: 15px;
+  margin-bottom: 10px;
 }
 
-audio {
-  height: 30px;
-  background: none;
-  width: 90%;
-}
+/* ======================== Приоритет======================== */
 
-.audio_task{
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.category_task, .priority_task {
+.priority_task {
+  grid-area: priority;
   font-size: 14px;
-  vertical-align: middle;
   color: var(--main--color);
+  padding-bottom: 10px;
 }
 
+/* ======================== Категория ======================== */
 
-
-.task_first_line{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.category_task {
+  grid-area: category;
+  font-size: 14px;
+  color: var(--main--color);
+  padding-bottom: 10px;
 }
 
-.information_task {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-around;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
+/* ======================== Дедлайн ======================== */
+
+.deadpline__task{
+  grid-area: deadline;
+  padding-bottom: 10px;
 }
 
 .deadline_btn{
   display: block;
-  margin:  8px auto 0 auto;
-  font-size: 16px;
+  font-size: 14px;
 }
 
-.main_wnd_btn{
-  border: none;
-  height: 30px;
+/* ======================== Дата ======================== */
+
+.date_task{
+  grid-area: date;
+  font-size: 14px;
   color: var(--main--color);
-  font-family: Hero-Bold;
-  cursor: pointer;
-  background: transparent;
+  font-size: 14px;
+  padding-bottom: 10px;
 }
 
-.more_btn, #home_btn, #table_btn, #list_btn, .plus_btn{
+/* ======================== Описание ======================== */
+
+.description__task{
+  grid-area: description;
+  grid-column: span 2;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+
+
+/* ======================== Аудио ======================== */
+
+
+.audio_task{
+  grid-area: audio;
+  grid-column: span 2;
+}
+
+
+
+
+
+/* ================================================ Табличный вид ================================================ */
+
+
+
+.table--view.task__wrapper{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 20px);
+  grid-auto-flow: row;
+  justify-items: left;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  grid-template-areas:
+  "title   title    .         .         .  "
+  "status category priority deadline date";
+}
+
+
+
+
+
+/* ======================== Заголовок ======================== */
+
+.table--view.task__wrapper .task_title{
+  order: 0;
+  grid-area: title;
+  grid-column: span 3;
+  text-align: left;
+  font-family: inherit;
+  margin-right: 40px;
+  font-size: 18px;
+  color: var(--avtive--color);
+  justify-self: left;
+  padding-bottom: 5px;
+}
+
+/* ======================== Статус ======================== */
+
+.table--view.task__wrapper .task_status{
+  grid-area: status;
+  justify-self: left;
+  font-size: 15px;
+  font-family: Hero-Regular;
+}
+
+/* ======================== Картинка ======================== */
+
+
+/* ======================== Приоритет======================== */
+
+.priority_task {
+  grid-area: priority;
+  font-size: 14px;
+  color: var(--main--color);
+  padding-bottom: 10px;
+}
+
+/* ======================== Категория ======================== */
+
+.category_task {
+  grid-area: category;
+  font-size: 14px;
+  color: var(--main--color);
+  padding-bottom: 10px;
+}
+
+/* ======================== Дедлайн ======================== */
+
+.deadpline__task{
+  grid-area: deadline;
+  padding-bottom: 10px;
+}
+
+.deadline_btn{
+  display: block;
+  font-size: 14px;
+}
+
+/* ======================== Дата ======================== */
+
+.date_task{
+  grid-area: date;
+  font-size: 14px;
+  color: var(--main--color);
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+/* ======================== Описание ======================== */
+
+.description__task{
+  grid-area: description;
+  grid-column: span 2;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+
+
+/* ======================== Аудио ======================== */
+
+
+.audio_task{
+  grid-area: audio;
+  grid-column: span 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.more_btn{
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 16px;
@@ -95,37 +309,11 @@ audio {
   height: 30px;
 }
 
-.main_wnd_btn:hover {
-  transition: 0.15s;
-  border-radius: 15px;
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.4);
-  color: var(--avtive--color);
-  text-shadow:  0 0 1em var(--avtive--color--glow), 0 0 0.5em var(--avtive--color--glow), 0 0 0.1em var(--avtive--color--glow);
-}
 
-.main_wnd_btn:active {
-  transition: 0.1s;
-  transform: scale(0.98);
-}
-
-.deadline_btn{
-  display: block;
-  margin:  8px auto 0 auto;
-  font-size: 16px;
-}
-
-#filtr_btn, #search_btn, #filtr_enter_btn, #filtr_reset_btn, .bell_btn{
+.bell_btn{
   background-position: 10px center;
   background-repeat: no-repeat;
   background-size: 20px;
-}
-
-.plus_btn {
-  background-image: url(../../../../../../../../../assets/image/icons/plus.png);
-}
-
-.plus_btn:hover {
-  background-image: url(../../../../../../../../../assets/image/icons/plus_hov.png);
 }
 
 
@@ -159,27 +347,23 @@ audio {
 
 .dropworn_task_menu{
   transition: 0.2s;
-  z-index: 4;
+  z-index: 20;
   position: absolute;
   width: 150px;
   overflow: hidden;
   background: linear-gradient(31deg, rgba(0,0,0,0.95) 0%, rgba(21,21,21,0.95) 50%, rgba(0,0,0,0.95) 100%);
-  top: 54px;
-  right: 30px;
+  top: 40px;
+  right: 0;
   border-radius: 10px;
   padding: 10px;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .collapsed{
-  top: 0px;
   height: 0;
-  right: 0;
-  transition: 0/2s;
   width: 0px;
   border: 1px solid transparent;
   padding: 0;
-
 }
 
 
