@@ -1,10 +1,10 @@
 .wrapper {
   width: 100%;
   height: 100vh;
-  color: var(--menu_button);
+  color: var(--main--color);
   font-size: 13px;
   font-family: Hero-Regular;
-  background-image: url(../assets/image/bg7.jpg);
+  background-image: url(../assets/image/bg7.png);
   background-size: cover;
 }
 

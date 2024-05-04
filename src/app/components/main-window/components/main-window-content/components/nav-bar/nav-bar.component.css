@@ -26,12 +26,12 @@
   font-family: Hero-Bold;
   line-height: 15px;
   font-size: 13px;
-  color: white;
+  color: var(--avtive--color);
 }
 
 .status{
    padding-top: 5px;
-   color: var(--menu_button);
+   color: var(--main--color);
    font-size: 12px;
 }
 
@@ -51,7 +51,7 @@ nav{
   width: 100%;
   border: none;
   height: 35px;
-  color: var(--menu_button);
+  color: var(--main--color);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -67,9 +67,9 @@ nav{
 .menu_btn:hover {
   transform: scale(1.1);
   transition: 0.15s;
-  color: white;
+  color: var(--avtive--color);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.);
-  text-shadow:  0 0 1em var(--avtive_color), 0 0 0.5em var(--avtive_color), 0 0 0.1em var(--avtive_color);
+  text-shadow:  0 0 1em var(--avtive--color--glow), 0 0 0.5em var(--avtive--color--glow), 0 0 0.1em var(--avtive--color--glow);
 }
 
 .menu_btn:active {
@@ -79,7 +79,7 @@ nav{
 
 .active{
   font-family: Hero-Regular;
-  color: white;
+  color: var(--avtive--color);
 }
 
 h2, h3{

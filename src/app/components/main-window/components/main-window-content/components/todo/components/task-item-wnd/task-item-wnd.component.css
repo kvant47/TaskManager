@@ -20,26 +20,44 @@
 
 textarea{
   width: 100%;
-  resize: vertical;
   min-height: 30px;
-  max-height: 100px;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 .form__group:hover > h4{
-  color: white;
+  color: var(--avtive--color);
 }
+
+
+
+
+textarea::-webkit-scrollbar {
+  width: 5px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 20, 0.4);
+  border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--main--color);
+}
+
 
 /* ================================ДАТА===================================== */
 input[type=date] {
   user-select: none;
-  color: var(--main_color);
+  color: var(--main--color);
 	&::-webkit-calendar-picker-indicator {
 		background-image: url("../../../../../../../../../assets/image/icons/calendar_hov.png");
 	}
 }
 
 input[type=date]:focus .header_deadline{
-  color: white;
+  color: var(--avtive--color);
 }
 
 
@@ -50,14 +68,14 @@ input[type=file] {
 }
 
 .field_input_file label {
-  border: 1px solid #d3d3d3;
+  border: 1px solid var(--main--color);
   background: rgba(0, 0, 0, 0);
   text-align: center;
   padding: 9px 30px 10px 7px;
   border-radius: 20px;
   transition: 0.2s;
   font-size: 16px;
-  color: #d3d3d3;
+  color: var(--main--color);
   background-image: url(../../../../../../../../../assets/image/icons/upload.png);
   background-position:  right 5px top 5px;
   background-repeat: no-repeat;
@@ -65,7 +83,7 @@ input[type=file] {
 }
 
 .field_input_file label:hover, .field_input_file label:focus, .field_input_file label:active {
-  background: #d3d3d3;
+  background: var(--main--color);
   color: black;
   background-image: url(../../../../../../../../../assets/image/icons/upload_hov.png);
   background-repeat: no-repeat;
@@ -84,7 +102,7 @@ input[type=file] {
 h4{
   font-size: 14px;
   transition: 0.2s;
-  color: var(--main_color);
+  color: var(--main--color);
 }
 
 
@@ -97,7 +115,7 @@ h4{
 
 
 input[type=radio] {
-  color: var(--main_color);
+  color: var(--main--color);
   display: none;
 }
 
@@ -111,7 +129,7 @@ label {
 
 /* Hover */
  label:hover {
-	color: white;
+	color: var(--avtive--color);
 }
 
 * {
@@ -137,13 +155,13 @@ label {
   z-index: 20;
   height: 0;
   font-size: 16px;
-  color: var(--main_color);
+  color: var(--main--color);
   background-color: transparent;
   padding: 0 10px;
 }
 
 .active ul {
-  border: 1px solid var(--main_color);
+  border: 1px solid var(--main--color);
 }
 
 .active ul li{
@@ -152,9 +170,9 @@ label {
 }
 
 .form__group__select p{
-  border-bottom: 1px solid #9b9b9b;
+  border-bottom: 1px solid var(--main--color);
   font-size: 16px;
-  color: var(--main_color);
+  color: var(--main--color);
   padding: 9px 0;
   background-color: transparent;
 }
@@ -168,7 +186,7 @@ label {
   right: 5px;
   width: 8px;
   height: 8px;
-  border: 2px solid var(--main_color);
+  border: 2px solid var(--main--color);
   border-right-color: transparent;
   border-top-color: transparent;
   transform: rotate(-45deg);

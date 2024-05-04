@@ -9,7 +9,7 @@
   height: 90%;
   overflow: hidden;
   transition: 0.2s;
-  border: 1px solid rgba(255, 255, 255, 0.205);
+  border: 1px solid var(--main--color--transparent);
 }
 
 
@@ -56,7 +56,6 @@
 
 .fullscreenBtn:hover {
   background-image: url(../../../../../assets/image/icons/maximize_hov.png);
-  box-shadow:  0 0 5px var(--avtive_color_rgba) inset, 0 0 5px var(--avtive_color_rgba) inset, 0 0 0.5em var(--avtive_color_rgba), 0 0 0.1em var(--avtive_color_rgba);
 }
 
 .main_wnd_btn_fullscreen{
@@ -72,6 +71,6 @@
 .hideMenuMode{
   transition: all 0.3s ease-out;
   max-width: 60px;
-  border-right: 1px solid rgba(255, 255, 255, 0.205);
+  border-right: 1px solid var(--main--color--transparent);
 }
 

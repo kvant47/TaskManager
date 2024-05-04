@@ -12,6 +12,8 @@
   overflow-y: auto;
 }
 
+    /*========================================= Стили для скролл-бара ========================================= */
+
 .task_conteiner::-webkit-scrollbar {
   width: 5px;
 }
@@ -23,7 +25,7 @@
 
 .task_conteiner::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: var(--menu_button);
+  background: var(--main--color);
 }
 
 .task_header {
@@ -48,7 +50,7 @@
 }
 
 .low_priority {
-  border-left: 5px solid var(--avtive_color);
+  border-left: 5px solid var(--avtive--color--glow);
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
 }
@@ -62,7 +64,7 @@
 .main_wnd_btn {
   border: none;
   height: 30px;
-  color: var(--menu_button);
+  color: var(--main--color);
   font-family: Hero-Bold;
   cursor: pointer;
   background: transparent;
@@ -90,9 +92,9 @@
   transition: 0.15s;
   border-radius: 15px;
   /* box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.4); */
-  color: white;
-  text-shadow: 0 0 1em var(--avtive_color), 0 0 0.5em var(--avtive_color),
-    0 0 0.1em var(--avtive_color);
+  color: var(--avtive--color);
+  text-shadow: 0 0 1em var(--avtive--color--glow), 0 0 0.5em var(--avtive--color--glow),
+    0 0 0.1em var(--avtive--color--glow);
 }
 
 .main_wnd_btn:active {
@@ -231,7 +233,7 @@
 }
 
 .slide_bnt:hover{
-  border-color: white;
+  border-color: var(--avtive--color);
   background-image: none;
   transform: none;
   z-index: 10;
