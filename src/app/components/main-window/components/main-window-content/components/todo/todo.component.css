@@ -38,8 +38,12 @@ h1 {
 
 
 /*============================================ Dropwon Menu GroupBy=========================================*/
+.view p {
+  margin-right: 5px;
+}
 
 .view, .group_by {
+  gap: 5px;
   display: flex;
   align-items: center;
 }
@@ -92,71 +96,60 @@ h1 {
 /*======================================= Конец Dropwon Menu GroupBy=========================================*/
 
 
+.view__active{
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  border: 1px solid #8d8d8d;
+}
 
 
-#filtr_btn, #search_btn, #filtr_enter_btn, #filtr_reset_btn, .bell_btn, #new_group_btn{
-  background-position: 10px center;
+#search_reset {
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: 20px;
-}
-
-#search_btn {
+  background-size: 25px;
   position: absolute;
-  padding-right: 20px;
-  padding-left: 35px;
+  padding: 15px;
   border-radius: 25px;
-  background-image: url(../../../../../../../assets/image/search.png);
+  background-image: url(../../../../../../../assets/image/icons/cancel.png);
 }
 
-#search_btn:hover {
-   background-image: url(../../../../../../../assets/image/search_hov.png);
+#search_reset:hover {
+   background-image: url(../../../../../../../assets/image/icons/cancel_hov.png);
 }
 
-.small_btn:hover{
-  box-shadow:  0 0 5px var(--avtive_color_rgba) inset, 0 0 5px var(--avtive_color_rgba) inset, 0 0 0.5em var(--avtive_color_rgba), 0 0 0.1em var(--avtive_color_rgba);
-}
 
 #filtr_btn{
   width: 130px;
-  background-image: url(../../../../../../../assets/image/filter.png);
+  background-image: url(../../../../../../../assets/image/icons/filter.png);
 }
 
 #filtr_btn:hover{
-  background-image: url(../../../../../../../assets/image/filter_hov.png);
+  background-image: url(../../../../../../../assets/image/icons/filter_hov.png);
 }
 
 .more_btn{
- background-image: url(../../../../../../../assets/image/more.png);
+ background-image: url(../../../../../../../assets/image/icons/more.png);
 }
 
 .more_btn:hover{
-  background-image: url(../../../../../../../assets/image/more_hov.png);
-}
-
-#home_btn{
-  background-size: 20px;
-  background-image: url(../../../../../../../assets/image/home.png);
-}
-
-#home_btn:hover{
-  background-image: url(../../../../../../../assets/image/home_hov.png);
+  background-image: url(../../../../../../../assets/image/icons/more_hov.png);
 }
 
 #table_btn{
-  background-image: url(../../../../../../../assets/image/table.png);
+  background-image: url(../../../../../../../assets/image/icons/table.png);
 }
 
 #table_btn:hover{
-  background-image: url(../../../../../../../assets/image/table_hov.png);
+  background-image: url(../../../../../../../assets/image/icons/table_hov.png);
 }
 
 
 #list_btn{
-  background-image: url(../../../../../../../assets/image/grid.png);
+  background-image: url(../../../../../../../assets/image/icons/grid.png);
 }
 
 #list_btn:hover{
-  background-image: url(../../../../../../../assets/image/grid_hov.png);
+  background-image: url(../../../../../../../assets/image/icons/grid_hov.png);
 }
 
 
@@ -219,16 +212,11 @@ h1 {
   margin: 10px 0;
 }
 
-#filtr_btn, #search_btn, #filtr_enter_btn, #filtr_reset_btn, .bell_btn {
+#filtr_btn, #filtr_enter_btn, #filtr_reset_btn, .bell_btn, #new_group_btn {
   background-position: 10px center;
   background-repeat: no-repeat;
   background-size: 20px;
   padding-left: 35px;
-}
-
-
-.small_btn:hover {
-  box-shadow: 0 0 5px var(--avtive_color_rgba) inset, 0 0 5px var(--avtive_color_rgba) inset, 0 0 0.5em var(--avtive_color_rgba), 0 0 0.1em var(--avtive_color_rgba);
 }
 
 
@@ -241,19 +229,6 @@ h1 {
 }
 
 
-
-
-
-
-.small_btn:hover {
-  box-shadow: 0 0 5px var(--avtive_color_rgba) inset, 0 0 5px var(--avtive_color_rgba) inset, 0 0 0.5em var(--avtive_color_rgba), 0 0 0.1em var(--avtive_color_rgba);
-}
-
-
-
-
-
-
 .button_section {
   margin-bottom: 10px;
   display: flex;
@@ -261,27 +236,28 @@ h1 {
 }
 
 #filtr_reset_btn {
-  background-image: url(../../../../../../../assets/image/reset.png);
+  background-image: url(../../../../../../../assets/image/icons/reset.png);
 }
 
 #filtr_enter_btn {
   background-size: 16px;
-  background-image: url(../../../../../../../assets/image/enter.png);
+  background-image: url(../../../../../../../assets/image/icons/enter.png);
 }
 
 #filtr_reset_btn {
-  background-image: url(../../../../../../../assets/image/reset_hov.png);
+  background-image: url(../../../../../../../assets/image/icons/reset_hov.png);
 }
 
 #filtr_enter_btn {
   background-size: 16px;
-  background-image: url(../../../../../../../assets/image/enter_hov.png);
+  background-image: url(../../../../../../../assets/image/icons/enter_hov.png);
 }
 
 
 
 .task_group_container::-webkit-scrollbar { /* chrome based */
   height: 5px;
+  width: 5px;
 }
 
 .task_group_container::-webkit-scrollbar-track {
@@ -302,7 +278,8 @@ h1 {
   height: 96%;
   flex-wrap: nowrap;
   gap: 30px;
-  overflow-y: hidden;   /*горизонтальный скролл*/
+  overflow-y: scroll;   /*горизонтальный скролл*/
+  overflow-x: scroll;   /*горизонтальный скролл*/
 }
 
 
@@ -332,103 +309,16 @@ h1 {
   font-size: 12px;
 }
 
-/*============================================ Dropwon Menu Task=========================================*/
-
-.dropworn_task_menu{
-  z-index: 4;
-  position: absolute;
-  width: 150px;
-  background: linear-gradient(31deg, rgba(0,0,0,0.95) 0%, rgba(21,21,21,0.95) 50%, rgba(0,0,0,0.95) 100%);
-  top: 54px;
-  right: 0;
-  border-radius: 10px;
-  padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-
-.dropworn_task_item {
-  padding-left: 37px;
-  height: 30px;
-  background-repeat: no-repeat;
-  background-position:  10px center;
-  background-size: 20px;
-}
-
-.dropworn_task_item_text {
-  height: 100%;
-  width: 100%;
-  display: block;
-  line-height: 30px;
-}
-
-.dropworn_task_item:hover{
-  transition: 0.15s;
-  border-radius: 10px;
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.4);
-  color: white;
-  text-shadow:  0 0 1em var(--avtive_color), 0 0 0.5em var(--avtive_color), 0 0 0.1em var(--avtive_color);
-}
-
-
-
-.dropworn_task_open {
-  background-image: url(../../../../../../../assets/image/open.png);
-}
-
-.dropworn_task_open:hover {
-  background-image: url(../../../../../../../assets/image/open_hov.png);
-}
-
-.dropworn_task_change {
-  background-image: url(../../../../../../../assets/image/edit.png);
-}
-
-.dropworn_task_change:hover {
-  background-image: url(../../../../../../../assets/image/edit_hov.png);
-}
-
-.dropworn_task_favorite {
-  background-image: url(../../../../../../../assets/image/favorite.png);
-}
-
-.dropworn_task_favorite:hover {
-  background-image: url(../../../../../../../assets/image/favorite_hov.png);
-}
-
-.dropworn_task_remind {
-  background-image: url(../../../../../../../assets/image/bell.png);
-}
-
-.dropworn_task_remind:hover {
-  background-image: url(../../../../../../../assets/image/bell_hov.png);
-}
-
-.dropworn_task_complete {
-  background-image: url(../../../../../../../assets/image/enter.png);
-}
-
-.dropworn_task_complete:hover {
-  background-image: url(../../../../../../../assets/image/enter_hov.png);
-}
-
-.dropworn_task_delete {
-  background-image: url(../../../../../../../assets/image/del.png);
-}
-
-.dropworn_task_delete:hover {
-  background-image: url(../../../../../../../assets/image/del_hov.png);
-}
 
 #new_group_btn{
   margin-left: 20px;
   padding-left: 40px;
   padding-right: 20px;
-  background-image: url(../../../../../../../assets/image/plus.png);
+  background-image: url(../../../../../../../assets/image/icons/plus.png);
 }
 
 #new_group_btn:hover{
-  background-image: url(../../../../../../../assets/image/plus_hov.png);
+  background-image: url(../../../../../../../assets/image/icons/plus_hov.png);
 }
 
 
@@ -567,3 +457,111 @@ input:checked~span {
 
 
 
+
+
+
+
+/* ==========================================Поле ввода для поиска============================================= */
+
+.form__group__main__input {
+  position: relative;
+  padding: 10px 0 10px;
+}
+
+.form--field {
+  box-sizing: border-box;
+  font-family: inherit;
+  width: 300px;
+  border: 0;
+  outline: 0;
+  margin-right: 40px;
+  font-size: 16px;
+  color: var(--main_color);
+  padding: 9px 0;
+  padding-left: 30px;
+  background-color: transparent;
+  background-image: url(../../../../../../../assets/image/icons/search.png);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  transition: background-color 0s 600000s, color 0s 600000s, background-position  0.2s, border-color 0.2s, padding-left 0.2s ;
+  padding-right: 40px;
+}
+
+.form--field::placeholder {
+  color: transparent;
+}
+
+.form--field:placeholder-shown ~ .form__label {
+  font-size: 16px;
+  cursor: text;
+  top: 20px;
+  padding-left: 30px;
+}
+
+.form__label {
+  position: absolute;
+  font-size: 14px;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  pointer-events: none;
+}
+
+.form--field:focus {     /*Подчеркинвание активного поля ввода*/
+  padding-bottom: 8px;
+  padding-left: 10px;
+  border-width: 2px;
+  border-image-slice: 1;
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+  background-image: url(../../../../../../../assets/image/icons/search_hov.png);
+  background-position: right center;
+  transition: background-position  0.3s !important;
+}
+
+.form--field:focus ~ .form__label {   /*Заголвоок активного поля ввода*/
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  color: white;
+  text-shadow:  0 0 1em var(--avtive_color), 0 0 0.5em var(--avtive_color), 0 0 0.1em var(--avtive_color);
+}
+
+
+
+.form--field:hover ~ .form__label {   /*Заголвоок активного поля ввода*/
+  color: white;
+  text-shadow:  0 0 1em var(--avtive_color), 0 0 0.5em var(--avtive_color), 0 0 0.1em var(--avtive_color);
+}
+
+/* reset input */
+.form--field:required, .form--field:invalid {
+  box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+/* ===================================Стили для табличной формы===================================== */
+
+
+.task_group_container.table--view{
+  display: flex;
+  height: 96%;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: scroll;   /*горизонтальный скролл*/
+  overflow-x: hidden;   /*горизонтальный скролл*/
+}
+
+
+.task_group_container .task_list{
+  max-width: 100%;
+  width: 100%;
+}

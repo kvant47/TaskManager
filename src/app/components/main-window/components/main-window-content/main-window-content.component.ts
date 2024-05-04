@@ -7,9 +7,13 @@ import { Component } from '@angular/core';
 })
 export class MainWindowContentComponent {
 
-  public fullscreenMode = false;
+  public fullscreenMode: boolean = true;
 
-  public hideMenuMode: boolean = false;
+  public hideMenuMode: boolean;
+
+  constructor(){
+
+  }
 
   HideMenu(newValue: boolean){
     this.hideMenuMode = newValue;

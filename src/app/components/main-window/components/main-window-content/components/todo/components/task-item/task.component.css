@@ -121,31 +121,31 @@ audio {
 }
 
 .plus_btn {
-  background-image: url(../../../../../../../../../assets/image/plus.png);
+  background-image: url(../../../../../../../../../assets/image/icons/plus.png);
 }
 
 .plus_btn:hover {
-  background-image: url(../../../../../../../../../assets/image/plus_hov.png);
+  background-image: url(../../../../../../../../../assets/image/icons/plus_hov.png);
 }
 
 
 .bell_btn{
   padding-left: 33px;
   background-position: 10px center;
-  background-image: url(../../../../../../../../../assets/image/bell.png);
+  background-image: url(../../../../../../../../../assets/image/icons/bell.png);
 }
 
 .bell_btn:hover{
-  background-image: url(../../../../../../../../../assets/image/bell_hov.png);
+  background-image: url(../../../../../../../../../assets/image/icons/bell_hov.png);
 }
 
 
 .more_btn{
-  background-image: url(../../../../../../../../../assets/image/more.png);
+  background-image: url(../../../../../../../../../assets/image/icons/more.png);
  }
 
  .more_btn:hover{
-   background-image: url(../../../../../../../../../assets/image/more_hov.png);
+   background-image: url(../../../../../../../../../assets/image/icons/more_hov.png);
  }
 
  .small_btn:hover{
@@ -209,51 +209,51 @@ audio {
 
 
 .dropworn_task_open {
-  background-image: url(../../../../../../../../../assets/image/open.png);
+  background-image: url(../../../../../../../../../assets/image/icons/open.png);
 }
 
 .dropworn_task_open:hover {
-  background-image: url(../../../../../../../../../assets/image/open_hov.png);
+  background-image: url(../../../../../../../../../assets/image/icons/open_hov.png);
 }
 
 .dropworn_task_change {
-  background-image: url(../../../../../../../../../assets/image/edit.png);
+  background-image: url(../../../../../../../../../assets/image/icons/edit.png);
 }
 
 .dropworn_task_change:hover {
-  background-image: url(../../../../../../../../../assets/image/edit_hov.png);
+  background-image: url(../../../../../../../../../assets/image/icons/edit_hov.png);
 }
 
 .dropworn_task_favorite {
-  background-image: url(../../../../../../../../../assets/image/favorite.png);
+  background-image: url(../../../../../../../../../assets/image/icons/favorite.png);
 }
 
 .dropworn_task_favorite:hover {
-  background-image: url(../../../../../../../../../assets/image/favorite_hov.png);
+  background-image: url(../../../../../../../../../assets/image/icons/favorite_hov.png);
 }
 
 .dropworn_task_remind {
-  background-image: url(../../../../../../../../../assets/image/bell.png);
+  background-image: url(../../../../../../../../../assets/image/icons/bell.png);
 }
 
 .dropworn_task_remind:hover {
-  background-image: url(../../../../../../../../../assets/image/bell_hov.png);
+  background-image: url(../../../../../../../../../assets/image/icons/bell_hov.png);
 }
 
 .dropworn_task_complete {
-  background-image: url(../../../../../../../../../assets/image/enter.png);
+  background-image: url(../../../../../../../../../assets/image/icons/enter.png);
 }
 
 .dropworn_task_complete:hover {
-  background-image: url(../../../../../../../../../assets/image/enter_hov.png);
+  background-image: url(../../../../../../../../../assets/image/icons/enter_hov.png);
 }
 
 .dropworn_task_delete {
-  background-image: url(../../../../../../../../../assets/image/del.png);
+  background-image: url(../../../../../../../../../assets/image/icons/del.png);
 }
 
 .dropworn_task_delete:hover {
-  background-image: url(../../../../../../../../../assets/image/del_hov.png);
+  background-image: url(../../../../../../../../../assets/image/icons/del_hov.png);
 }
 
 /*======================================= Конец Dropwon Menu Task=========================================*/

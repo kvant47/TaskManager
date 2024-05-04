@@ -65,6 +65,7 @@ nav{
 }
 
 .menu_btn:hover {
+  transform: scale(1.1);
   transition: 0.15s;
   color: white;
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.);
@@ -92,69 +93,109 @@ h3{
 
 #task_btn, #statistic_btn, #profile_btn, #setting_bnt, #edit_btn, #exit_btn, #calendar_btn,
 #hide_menu_btn {
-  transition: all 0.3s ease-out;
+  transition: all 0.1s ease-out;
   background-position: 15px center;
   background-repeat: no-repeat;
   background-size: 23px;
 }
 
 #task_btn{
-  background-image: url(../../../../../../../assets/image/task.png);
+  background-image: url(../../../../../../../assets/image/icons/task.png);
+}
+
+#task_btn.active{
+  background-image: url(./../../../../../../../assets/image/icons/task_hov.png);
 }
 
 #task_btn:hover{
-  background-image: url(./../../../../../../../assets/image/task_hov.png);
+  background-image: url(./../../../../../../../assets/image/icons/task_hov.png);
 }
 
+
+
 #statistic_btn{
-  background-image: url(./../../../../../../../assets/image/statistic.png);
+  background-image: url(./../../../../../../../assets/image/icons/statistic.png);
+}
+
+#statistic_btn.active{
+  background-image: url(./../../../../../../../assets/image/icons/statistic_hov.png);
 }
 
 #statistic_btn:hover{
-  background-image: url(./../../../../../../../assets/image/statistic_hov.png);
+  background-image: url(./../../../../../../../assets/image/icons/statistic_hov.png);
 }
 
+
+
+
 #profile_btn{
-  background-image: url(./../../../../../../../assets/image/profile.png);
+  background-image: url(./../../../../../../../assets/image/icons/profile.png);
+}
+
+#profile_btn.active{
+  background-image: url(./../../../../../../../assets/image/icons/profile_hov.png);
 }
 
 #profile_btn:hover{
-  background-image: url(./../../../../../../../assets/image/profile_hov.png);
+  background-image: url(./../../../../../../../assets/image/icons/profile_hov.png);
 }
 
+
+
+
 #calendar_btn{
-  background-image: url(./../../../../../../../assets/image/calendar.png);
+  background-image: url(./../../../../../../../assets/image/icons/calendar.png);
+}
+
+#calendar_btn.active{
+  background-image: url(./../../../../../../../assets/image/icons/calendar_hov.png);
 }
 
 #calendar_btn:hover{
-  background-image: url(./../../../../../../../assets/image/calendar_hov.png);
+  background-image: url(./../../../../../../../assets/image/icons/calendar_hov.png);
 }
 
+
+
+
 #setting_bnt{
-  background-image: url(./../../../../../../../assets/image/settings.png);
+  background-image: url(./../../../../../../../assets/image/icons/settings.png);
+}
+
+#setting_bnt.active{
+  background-image: url(./../../../../../../../assets/image/icons/settings_hov.png);
 }
 
 #setting_bnt:hover{
-  background-image: url(./../../../../../../../assets/image/settings_hov.png);
+  background-image: url(./../../../../../../../assets/image/icons/settings_hov.png);
 }
 
+
+
+
 #edit_btn{
-  background-image: url(./../../../../../../../assets/image/support.png);
+  background-image: url(./../../../../../../../assets/image/icons/support.png);
+}
+
+#edit_btn.active{
+  background-image: url(./../../../../../../../assets/image/icons/support_hov.png);
 }
 
 #edit_btn:hover{
-  background-image: url(./../../../../../../../assets/image/support_hov.png);
+  background-image: url(./../../../../../../../assets/image/icons/support_hov.png);
 }
+
+
 
 #exit_btn {
   position: absolute;
   bottom: 5px;
   left: 0;
-  background-image: url(./../../../../../../../assets/image/logout.png);
+  background-image: url(./../../../../../../../assets/image/icons/logout.png);
 }
 
 #exit_btn:hover {
-  background-image: url(./../../../../../../../assets/image/logout_hov.png);
+  background-image: url(./../../../../../../../assets/image/icons/logout_hov.png);
 }
 
 
@@ -169,7 +210,7 @@ h3{
 
 #hide_btn{
   transition: 0.2s;
-  background-image: url(./../../../../../../../assets/image/arraow.png);
+  background-image: url(./../../../../../../../assets/image/icons/arraow.png);
   background-size: contain;
   width: 0;
   height: 0;
@@ -181,7 +222,7 @@ h3{
 }
 
 #hide_btn:hover{
-  background-image: url(./../../../../../../../assets/image/arraow_hov.png);
+  background-image: url(./../../../../../../../assets/image/icons/arraow_hov.png);
 }
 
 /*====================Скрытое меню=========================*/
@@ -206,7 +247,9 @@ h3{
 }
 
 .hideMenu a:hover{
-  box-shadow: 0 0 5px var(--avtive_color_rgba) inset, 0 0 5px var(--avtive_color_rgba) inset, 0 0 0.5em var(--avtive_color_rgba), 0 0 0.1em var(--avtive_color_rgba);
+  transform: none;
+  transition: 0.1s !important;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .hideMenu .header_wrapper{

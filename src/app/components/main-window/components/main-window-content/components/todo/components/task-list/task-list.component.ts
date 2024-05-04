@@ -23,6 +23,7 @@ export class TaskListComponent {
 
   @Input() sortBy!: number;
   @Input() search: string
+  @Input() tableView: boolean;
   @Input() enterFilterFlag: number
   @Input() categoryesSearch: string[]
   @Input() priorotiesSearch: string[]
@@ -35,6 +36,7 @@ export class TaskListComponent {
   }>();
 
   @Output() update = new EventEmitter<{}>();
+
 
   constructor(
     private dialog: MatDialog,

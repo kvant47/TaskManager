@@ -7,6 +7,26 @@
   ></button>
 </div>
 
+
+<p *ngIf="taskItem.imagePath != null && taskItem.imagePath != ''" class="task_image">
+  <img src="{{ taskItem.imagePath }}" class="flexable_image" alt="" />
+</p>
+<p class="category_task" *ngIf="taskItem.category  != null && taskItem.category != ''">{{ taskItem.category }}</p>
+<p class="priority_task" *ngIf="taskItem.priority != null && taskItem.priority != ''">{{ taskItem.priority }}</p>
+<p class="audio_task" *ngIf="taskItem.audioPath != null && taskItem.audioPath != ''">
+  <audio
+    controls
+    src="{{taskItem.audioPath}}"
+  ></audio>
+</p>
+<button *ngIf="taskItem.deadline != null && taskItem.deadline != ''" class="deadline_btn main_wnd_btn bell_btn">
+  <h3>{{ taskItem.deadline }}</h3>
+</button>
+
+<h3>{{ taskItem.dateCreate }}</h3>
+
+
+
 <div class="dropworn_task_menu" [ngClass]="{ collapsed: !isCollapsed }">
   <ul>
     <li class="dropworn_task_item dropworn_task_open">
@@ -29,22 +49,3 @@
     </li>
   </ul>
 </div>
-
-<p *ngIf="taskItem.imagePath != null && taskItem.imagePath != ''" class="task_image">
-  <img src="{{ taskItem.imagePath }}" class="flexable_image" alt="" />
-</p>
-<div *ngIf="(taskItem.category  != null && taskItem.category != '') || (taskItem.priority != null && taskItem.priority != '')" class="information_task">
-  <p class="category_task">{{ taskItem.category }}</p>
-  <p class="priority_task">{{ taskItem.priority }}</p>
-</div>
-<p class="audio_task" *ngIf="taskItem.audioPath != null && taskItem.audioPath != ''">
-  <audio
-    controls
-    src="{{taskItem.audioPath}}"
-  ></audio>
-</p>
-<button *ngIf="taskItem.deadline != null && taskItem.deadline != ''" class="deadline_btn main_wnd_btn bell_btn">
-  <h3>{{ taskItem.deadline }}</h3>
-</button>
-
-<h3>{{ taskItem.dateCreate }}</h3>

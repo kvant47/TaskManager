@@ -45,9 +45,8 @@
   <div class="content_view">
     <div class="view">
       <p>Вид:</p>
-      <button class="main_wnd_btn small_btn" id="home_btn"></button>
-      <button class="main_wnd_btn small_btn" id="table_btn"></button>
-      <button class="main_wnd_btn small_btn" id="list_btn"></button>
+      <button class="main_wnd_btn small_btn" id="table_btn" [ngClass]="{'view__active' : tableView}" (click)="tableView = true"></button>
+      <button class="main_wnd_btn small_btn" id="list_btn" [ngClass]="{'view__active' : !tableView}" (click)="tableView = false"></button>
     </div>
 
     <div class="group_by">
@@ -88,19 +87,33 @@
 
 
     <div class="search_block">
-      <input type="text" placeholder="Поиск..." class="search_area"  [(ngModel)]="search" />
-      <button class="main_wnd_btn" id="search_btn"><h3>Поиск</h3></button>
+
+      <div class="form__group__main__input field">
+        <input
+          #searchTask
+          id="searchTask"
+          type="text"
+          class="form--field"
+          placeholder="Название задачи... search_area"
+          name="searchChat"
+          autocomplete="off"
+          [(ngModel)]="search"
+        />
+        <label for="title" class="form__label">Название задачи...</label>
+      </div>
+      <button class="main_wnd_btn" id="search_reset" (click)="search=''"><h3></h3></button>
     </div>
   </div>
 </div>
 
 <div class="main_content_section">
-  <div class="task_group_container">
+  <div class="task_group_container"  [ngClass]="{'table--view' : tableView}">
     <app-task-list
       (update)="Update()"
       [taskList]="group"
       [search]="search"
       [sortBy]="sortBy"
+      [tableView]="tableView"
       [priorotiesSearch]="priorotiesSearch"
       [categoryesSearch]="categoryesSearch"
       [enterFilterFlag]="enterFilterFlag"

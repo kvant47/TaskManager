@@ -1,28 +1,42 @@
-<div class="task_header">
+<div class="task_header" [ngClass]="{'table--view' : tableView}">
   <h4 class="task_list_name">{{ taskList.title }}</h4>
   <div class="header-nav">
     <ul>
       <li>
-        <button class="main_wnd_btn more_btn header-nav header-nav-link header-nav-top-link"></button>
+        <button id="taskList--more--btn" class="main_wnd_btn more_btn header-nav header-nav-link header-nav-top-link"></button>
         <ul class="conteiner_for_bnt">
 
           <li class="line_btn">
-            <button class="main_wnd_btn more_btn slide_bnt" (click)="EditTaskList()">
-              <div class="image_bg_edit sss"></div>
+            <button class="main_wnd_btn more_btn slide_bnt" id="add--user--btn">
+              <div class="slide--bnt--icon" id="image_bg_add_user"></div>
+              <h3>Новый участник</h3>
+            </button>
+         </li>
+
+         <li class="line_btn">
+          <button class="main_wnd_btn more_btn slide_bnt" id="del--user--btn">
+            <div class="slide--bnt--icon" id="image_bg_del_user"></div>
+            <h3>Убрать участника</h3>
+          </button>
+       </li>
+
+          <li class="line_btn">
+            <button class="main_wnd_btn more_btn slide_bnt" id="add--task--btn">
+              <div class="slide--bnt--icon" id="image_bg_add_task"></div>
               <h3>Задача</h3>
             </button>
          </li>
 
           <li class="line_btn">
-              <button class="main_wnd_btn more_btn slide_bnt" (click)="EditTaskList()">
-                <div class="image_bg_edit"></div>
+              <button class="main_wnd_btn more_btn slide_bnt" id="edit--list--btn" (click)="EditTaskList()">
+                <div class="slide--bnt--icon" id="image_bg_edit"></div>
                 <h3>Изменить</h3>
               </button>
           </li>
 
           <li class="line_btn">
-            <button class="main_wnd_btn more_btn slide_bnt " (click)="DeleteTaskList()">
-              <div class="image_bg_del"></div>
+            <button class="main_wnd_btn more_btn slide_bnt " id="del--list--btn" (click)="DeleteTaskList()">
+              <div class="slide--bnt--icon" id="image_bg_del"></div>
               <h3>Удалить</h3>
             </button>
           </li>
@@ -31,11 +45,8 @@
       </li>
     </ul>
   </div>
-
-
-  </div>
-
-  <div class="task_conteiner">
+</div>
+<div class="task_conteiner">
     <app-task-item
       class="low_priority"
       [index]="i"
@@ -45,4 +56,4 @@
       (editTaskEmitter)="editTask($event)"
       (deleteTaskEmitter)="deleteTask($event)"
     ></app-task-item>
-  </div>
+</div>

@@ -14,7 +14,7 @@ export class NavBarComponent  implements OnInit{
 
   @Output() hideMenu = new EventEmitter<boolean>()
 
-  public hideMenuMode = false;
+  public hideMenuMode = true;
 
 
   HideMenu(){
@@ -27,6 +27,7 @@ export class NavBarComponent  implements OnInit{
   }
 
   ngOnInit(): void {
+    this.hideMenu.emit(this.hideMenuMode);
   }
 
 }

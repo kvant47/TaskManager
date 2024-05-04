@@ -22,17 +22,18 @@ export class TaskListWndComponent implements OnInit {
 
 
   ngOnInit(): void {
-    if(!this.data){
-      this.title = 'Новая группа задач';
-      this.loginForm = new FormGroup({
-        title: new FormControl('', [Validators.required]),
-    })}
-    else
-      this.title = 'Редактирование группы задач';
-      this.loginForm = new FormGroup({
-        title: new FormControl(this.data.title, [Validators.required]),
-      });
+  if (!this.data) {
+    this.title = 'Новая группа задач';
+    this.loginForm = new FormGroup({
+      title: new FormControl('', [Validators.required]),
+    });
+  } else {
+    this.title = 'Редактирование группы задач';
+    this.loginForm = new FormGroup({
+      title: new FormControl(this.data?.title || '', [Validators.required]), // Добавляем проверку на существование this.data и его свойства title
+    });
   }
+}
 
   save() {
     const taskList :TaskList = {

@@ -37,7 +37,8 @@ export class TodoComponent implements OnInit {
   public priorotiesSearch: string[] = [];     //массив хранит приоритеты для фильтров
 
   public activeSort = false;                  //переменная для открытия/закрытия списка сортировки
-  wasInside: boolean;                         //переменная для закрытия окна сорировки при клике вне
+  public wasInside: boolean;                         //переменная для закрытия окна сорировки при клике вне
+  public tableView: boolean = true;                         //переменная для закрытия окна сорировки при клике вне
 
   public sortBy: number = 0;
 
@@ -50,7 +51,6 @@ export class TodoComponent implements OnInit {
   ){
     this.isCollapsed = false;
   }
-
 
 //===========================Методы для открытия списка сортировки и закрытия окна при клике вне его====================
 

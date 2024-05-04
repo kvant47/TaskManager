@@ -86,9 +86,10 @@
 }
 
 .main_wnd_btn:hover {
+  transform: none;
   transition: 0.15s;
   border-radius: 15px;
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.4); */
   color: white;
   text-shadow: 0 0 1em var(--avtive_color), 0 0 0.5em var(--avtive_color),
     0 0 0.1em var(--avtive_color);
@@ -116,29 +117,29 @@
 }
 
 .plus_btn {
-  background-image: url(../../../../../../../../../assets/image/plus.png);
+  background-image: url(../../../../../../../../../assets/image/icons/plus.png);
 }
 
 .plus_btn:hover {
-  background-image: url(../../../../../../../../../assets/image/plus_hov.png);
+  background-image: url(../../../../../../../../../assets/image/icons/plus_hov.png);
 }
 
 .bell_btn {
   padding-left: 33px;
   background-position: 10px center;
-  background-image: url(../../../../../../../../../assets/image/bell.png);
+  background-image: url(../../../../../../../../../assets/image/icons/bell.png);
 }
 
 .bell_btn:hover {
-  background-image: url(../../../../../../../../../assets/image/bell_hov.png);
+  background-image: url(../../../../../../../../../assets/image/icons/bell_hov.png);
 }
 
 .more_btn {
-  background-image: url(../../../../../../../../../assets/image/more.png);
+  background-image: url(../../../../../../../../../assets/image/icons/more.png);
 }
 
 .more_btn:hover {
-  background-image: url(../../../../../../../../../assets/image/more_hov.png);
+  background-image: url(../../../../../../../../../assets/image/icons/more_hov.png);
 }
 
 
@@ -178,8 +179,9 @@
 .header-nav > ul {
   position: relative;
 }
+
 /* сокрытие элементов списка*/
- .header-nav > ul > li > .header-nav-link + ul li {
+  .header-nav > ul > li > .header-nav-link + ul li {
   opacity: 0;
   height: 0;
   margin-top: -48px;
@@ -203,6 +205,7 @@
   background-size: 23px;
   overflow: hidden;
   right: 0px;
+  background-image: none;
   margin-bottom: 4px;
   box-shadow: 0px 5px 100px 98px rgba(21, 21, 21, 0.95) inset;
   border-radius: 50%;
@@ -213,57 +216,161 @@
   margin-left: 60px;
   position: absolute;
   top: 8px;
+  transition: 0.2s;
+  border-radius: 0;
+  white-space: nowrap;
 }
 
-.image_bg_del,
-.image_bg_edit{
+.slide--bnt--icon{
+  background-image: none;
   width: 20px;
   height: 20px;
-  background-image: url(../../../../../../../../../assets/image/del_hov.png);
   background-repeat: no-repeat;
-  background-size: 20px;
+  background-size: contain;
   background-position: center center;
 }
 
 .slide_bnt:hover{
+  border-color: white;
+  background-image: none;
+  transform: none;
   z-index: 10;
   transition: 0.2s;
   box-shadow: 0px 5px 100px 98px rgba(21, 21, 21, 0.95) inset,
            0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-  width: 110px;
   padding-right: 15px;
 }
 
 .slide_bnt:hover h3 {
   transition: 0.2s;
-  visibility: visible;
   width: auto;
-  border-radius: 0;
   margin-left: 25px;
 }
 
+/*============================================ Новый пользователь ============================================*/
 
-.image_bg_edit {
-  background-image: url(../../../../../../../../../assets/image/edit.png);
+.slide_bnt:hover#add--user--btn{
+  width: 150px;
 }
 
-.image_bg_edit:hover {
-  background-image: url(../../../../../../../../../assets/image/edit_hov.png);
+#image_bg_add_user{
+  background-image: url(../../../../../../../../../assets/image/icons/add-user.png);
+}
+
+.slide_bnt:hover > #image_bg_add_user{
+  background-image: url(../../../../../../../../../assets/image/icons/add-user_hov.png);
 }
 
 
-.image_bg_del {
-  background-image: url(../../../../../../../../../assets/image/del_hov.png);
+/*============================================ Удалить пользователя ============================================*/
+
+.slide_bnt:hover#del--user--btn{
+  width: 160px;
+}
+
+#image_bg_del_user{
+  background-image: url(../../../../../../../../../assets/image/icons/remove-user.png);
+}
+
+.slide_bnt:hover > #image_bg_del_user{
+  background-image: url(../../../../../../../../../assets/image/icons/remove-user_hov.png);
 }
 
 
-.image_bg_del:hover {
-  background-image: url(../../../../../../../../../assets/image/del_hov.png);
+/*============================================ Добавить задачу ============================================*/
+
+.slide_bnt:hover#add--task--btn{
+  width: 90px;
 }
+
+#image_bg_add_task{
+  background-image: url(../../../../../../../../../assets/image/icons/add-post.png);
+}
+
+.slide_bnt:hover > #image_bg_add_task{
+  background-image: url(../../../../../../../../../assets/image/icons/add-post_hov.png);
+}
+
+
+/*============================================ Изменить название списка ============================================*/
+
+.slide_bnt:hover#edit--list--btn{
+  width: 105px;
+}
+
+#image_bg_edit{
+  background-image: url(../../../../../../../../../assets/image/icons/edit.png);
+}
+
+.slide_bnt:hover > #image_bg_edit{
+  background-image: url(../../../../../../../../../assets/image/icons/edit_hov.png);
+}
+
+
+/*============================================ Удалить список ============================================*/
+
+.slide_bnt:hover#del--list--btn{
+  width: 95px;
+}
+
+#image_bg_del{
+  background-image: url(../../../../../../../../../assets/image/icons/del.png);
+}
+
+.slide_bnt:hover > #image_bg_del{
+  background-image: url(../../../../../../../../../assets/image/icons/del_hov.png);
+}
+
 
 
 /* ========================Выпадающий список и выдвижные кнопки======================= */
 
-.sss {
-  background-image: url(../../../../../../../../../assets/image/plus.png);
+
+
+
+
+
+
+
+
+/* ========================Стили для табличного отображения======================= */
+
+/* Контейнер для выпадающих кнопок */
+
+.table--view .conteiner_for_bnt{
+  margin-right: 5px;
+  display: flex;
+  gap: 5px;
+  padding-top: 0 !important;
+}
+
+
+.table--view .header-nav > ul > li > .header-nav-link + ul li {
+  opacity: 1;
+  margin-top: 0;
+}
+
+.table--view .header-nav {
+  bottom: 4px;
+}
+
+.table--view  #taskList--more--btn{
+  display: none;
+}
+
+.table--view .slide--bnt--icon{
+  width: 18px;
+  height: 18px;
+  padding-left: 4px;
+}
+
+.table--view .slide_bnt{
+  height: 30px;
+  width: 30px;
+  top: 6px;
+  padding-left: 3px;
+}
+
+.table--view .slide_bnt h3{
+  top: 6px;
 }

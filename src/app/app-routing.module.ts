@@ -15,6 +15,7 @@ export const routes: Routes = [
   {path: '**', component: NotFoundComponent},   // должно идти посдедним?
 ];
 
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

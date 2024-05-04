@@ -10,11 +10,11 @@ export class AuthService {
   constructor(private router: Router) { }
 
   setToken(token: string) {
-    localStorage.setItem('token', token);
+    localStorage?.setItem('token', token);
   }
 
   getToken(){
-    return localStorage.getItem('token');
+    return localStorage?.getItem('token');
   }
 
   isLoggedIn() {
