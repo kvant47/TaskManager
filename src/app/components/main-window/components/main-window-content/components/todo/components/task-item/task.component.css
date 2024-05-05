@@ -186,7 +186,7 @@ to {
   gap: 13px;
   display: grid;
   padding-right: 40px;
-  grid-template-columns: 1fr repeat(3, minmax(140px, 12%)) 100px 100px;
+  grid-template-columns: minmax(150px, 1fr) repeat(3, minmax(140px, 12%)) 100px 100px;
   grid-template-rows: 1fr;
   grid-template-areas: "title status category priority deadline date";
 }
@@ -196,6 +196,7 @@ to {
   width: 100%;
   grid-area: title;
   font-size: 15px;
+  margin-right: 0;
   padding-bottom: 0;
 }
 
@@ -213,11 +214,12 @@ to {
 
 .table--view.task__wrapper .deadpline__task{
   grid-area: deadline;
-
+  min-width: 100px;
 }
 
 .table--view.task__wrapper .date_task{
   grid-area: date;
+  min-width: 100px;
 }
 
 .table--view.task__wrapper .task_status, .table--view.task__wrapper .priority_task, .table--view.task__wrapper .category_task,

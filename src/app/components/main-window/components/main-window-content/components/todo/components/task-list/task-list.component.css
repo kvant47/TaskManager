@@ -324,8 +324,8 @@
   gap: 13px;
   display: grid;
   padding: 14px;
-  padding-right: 40px;
-  grid-template-columns: 1fr repeat(3, minmax(140px, 12%)) 100px 100px;
+  padding-right: 55px;
+  grid-template-columns: minmax(150px, 1fr) repeat(3, minmax(140px, 12%)) 100px 100px;
   grid-template-rows: 1fr;
   grid-template-areas: "title status category priority deadline date";
 }

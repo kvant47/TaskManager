@@ -4,10 +4,11 @@
   border-radius: 20px;
   display: flex;
   background-size: cover;
-  min-width: 900px;
+  min-width: 1200px;
   width: 90%;
   height: 90%;
   overflow: hidden;
+  position: relative;
   transition: 0.2s;
   border: 1px solid var(--main--color--transparent);
 }
@@ -37,10 +38,6 @@
 
 
 /*=================================== Кнопка разворачивания окна ======================================*/
-
-.app_wnd {
-  position: relative;
-}
 
 .fullscreenBtn{
   position: absolute;
