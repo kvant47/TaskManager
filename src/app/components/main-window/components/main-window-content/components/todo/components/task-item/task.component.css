@@ -58,6 +58,50 @@ to {
 
 
 
+.task__item {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.task__item__status{
+  justify-content: flex-start;
+}
+
+.bg__image{
+  width: 22px;
+  height: 22px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.status__bg{
+  background-image: url(../../../../../../../../../assets/image/icons/status_hov.png);
+}
+
+
+.priority__bg{
+  background-image: url(../../../../../../../../../assets/image/icons/priority_hov.png);
+}
+
+.category__bg{
+  background-image: url(../../../../../../../../../assets/image/icons/category_hov.png);
+}
+
+.deadline_bg
+{
+  background-image: url(../../../../../../../../../assets/image/icons/deadline_hov.png);
+}
+
+.date_bg
+{
+  background-image: url(../../../../../../../../../assets/image/icons/date_hov.png);
+}
+
+
 
 
 #task_more_btn{
@@ -103,7 +147,7 @@ to {
 .priority_task {
   font-size: 14px;
   color: var(--main--color);
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   min-width: 130px;
   flex: 1;
   white-space: nowrap; /* Запрет на перенос текста */
@@ -115,7 +159,7 @@ to {
   font-size: 14px;
   color: var(--main--color);
   min-width: 125px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   flex: 1;
   white-space: nowrap; /* Запрет на перенос текста */
 }
@@ -124,14 +168,10 @@ to {
 
 .deadpline__task{
   min-width: 125px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   flex: 1;
-  white-space: nowrap; /* Запрет на перенос текста */
-}
-
-.deadline_btn{
-  display: block;
   font-size: 14px;
+  white-space: nowrap; /* Запрет на перенос текста */
 }
 
 /* ======================== Дата ======================== */
@@ -141,7 +181,7 @@ to {
   color: var(--main--color);
   min-width: 125px;
   font-size: 14px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   flex: 1;
   white-space: nowrap; /* Запрет на перенос текста */
 }
@@ -152,7 +192,7 @@ to {
   padding-left: 5px;
   width: 100%;
   padding-right: 5px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   font-size: 14px;
 }
 
@@ -162,6 +202,14 @@ to {
 /* ================================================ Табличный вид ================================================ */
 
 
+
+.table--view .task__item {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
 
 .table--view :host #task_more_btn{
   top: 7px;
@@ -186,7 +234,7 @@ to {
   gap: 13px;
   display: grid;
   padding-right: 40px;
-  grid-template-columns: minmax(150px, 1fr) repeat(3, minmax(140px, 12%)) 100px 100px;
+  grid-template-columns: minmax(150px, 1fr) repeat(3, minmax(140px, 12%)) 120px 120px;
   grid-template-rows: 1fr;
   grid-template-areas: "title status category priority deadline date";
 }

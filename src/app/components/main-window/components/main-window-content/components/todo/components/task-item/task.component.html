@@ -33,23 +33,44 @@
 
   <div class="task_title">{{ taskItem.title }}</div>
 
-  <div class="task_status">{{ taskItem.status }}</div>
+  <div class="task_status" *ngIf="taskItem.status != null && taskItem.status != ''">
+    <div class="task__item task__item__status">
+      <div class="bg__image status__bg" *ngIf="!tableView"></div>
+      <div class="task__text"> {{ taskItem.status }}</div>
+    </div>
+  </div>
 
   <div *ngIf="taskItem.imagePath != null && taskItem.imagePath != '' && tableView == false" class="task_image">
     <img src="{{ taskItem.imagePath }}" class="flexable_image" alt="" />
   </div>
 
-  <div class="priority_task" *ngIf="taskItem.priority != null && taskItem.priority != ''">{{ taskItem.priority }}</div>
+  <div class="priority_task" *ngIf="taskItem.priority != null && taskItem.priority != ''">
+    <div class="task__item">
+      <div class="bg__image priority__bg" *ngIf="!tableView"></div>
+      <div class="task__text"> {{ taskItem.priority }}</div>
+    </div>
+</div>
 
-  <div class="category_task" *ngIf="taskItem.category  != null && taskItem.category != ''">{{ taskItem.category }}</div>
-
-  <div *ngIf="taskItem.deadline != null && taskItem.deadline != ''" class="deadpline__task">
-    <button  class="deadline_btn main_wnd_btn bell_btn">
-      <h3>{{ taskItem.deadline }}</h3>
-    </button>
+  <div class="category_task" *ngIf="taskItem.category  != null && taskItem.category != ''">
+    <div class="task__item">
+      <div class="bg__image category__bg" *ngIf="!tableView"></div>
+      <div class="task__text">   {{ taskItem.category }}</div>
+    </div>
   </div>
 
-  <div class="date_task" >{{ taskItem.dateCreate }}</div>
+  <div *ngIf="taskItem.deadline != null && taskItem.deadline != ''" class="deadpline__task">
+    <div class="task__item">
+      <div class="bg__image deadline_bg" *ngIf="!tableView"></div>
+      <div class="task__text">  {{ taskItem.deadline }}</div>
+    </div>
+  </div>
+
+  <div class="date_task" >
+    <div class="task__item">
+      <div class="bg__image date_bg" *ngIf="!tableView"></div>
+      <div class="task__text">  {{ taskItem.dateCreate }}</div>
+    </div>
+  </div>
 
   <div class="description__task" *ngIf="taskItem.description != null && taskItem.description != '' && tableView == false">{{ taskItem.description }}</div>
 

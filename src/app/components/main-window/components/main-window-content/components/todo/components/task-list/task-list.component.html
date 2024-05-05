@@ -48,12 +48,34 @@
 </div>
 <div class="task_conteiner"  [ngClass]="{'table--view' : tableView, 'have__elements' : taskList.items?.length > 0}">
   <div *ngIf="tableView && taskList.items?.length > 0" class="title__table">
-    <p>Название</p>
-    <p>Статус</p>
-    <p>Категория</p>
-    <p>Приоритет</p>
-    <p>Дедлайн</p>
-    <p>Создана</p>
+
+    <div class="task_title task__item">Название</div>
+
+      <div class="task__item">
+        <div class="bg__image status__bg"></div>
+        <div class="task__text"> Статус</div>
+      </div>
+
+      <div class="task__item">
+        <div class="bg__image priority__bg"></div>
+        <div class="task__text"> Категория</div>
+      </div>
+
+      <div class="task__item">
+        <div class="bg__image category__bg"></div>
+        <div class="task__text">   Приоритет</div>
+      </div>
+
+      <div class="task__item">
+        <div class="bg__image deadline_bg"></div>
+        <div class="task__text"> Дедлайн</div>
+      </div>
+
+      <div class="task__item">
+        <div class="bg__image date_bg"></div>
+        <div class="task__text"> Создана</div>
+    </div>
+
   </div>
     <app-task-item
       class="low_priority"
