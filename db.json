@@ -9,7 +9,7 @@
       "priority": "Не затягивать",
       "imagePath": "../../../../../assets/image/1158.jpg",
       "audioPath": null,
-      "dateCreate": "2024.05.02 04:10:58",
+      "dateCreate": "2024.05.02",
       "id": "7"
     },
     {
@@ -21,7 +21,7 @@
       "priority": "Не к спеху",
       "imagePath": "../../../../../assets/image/task2.jpg",
       "audioPath": null,
-      "dateCreate": "2024.05.02 04:10:55",
+      "dateCreate": "2024.05.02",
       "id": "8"
     },
     {
@@ -33,7 +33,7 @@
       "priority": null,
       "imagePath": "../../../../../assets/image/bg4.jpg",
       "audioPath": null,
-      "dateCreate": "2024.05.02 04:10:52",
+      "dateCreate": "2024.05.02",
       "id": "24ce"
     },
     {
@@ -45,7 +45,7 @@
       "priority": null,
       "imagePath": "../../../../../assets/image/guitar.jpg",
       "audioPath": null,
-      "dateCreate": "2024.05.02 04:10:49",
+      "dateCreate": "2024.05.02",
       "id": "bca2"
     },
     {
@@ -57,7 +57,7 @@
       "priority": "Срочно",
       "imagePath": "../../../../../assets/image/ol-task.jpg",
       "audioPath": "",
-      "dateCreate": "2024.05.02 04:10:46",
+      "dateCreate": "2024.05.02",
       "id": "2bbb"
     },
     {
@@ -69,7 +69,79 @@
       "priority": "Поторопиться",
       "imagePath": "../../../../../assets/image/bg11.png",
       "audioPath": "",
-      "dateCreate": "2024.05.04 20:56:52",
+      "dateCreate": "2024.05.04",
+      "id": "34ea"
+    },
+    {
+      "id": "941f",
+      "title": "Проверить как выглядит таска с описанием",
+      "description": "Я просто добавлю таску, ничего не буду в нее  вносить, только напишу описание  и проверю.\n",
+      "deadline": "",
+      "category": "",
+      "status": "",
+      "priority": "",
+      "imagePath": "",
+      "audioPath": "",
+      "dateCreate": "2024.05.04"
+    },
+    {
+      "title": "Поменять резину",
+      "description": "Какое то развернутое описание",
+      "deadline": null,
+      "category": "Другое",
+      "status": "Выполнено",
+      "priority": "Не к спеху",
+      "imagePath": "../../../../../assets/image/task2.jpg",
+      "audioPath": null,
+      "dateCreate": "2024.05.02",
+      "id": "8"
+    },
+    {
+      "title": "Выложить фотку!",
+      "description": "описание",
+      "deadline": null,
+      "category": null,
+      "status": null,
+      "priority": null,
+      "imagePath": "../../../../../assets/image/bg4.jpg",
+      "audioPath": null,
+      "dateCreate": "2024.05.02",
+      "id": "24ce"
+    },
+    {
+      "title": "Позаниматься на гитаре",
+      "description": "",
+      "deadline": null,
+      "category": null,
+      "status": null,
+      "priority": null,
+      "imagePath": "../../../../../assets/image/guitar.jpg",
+      "audioPath": null,
+      "dateCreate": "2024.05.02",
+      "id": "bca2"
+    },
+    {
+      "title": "Тестовая задача",
+      "description": "Описание тестовой задачи",
+      "deadline": "2024-05-10",
+      "category": "Учеба",
+      "status": "Выполняется",
+      "priority": "Срочно",
+      "imagePath": "../../../../../assets/image/ol-task.jpg",
+      "audioPath": "",
+      "dateCreate": "2024.05.02",
+      "id": "2bbb"
+    },
+    {
+      "title": "Название",
+      "description": "Я хочу проверить как моя таcка будет выглядеть при разных способах отображения",
+      "deadline": "2024-05-04",
+      "category": "Учеба",
+      "status": "Выполняется",
+      "priority": "Поторопиться",
+      "imagePath": "../../../../../assets/image/bg11.png",
+      "audioPath": "",
+      "dateCreate": "2024.05.04",
       "id": "34ea"
     },
     {
@@ -93,11 +165,11 @@
     },
     {
       "title": "В процессе",
-      "id": "2",
-      "items": []
+      "id": "2"
     },
     {
       "title": "Выполнено",
+      "items": [],
       "id": "3"
     }
   ]

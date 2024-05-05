@@ -39,7 +39,8 @@ export class TaskListComponent {
   constructor(
     private dialog: MatDialog,
     private taskItemService: TaskItemService,
-    private taskListService: TaskListService) {}
+    private taskListService: TaskListService) {
+    }
 
 
   editTask(taskItem: TaskItem) {

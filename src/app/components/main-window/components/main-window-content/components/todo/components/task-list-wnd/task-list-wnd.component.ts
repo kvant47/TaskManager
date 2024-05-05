@@ -1,3 +1,4 @@
+import { TaskItem } from './../../../../../../../../interfaces/task-list.interface';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { TaskList } from '../../../../../../../../interfaces/task-list.interface';

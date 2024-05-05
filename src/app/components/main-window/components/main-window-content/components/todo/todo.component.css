@@ -549,9 +549,10 @@ input:checked~span {
 .task_group_container.table--view{
   display: flex;
   height: 96%;
+  padding-right: 10px;
   flex-direction: column;
-  gap: 20px;
-  overflow-y: scroll;   /*горизонтальный скролл*/
+  gap: 40px;
+  overflow-y: auto;   /*горизонтальный скролл*/
   overflow-x: hidden;   /*горизонтальный скролл*/
 }
 

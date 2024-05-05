@@ -51,7 +51,7 @@
 
   <div class="date_task" >{{ taskItem.dateCreate }}</div>
 
-  <div class="description__task" *ngIf="taskItem.description != null && taskItem.description != ''">{{ taskItem.description }}</div>
+  <div class="description__task" *ngIf="taskItem.description != null && taskItem.description != '' && tableView == false">{{ taskItem.description }}</div>
 
   <div class="audio_task" *ngIf="taskItem.audioPath != null && taskItem.audioPath != ''">
     <audio

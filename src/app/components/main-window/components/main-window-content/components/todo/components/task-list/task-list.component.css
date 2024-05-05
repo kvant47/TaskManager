@@ -318,11 +318,45 @@
 
 
 /* ========================Стили для табличного отображения======================= */
-slide_bnt
-/* Контейнер для выпадающих кнопок */
+
+
+.title__table{
+  gap: 13px;
+  display: grid;
+  padding: 14px;
+  padding-right: 40px;
+  grid-template-columns: 1fr repeat(3, minmax(140px, 12%)) 100px 100px;
+  grid-template-rows: 1fr;
+  grid-template-areas: "title status category priority deadline date";
+}
+
+.title__table p{
+  font-size: 20px;
+}
+
 .table--view.task_conteiner{
   overflow-y: hidden;
+  gap: 0;
+  height: calc(100% - 30px);      /*тонкая настройка! не трогать! */
 }
+
+
+.table--view.task_conteiner.have__elements {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.table--view.task_header{
+  padding: 0;
+}
+
+.table--view .task_list_name{
+  font-size: 16px;
+}
+
+
+/* Контейнер для выпадающих кнопок */
 
 .table--view .conteiner_for_bnt{
   margin-right: 5px;

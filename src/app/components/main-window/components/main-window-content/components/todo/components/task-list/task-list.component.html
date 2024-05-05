@@ -1,5 +1,5 @@
 <div class="task_header" [ngClass]="{'table--view' : tableView}" >
-  <h4 class="task_list_name">{{ taskList.title }}</h4>
+  <h4 class="task_list_name">{{ taskList.title }} - {{taskList.items == null || taskList.items?.length < 1 ? 0 : taskList.items?.length}}</h4>
   <div class="header-nav">
     <ul>
       <li>
@@ -46,7 +46,15 @@
     </ul>
   </div>
 </div>
-<div class="task_conteiner"  [ngClass]="{'table--view' : tableView}">
+<div class="task_conteiner"  [ngClass]="{'table--view' : tableView, 'have__elements' : taskList.items?.length > 0}">
+  <div *ngIf="tableView && taskList.items?.length > 0" class="title__table">
+    <p>Название</p>
+    <p>Статус</p>
+    <p>Категория</p>
+    <p>Приоритет</p>
+    <p>Дедлайн</p>
+    <p>Создана</p>
+  </div>
     <app-task-item
       class="low_priority"
       [index]="i"

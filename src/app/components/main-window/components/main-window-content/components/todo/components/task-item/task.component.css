@@ -4,8 +4,6 @@
   background: rgba(0,0,0,0.3);
   border-radius: 10px;
   box-sizing: border-box;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.3);
   position: relative;
@@ -21,35 +19,25 @@
 
 
 .task__wrapper{
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: auto auto  auto auto auto auto auto;
+  gap: 5px;
   padding: 14px;
-  justify-items: center;
-  align-items: center;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-
-  grid-template-areas:
-    "title title "
-    "status ."
-    "image image"
-    "priority category"
-    "deadline date"
-    "description description"
-    "audio audio";
 }
 
 
 
 .task__wrapper:before {
-  content: ""; /* отображает псевдоэлемент */
-  position: absolute; /* абсолютное позиционирование */
-  top: 0; /* верхняя координата */
-  left: -800px; /* левая координата */
-  width: 40px; /* относительная ширина */
-  height: 100%; /* высота как у оригинала */
-  background-color: rgba(255, 255, 255, 0.3); /* белый цвет с полупрозрачностью */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -800px;
+  width: 40px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
   transform: translateX(-4em) skewX(-45deg);
 }
 
@@ -83,31 +71,27 @@ to {
 /* ======================== Заголовок ======================== */
 
 .task_title{
-  grid-area: title;
-  grid-column: span 2;
-  text-align: left;
+  width: 100%;
   font-family: inherit;
   margin-right: 40px;
   font-size: 18px;
   color: var(--avtive--color);
-  justify-self: left;
   padding-bottom: 5px;
 }
 
 /* ======================== Статус ======================== */
 
 .task_status{
-  grid-area: status;
   justify-self: left;
   font-size: 15px;
+  width: 100%;
   font-family: Hero-Regular;
+  white-space: nowrap; /* Запрет на перенос текста */
 }
 
 /* ======================== Картинка ======================== */
 
 .task_image{
-  grid-area: image;
-  grid-column: span 2;
   margin-top: 10px;
   overflow: hidden;
   border-radius: 15px;
@@ -117,26 +101,32 @@ to {
 /* ======================== Приоритет======================== */
 
 .priority_task {
-  grid-area: priority;
   font-size: 14px;
   color: var(--main--color);
   padding-bottom: 10px;
+  min-width: 25%;
+  flex: 1;
+  white-space: nowrap; /* Запрет на перенос текста */
 }
 
 /* ======================== Категория ======================== */
 
 .category_task {
-  grid-area: category;
   font-size: 14px;
   color: var(--main--color);
+  min-width: 25%;
   padding-bottom: 10px;
+  flex: 1;
+  white-space: nowrap; /* Запрет на перенос текста */
 }
 
 /* ======================== Дедлайн ======================== */
 
 .deadpline__task{
-  grid-area: deadline;
+  min-width: 25%;
   padding-bottom: 10px;
+  flex: 1;
+  white-space: nowrap; /* Запрет на перенос текста */
 }
 
 .deadline_btn{
@@ -147,145 +137,111 @@ to {
 /* ======================== Дата ======================== */
 
 .date_task{
-  grid-area: date;
   font-size: 14px;
   color: var(--main--color);
+  min-width: 25%;
   font-size: 14px;
   padding-bottom: 10px;
+  flex: 1;
+  white-space: nowrap; /* Запрет на перенос текста */
 }
 
 /* ======================== Описание ======================== */
 
 .description__task{
-  grid-area: description;
-  grid-column: span 2;
   padding-left: 5px;
+  width: 100%;
   padding-right: 5px;
   padding-bottom: 10px;
   font-size: 14px;
 }
-
-
-/* ======================== Аудио ======================== */
-
-
-.audio_task{
-  grid-area: audio;
-  grid-column: span 2;
-}
-
 
 
 
 
 /* ================================================ Табличный вид ================================================ */
 
+.table--view :host {
+  background: transparent;
+  transition: 0.2s;
+  border-radius: 0;
+  margin-left: 10px;
+  border-color: transparent;
+}
+
+.table--view :host:hover {
+  border-bottom: 1px solid var(--main--color);
+}
+
+.table--view :host:hover .task_title, .table--view :host:hover .task_status,
+.table--view :host:hover .priority_task, .table--view :host:hover .category_task,
+.table--view :host:hover .deadpline__task, .table--view :host:hover .table--view.task__wrapper .task_title{
+  transition: 0.2s;
+  color: var(--avtive--color);
+}
+
+
+.table--view :host #task_more_btn{
+  top: 7px;
+  right: 9px;
+}
+
+.table--view :host .dropworn_task_menu{
+  width: auto;
+  top: -3px;
+  right: 42px;
+}
+
+.table--view :host .dropworn_task_menu ul{
+  display: flex;
+}
+
+
+
 
 
 .table--view.task__wrapper{
+  gap: 13px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(1, 20px);
-  grid-auto-flow: row;
-  justify-items: left;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-
-  grid-template-areas:
-  "title   title    .         .         .  "
-  "status category priority deadline date";
+  padding: 6px;
+  padding-right: 40px;
+  grid-template-columns: 1fr repeat(3, minmax(140px, 12%)) 100px 100px;
+  grid-template-rows: 1fr;
+  grid-template-areas: "title status category priority deadline date";
 }
 
-
-
-
-
-/* ======================== Заголовок ======================== */
 
 .table--view.task__wrapper .task_title{
-  order: 0;
+  width: 100%;
   grid-area: title;
-  grid-column: span 3;
-  text-align: left;
-  font-family: inherit;
-  margin-right: 40px;
-  font-size: 18px;
-  color: var(--avtive--color);
-  justify-self: left;
-  padding-bottom: 5px;
+  font-size: 15px;
+  padding-bottom: 0;
 }
-
-/* ======================== Статус ======================== */
 
 .table--view.task__wrapper .task_status{
   grid-area: status;
-  justify-self: left;
-  font-size: 15px;
-  font-family: Hero-Regular;
 }
 
-/* ======================== Картинка ======================== */
-
-
-/* ======================== Приоритет======================== */
-
-.priority_task {
+.table--view.task__wrapper .priority_task{
   grid-area: priority;
-  font-size: 14px;
-  color: var(--main--color);
-  padding-bottom: 10px;
 }
 
-/* ======================== Категория ======================== */
-
-.category_task {
+.table--view.task__wrapper .category_task{
   grid-area: category;
-  font-size: 14px;
-  color: var(--main--color);
-  padding-bottom: 10px;
 }
 
-/* ======================== Дедлайн ======================== */
-
-.deadpline__task{
+.table--view.task__wrapper .deadpline__task{
   grid-area: deadline;
-  padding-bottom: 10px;
+
 }
 
-.deadline_btn{
-  display: block;
-  font-size: 14px;
-}
-
-/* ======================== Дата ======================== */
-
-.date_task{
+.table--view.task__wrapper .date_task{
   grid-area: date;
-  font-size: 14px;
-  color: var(--main--color);
-  font-size: 14px;
-  padding-bottom: 10px;
 }
 
-/* ======================== Описание ======================== */
-
-.description__task{
-  grid-area: description;
-  grid-column: span 2;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-bottom: 10px;
-  font-size: 14px;
-}
-
-
-/* ======================== Аудио ======================== */
-
-
-.audio_task{
-  grid-area: audio;
-  grid-column: span 2;
+.table--view.task__wrapper .task_status, .table--view.task__wrapper .priority_task, .table--view.task__wrapper .category_task,
+.table--view.task__wrapper .deadpline__task, .table--view.task__wrapper .date_task{
+  padding: 0;
 }
 
 
@@ -361,7 +317,7 @@ to {
 
 .collapsed{
   height: 0;
-  width: 0px;
+  width: 0;
   border: 1px solid transparent;
   padding: 0;
 }
