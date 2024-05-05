@@ -104,7 +104,7 @@ to {
   font-size: 14px;
   color: var(--main--color);
   padding-bottom: 10px;
-  min-width: 25%;
+  min-width: 130px;
   flex: 1;
   white-space: nowrap; /* Запрет на перенос текста */
 }
@@ -114,7 +114,7 @@ to {
 .category_task {
   font-size: 14px;
   color: var(--main--color);
-  min-width: 25%;
+  min-width: 125px;
   padding-bottom: 10px;
   flex: 1;
   white-space: nowrap; /* Запрет на перенос текста */
@@ -123,7 +123,7 @@ to {
 /* ======================== Дедлайн ======================== */
 
 .deadpline__task{
-  min-width: 25%;
+  min-width: 125px;
   padding-bottom: 10px;
   flex: 1;
   white-space: nowrap; /* Запрет на перенос текста */
@@ -139,7 +139,7 @@ to {
 .date_task{
   font-size: 14px;
   color: var(--main--color);
-  min-width: 25%;
+  min-width: 125px;
   font-size: 14px;
   padding-bottom: 10px;
   flex: 1;
@@ -161,24 +161,6 @@ to {
 
 /* ================================================ Табличный вид ================================================ */
 
-.table--view :host {
-  background: transparent;
-  transition: 0.2s;
-  border-radius: 0;
-  margin-left: 10px;
-  border-color: transparent;
-}
-
-.table--view :host:hover {
-  border-bottom: 1px solid var(--main--color);
-}
-
-.table--view :host:hover .task_title, .table--view :host:hover .task_status,
-.table--view :host:hover .priority_task, .table--view :host:hover .category_task,
-.table--view :host:hover .deadpline__task, .table--view :host:hover .table--view.task__wrapper .task_title{
-  transition: 0.2s;
-  color: var(--avtive--color);
-}
 
 
 .table--view :host #task_more_btn{
@@ -203,7 +185,6 @@ to {
 .table--view.task__wrapper{
   gap: 13px;
   display: grid;
-  padding: 6px;
   padding-right: 40px;
   grid-template-columns: 1fr repeat(3, minmax(140px, 12%)) 100px 100px;
   grid-template-rows: 1fr;

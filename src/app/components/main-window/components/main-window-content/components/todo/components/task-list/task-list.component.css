@@ -336,16 +336,10 @@
 
 .table--view.task_conteiner{
   overflow-y: hidden;
-  gap: 0;
+  gap: 2px;
   height: calc(100% - 30px);      /*тонкая настройка! не трогать! */
 }
 
-
-.table--view.task_conteiner.have__elements {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
 
 .table--view.task_header{
   padding: 0;
