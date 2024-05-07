@@ -48,12 +48,12 @@
 }
 
        @keyframes moveLight {
-from {
-  transform: translateX(-150px) skewX(-45deg);
-}
-to {
-  transform: translateX(4000px) skewX(-45deg);
-}
+  from {
+    transform: translateX(-150px) skewX(-45deg);
+  }
+  to {
+    transform: translateX(4000px) skewX(-45deg);
+  }
 }
 
 
@@ -119,7 +119,7 @@ to {
   font-family: inherit;
   margin-right: 40px;
   font-size: 18px;
-  color: var(--avtive--color);
+  color: var(--active--color);
   padding-bottom: 5px;
 }
 
@@ -149,7 +149,7 @@ to {
   color: var(--main--color);
   padding-bottom: 5px;
   min-width: 130px;
-  flex: 1;
+  flex-grow: 1;
   white-space: nowrap; /* Запрет на перенос текста */
 }
 
@@ -160,7 +160,7 @@ to {
   color: var(--main--color);
   min-width: 125px;
   padding-bottom: 5px;
-  flex: 1;
+  flex-grow: 1;
   white-space: nowrap; /* Запрет на перенос текста */
 }
 
@@ -169,7 +169,7 @@ to {
 .deadpline__task{
   min-width: 125px;
   padding-bottom: 5px;
-  flex: 1;
+  flex-grow: 1;
   font-size: 14px;
   white-space: nowrap; /* Запрет на перенос текста */
 }
@@ -182,7 +182,7 @@ to {
   min-width: 125px;
   font-size: 14px;
   padding-bottom: 5px;
-  flex: 1;
+  flex-grow: 1;
   white-space: nowrap; /* Запрет на перенос текста */
 }
 
@@ -325,7 +325,7 @@ to {
 
  .small_btn:hover{
   z-index: 10;
-  box-shadow:  0 0 5px var(--avtive--color--glow_rgba) inset, 0 0 5px var(--avtive--color--glow_rgba) inset, 0 0 0.5em var(--avtive--color--glow_rgba), 0 0 0.1em var(--avtive--color--glow_rgba);
+  box-shadow:  0 0 5px var(--active--color--glow_rgba) inset, 0 0 5px var(--active--color--glow_rgba) inset, 0 0 0.5em var(--active--color--glow_rgba), 0 0 0.1em var(--active--color--glow_rgba);
 }
 
 
@@ -373,8 +373,8 @@ to {
   transition: 0.15s;
   border-radius: 10px;
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.4);
-  color: var(--avtive--color);
-  text-shadow:  0 0 1em var(--avtive--color--glow), 0 0 0.5em var(--avtive--color--glow), 0 0 0.1em var(--avtive--color--glow);
+  color: var(--active--color);
+  text-shadow:  0 0 1em var(--active--color--glow), 0 0 0.5em var(--active--color--glow), 0 0 0.1em var(--active--color--glow);
 }
 
 

@@ -32,6 +32,7 @@ export class TaskListComponent {
     item: TaskItem;
     index: number;
   }>();
+
   @Output() update = new EventEmitter<{}>();
 
 

@@ -6,6 +6,8 @@ import { TodoComponent } from './components/main-window-content/components/todo/
 import { StatisticComponent } from './components/main-window-content/components/statistic/statistic.component';
 import { CalendarComponent } from './components/main-window-content/components/calendar/calendar.component';
 import { ProfileComponent } from './components/main-window-content/components/profile/profile.component';
+import { ThemeComponent } from './components/main-window-content/components/theme/theme.component';
+import { CustomizeComponent } from './components/main-window-content/components/customize/customize.component';
 
 const routes: Routes = [
   {path: '', component: MainWindowContentComponent,
@@ -15,6 +17,8 @@ const routes: Routes = [
       {path: 'statisic', component: StatisticComponent},
       {path: 'calendar', component: CalendarComponent},
       {path: 'profile', component: ProfileComponent},
+      {path: 'theme', component: ThemeComponent},
+      {path: 'customize', component: CustomizeComponent},
       {path: '', redirectTo: 'todo', pathMatch: 'full'},
     ]
   }

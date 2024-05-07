@@ -1,0 +1,50 @@
+<div class="header_content_section">
+  <div class="content_header">
+    <h1>Персонификация</h1>
+  </div>
+</div>
+<div class="main__wrapper">
+  <div class="section">
+    <div class="title__wrapper">
+      <h2 class="category">Категории</h2>
+      <button class="add__position"></button>
+    </div>
+    <div class="wrapper__category">
+      <app-category
+      [index]="i"
+      [category]="category"
+      *ngFor="let category of categoryes; let i = index"
+    ></app-category>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <div class="title__wrapper">
+      <h2 class="status">Статусы</h2>
+      <button class="add__position"></button>
+    </div>
+    <div class="category__item">
+      <app-status
+      [index]="i"
+      [status]="status"
+      *ngFor="let status of statuses; let i = index"
+    ></app-status>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="title__wrapper">
+      <h2 class="priority">Приоритеты</h2>
+      <button class="add__position"></button>
+    </div>
+    <app-priority
+      [index]="i"
+      [priority]="priority"
+      *ngFor="let priority of priorityes; let i = index"
+    ></app-priority>
+  </div>
+
+</div>
+
+

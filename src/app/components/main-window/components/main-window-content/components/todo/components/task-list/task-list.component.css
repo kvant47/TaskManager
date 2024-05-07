@@ -74,9 +74,9 @@
   transition: 0.15s;
   border-radius: 15px;
   /* box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.4); */
-  color: var(--avtive--color);
-  text-shadow: 0 0 1em var(--avtive--color--glow), 0 0 0.5em var(--avtive--color--glow),
-    0 0 0.1em var(--avtive--color--glow);
+  color: var(--active--color);
+  text-shadow: 0 0 1em var(--active--color--glow), 0 0 0.5em var(--active--color--glow),
+    0 0 0.1em var(--active--color--glow);
 }
 
 .main_wnd_btn:active {
@@ -215,7 +215,7 @@
 }
 
 .slide_bnt:hover{
-  border-color: var(--avtive--color);
+  border-color: var(--active--color);
   background-image: none;
   transform: none;
   z-index: 10;

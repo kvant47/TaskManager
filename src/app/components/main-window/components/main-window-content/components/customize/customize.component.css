@@ -1,0 +1,128 @@
+:host{
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  width: 80%;
+  flex-grow: 1;
+  padding: 0 20px;
+  overflow: hidden;
+  background: linear-gradient(31deg, var(--bg--content--color1) 0%, var(--bg--content--color2) 50%, var(--bg--content--color1) 100%);
+  backdrop-filter: blur(1px);
+}
+
+h1 {
+  flex-grow: 1;
+  height: 90px;
+  line-height: 90px;
+  text-align: left;
+  font-family: Hero-Regular;
+  font-size: 30px;
+  color: var(--title--color);
+}
+
+.title__wrapper{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add__position{
+  position: absolute;
+  top:  18px;
+  right: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  transition: 0.2s;
+  width: 0;
+  cursor: pointer;
+  height: 0;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../../../../../../../assets/image/icons/plus.png);
+}
+
+.section:hover  .add__position{
+  width: 22px;
+  height: 22px;
+  transition: 0.2s;
+}
+
+.add__position:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+  background-image: url(../../../../../../../assets/image/icons/plus_hov.png);
+}
+
+h2{
+  padding-left: 25px;
+  font-size: 20px;
+  color: var(--title--color);
+  margin: 20px 0 40px;
+}
+
+.main__wrapper{
+  width: 100%;
+  box-sizing: border-box;
+  max-height: calc(100% - 100px);
+  padding-bottom: 20px;
+  display: flex;
+  align-items: start;
+  column-gap: 20px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.section{
+  max-width: 700px;
+  min-width: 600px;
+}
+
+
+.main__wrapper::-webkit-scrollbar {
+  width: 5px;
+}
+
+.main__wrapper::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 20, 0.4);
+  border-radius: 10px;
+}
+
+.main__wrapper::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--main--color);
+}
+
+.category, .status, .priority{
+  background-position: left center;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+
+.category{
+  background-image: url(../../../../../../../assets/image/icons/category_hov.png);
+}
+
+.status{
+  background-image: url(../../../../../../../assets/image/icons/status_hov.png);
+}
+
+.priority{
+  background-image: url(../../../../../../../assets/image/icons/priority_hov.png);
+}
+
+@media (min-width: 1400px) {
+
+    .section{
+      max-width: 40%;
+      min-width: 400px;
+      flex: 1;
+  }
+
+}

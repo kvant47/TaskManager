@@ -18,6 +18,10 @@ export class TaskStatusService {
       title: 'Выполняется',
      },
      {
+       id: 3,
+       title: 'Статус с длинным названием',
+      },
+     {
       id: 2,
       title: 'Выполнено',
      }

@@ -7,7 +7,7 @@
   flex-direction: column;
   padding: 0 20px;
   overflow: hidden;
-  background: linear-gradient(31deg, rgba(0,0,0,0.8) 0%, rgba(22,21,21,0.8) 50%, rgba(0,0,0,0.8) 100%);
+  background: linear-gradient(31deg, var(--bg--content--color1) 0%, var(--bg--content--color2) 50%, var(--bg--content--color1) 100%);
   backdrop-filter: blur(1px);
 }
 

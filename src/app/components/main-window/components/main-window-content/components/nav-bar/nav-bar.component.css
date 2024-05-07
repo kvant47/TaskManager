@@ -3,9 +3,13 @@
 }
 
 .header_wrapper{
-  height: 70px;
-  margin: 20px auto 0 auto;
-  padding: 10px 10px  0 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 90px;
+  padding: 0 10px;
+  justify-content: center;
+  margin: 0 auto 0 auto;
   border-bottom: 1px solid #3c434b;
   overflow: hidden;
 }
@@ -31,7 +35,7 @@
   white-space: nowrap; /* Запрет на перенос текста */
   line-height: 15px;
   font-size: 13px;
-  color: var(--avtive--color);
+  color: var(--active--color);
 }
 
 .status{
@@ -72,9 +76,9 @@ nav{
 .menu_btn:hover {
   transform: scale(1.1);
   transition: 0.15s;
-  color: var(--avtive--color);
+  color: var(--active--color);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.);
-  text-shadow:  0 0 1em var(--avtive--color--glow), 0 0 0.5em var(--avtive--color--glow), 0 0 0.1em var(--avtive--color--glow);
+  text-shadow:  0 0 1em var(--active--color--glow), 0 0 0.5em var(--active--color--glow), 0 0 0.1em var(--active--color--glow);
 }
 
 .menu_btn:active {
@@ -84,7 +88,7 @@ nav{
 
 .active{
   font-family: Hero-Regular;
-  color: var(--avtive--color);
+  color: var(--active--color);
 }
 
 h2, h3{
@@ -96,7 +100,7 @@ h3{
    padding-left: 32px;
 }
 
-#task_btn, #statistic_btn, #profile_btn, #setting_bnt, #edit_btn, #exit_btn, #calendar_btn,
+#task_btn, #statistic_btn, #profile_btn, #theme_btn, #personification_btn, #exit_btn, #calendar_btn,
 #hide_menu_btn {
   transition: all 0.1s ease-out;
   background-position: 15px center;
@@ -163,30 +167,30 @@ h3{
 
 
 
-#setting_bnt{
-  background-image: url(./../../../../../../../assets/image/icons/settings.png);
+#theme_btn{
+  background-image: url(./../../../../../../../assets/image/icons/theme.png);
 }
 
-#setting_bnt.active{
-  background-image: url(./../../../../../../../assets/image/icons/settings_hov.png);
+#theme_btn.active{
+  background-image: url(./../../../../../../../assets/image/icons/theme_hov.png);
 }
 
-#setting_bnt:hover{
-  background-image: url(./../../../../../../../assets/image/icons/settings_hov.png);
+#theme_btn:hover{
+  background-image: url(./../../../../../../../assets/image/icons/theme_hov.png);
 }
 
 
 
 
-#edit_btn{
+#personification_btn{
   background-image: url(./../../../../../../../assets/image/icons/support.png);
 }
 
-#edit_btn.active{
+#personification_btn.active{
   background-image: url(./../../../../../../../assets/image/icons/support_hov.png);
 }
 
-#edit_btn:hover{
+#personification_btn:hover{
   background-image: url(./../../../../../../../assets/image/icons/support_hov.png);
 }
 
@@ -268,7 +272,7 @@ h3{
   height: 30px;
 }
 
-.hideMenu  #task_btn, .hideMenu  #statistic_btn, .hideMenu  #profile_btn, .hideMenu  #setting_bnt, .hideMenu  #edit_btn, .hideMenu  #exit_btn, .hideMenu  #calendar_btn,
+.hideMenu  #task_btn, .hideMenu  #statistic_btn, .hideMenu  #profile_btn, .hideMenu  #theme_btn, .hideMenu  #personification_btn, .hideMenu  #exit_btn, .hideMenu  #calendar_btn,
 .hideMenu  #hide_menu_btn {
   transition: all 0.3s ease-out;
   background-position: center center;

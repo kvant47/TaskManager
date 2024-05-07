@@ -17,6 +17,11 @@ import { FilterPipe } from '../../pipes/searchByTitle.pipe';
 import { SearchByCategory } from '../../pipes/searchByCategory.pipe';
 import { SearchByPriority } from '../../pipes/searchByPriority.pipe';
 import { SortTaskByPipe } from '../../pipes/sort-task-by.pipe';
+import { ThemeComponent } from './components/main-window-content/components/theme/theme.component';
+import { CustomizeComponent } from './components/main-window-content/components/customize/customize.component';
+import { CategoryComponent } from './components/main-window-content/components/customize/components/category/category.component';
+import { StatusComponent } from './components/main-window-content/components/customize/components/status/status.component';
+import { PriorityComponent } from './components/main-window-content/components/customize/components/priority/priority.component';
 
 
 
@@ -35,7 +40,12 @@ import { SortTaskByPipe } from '../../pipes/sort-task-by.pipe';
     FilterPipe,
     SearchByCategory,
     SearchByPriority,
-    SortTaskByPipe
+    SortTaskByPipe,
+    ThemeComponent,
+    CustomizeComponent,
+    CategoryComponent,
+    StatusComponent,
+    PriorityComponent,
   ],
   imports: [
     CommonModule,

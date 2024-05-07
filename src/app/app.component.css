@@ -4,8 +4,25 @@
   color: var(--main--color);
   font-size: 13px;
   font-family: Hero-Regular;
-  background-image: url(../assets/image/bg7.png);
+  background-image: url(../assets/image/bg14.jpg);
   background-size: cover;
+}
+
+ /* --Тут они не нужны, просто удобно; */
+:root {
+  --main--color: #999;
+  --main--color--transparent: rgba(255, 255, 255, 0.2);
+
+  --title--color: white;
+
+  --active--color: white;
+  --active--color--glow: #00bfff;
+
+  --bg--navbar--color1: rgba(0,0,0,0.6);
+  --bg--navbar--color2: rgba(22,21,21,0.7);
+
+  /* --active--color--glow: red; */
+
 }
 
 
