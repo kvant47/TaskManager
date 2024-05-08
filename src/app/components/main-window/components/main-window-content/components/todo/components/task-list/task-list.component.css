@@ -1,13 +1,16 @@
+
+
 .task_conteiner::-webkit-scrollbar {
   /* chrome based */
   width: 0;
 }
 
 .task_conteiner {
+  justify-content: flex-start;
   display: flex;
   gap: 12px;
   box-sizing: border-box;
-  height: calc(100% - 40px);
+  max-height: calc(100% - 40px);
   flex-direction: column;
   overflow-y: auto;
 }
@@ -383,9 +386,9 @@
 
 
 .table--view.task_conteiner{
-  overflow-y: hidden;
+  max-height: unset;
+  overflow: visible;
   gap: 2px;
-  height: calc(100% - 30px);      /*тонкая настройка! не трогать! */
 }
 
 
@@ -444,3 +447,31 @@
 .table--view .slide_bnt h3{
   top: 6px;
 }
+
+
+
+
+
+
+/* ===================================== Перетаскиваемый элемент ===================================== */
+
+
+.cdk-drag-preview {
+  color: var(--main--color);
+  transform: translate3d(0, 0, 0);
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.example-box {
+  transition: transform 50ms cubic-bezier(1,1,1,1);
+}
+
+.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+

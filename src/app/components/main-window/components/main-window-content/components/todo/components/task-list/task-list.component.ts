@@ -4,7 +4,7 @@ import {
   TaskItem,
   TaskList,
 } from '../../../../../../../../interfaces/task-list.interface';
-import { Component, Input, Output } from '@angular/core';
+import { Component, ElementRef, Input, Output, ViewChild } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { TaskItemWndComponent } from '../task-item-wnd/task-item-wnd.component';
 import { __values } from 'tslib';
@@ -101,6 +101,10 @@ export class TaskListComponent {
         })
   }})
   }
+
+
+
+
 
 
 }

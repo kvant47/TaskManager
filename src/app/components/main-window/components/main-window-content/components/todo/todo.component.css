@@ -326,20 +326,6 @@ h1 {
 
 
 
-.task_group_container::-webkit-scrollbar { /* chrome based */
-  height: 5px;
-}
-
-.task_group_container::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 20, 0.4);
-  border-radius: 10px;
-}
-
-.task_group_container::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background:  var(--main--color);
-}
-
 .main_content_section{
   flex-grow: 1;
   overflow: hidden;
@@ -536,13 +522,17 @@ input:checked~span {
 
 /* ===================================Стили для табличной формы===================================== */
 
+.main_content_section.table--view{
+  overflow: hidden auto;
+}
 
-.task_group_container.table--view{
+.table--view .task_group_container{
+  height: auto;
+  width: auto;
   display: flex;
-  height: 96%;
+  padding-bottom: 20px;
   padding-right: 10px;
   flex-direction: column;
-  gap: 40px;
   overflow-y: auto;   /*горизонтальный скролл*/
   overflow-x: hidden;   /*горизонтальный скролл*/
 }
@@ -550,8 +540,51 @@ input:checked~span {
 
 
 
-.task_group_container.table--view .task_list {
+.table--view .task_group_container .task_list {
   width: 100%;
   max-width: none;
   min-width: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main_content_section.table--view::-webkit-scrollbar {
+  width: 5px;
+}
+
+.main_content_section.table--view::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 20, 0.4);
+  border-radius: 10px;
+}
+
+.main_content_section.table--view::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--main--color);
+}
+

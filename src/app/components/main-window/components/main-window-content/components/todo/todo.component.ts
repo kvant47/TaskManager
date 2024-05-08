@@ -257,6 +257,12 @@ enterValueInInput($event){
     }
   }
 
+  drop1(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.taskLists, event.previousIndex, event.currentIndex);
+  }
+
+
+
 
 }
 

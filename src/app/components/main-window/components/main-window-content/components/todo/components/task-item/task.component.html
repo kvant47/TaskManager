@@ -1,8 +1,5 @@
-<button
-    class="main_wnd_btn more_btn small_btn"
-    id="task_more_btn"
-    (click)="moreClick()"
-  ></button>
+<div class="wrapper__task">
+
 
   <div class="dropworn_task_menu" [ngClass]="{ collapsed: !isCollapsed }">
     <ul>
@@ -10,7 +7,9 @@
         <span class="dropworn_task_item_text">Открыть</span>
       </li>
       <li class="dropworn_task_item dropworn_task_change">
-        <span class="dropworn_task_item_text" (click)="editTask()" >Изменить</span>
+        <span class="dropworn_task_item_text" (click)="editTask()"
+          >Изменить</span
+        >
       </li>
       <li class="dropworn_task_item dropworn_task_favorite">
         <span class="dropworn_task_item_text">В избранное</span>
@@ -22,93 +21,97 @@
         <span class="dropworn_task_item_text">Выполнено</span>
       </li>
       <li class="dropworn_task_item dropworn_task_delete">
-        <span class="dropworn_task_item_text" (click)="deleteTask()">Удалить</span>
+        <span class="dropworn_task_item_text" (click)="deleteTask()"
+          >Удалить</span
+        >
       </li>
     </ul>
   </div>
 
-<div class="task__wrapper" [ngClass]="{'table--view': tableView}">
+  <div class="task__wrapper" cdkDragHandle [ngClass]="{ 'table--view': tableView }">
 
+    <div class="task_title">{{ taskItem.title }}</div>
 
+    <button
+      class="main_wnd_btn more_btn small_btn"
+      id="task_more_btn"
+      (click)="moreClick()"
+    ></button>
 
-  <div class="task_title">{{ taskItem.title }}</div>
+    <div
+      class="task_status"
+      *ngIf="taskItem.status != null && taskItem.status != ''"
+    >
+      <div class="task__item task__item__status">
+        <div class="bg__image status__bg" *ngIf="!tableView"></div>
+        <div class="task__text">{{ taskItem.status }}</div>
+      </div>
+    </div>
 
-  <div class="task_status" *ngIf="taskItem.status != null && taskItem.status != ''">
-    <div class="task__item task__item__status">
-      <div class="bg__image status__bg" *ngIf="!tableView"></div>
-      <div class="task__text"> {{ taskItem.status }}</div>
+    <div
+      *ngIf="
+        taskItem.imagePath != null &&
+        taskItem.imagePath != '' &&
+        tableView == false
+      "
+      class="task_image"
+    >
+      <img src="{{ taskItem.imagePath }}" class="flexable_image" alt="" />
+    </div>
+
+    <div
+      class="priority_task"
+      *ngIf="taskItem.priority != null && taskItem.priority != ''"
+    >
+      <div class="task__item">
+        <div class="bg__image priority__bg" *ngIf="!tableView"></div>
+        <div class="task__text">{{ taskItem.priority }}</div>
+      </div>
+    </div>
+
+    <div
+      class="category_task"
+      *ngIf="taskItem.category != null && taskItem.category != ''"
+    >
+      <div class="task__item">
+        <div class="bg__image category__bg" *ngIf="!tableView"></div>
+        <div class="task__text">{{ taskItem.category }}</div>
+      </div>
+    </div>
+
+    <div
+      *ngIf="taskItem.deadline != null && taskItem.deadline != ''"
+      class="deadpline__task"
+    >
+      <div class="task__item">
+        <div class="bg__image deadline_bg" *ngIf="!tableView"></div>
+        <div class="task__text">{{ taskItem.deadline }}</div>
+      </div>
+    </div>
+
+    <div class="date_task">
+      <div class="task__item">
+        <div class="bg__image date_bg" *ngIf="!tableView"></div>
+        <div class="task__text">{{ taskItem.dateCreate }}</div>
+      </div>
+    </div>
+
+    <div
+      class="description__task"
+      *ngIf="
+        taskItem.description != null &&
+        taskItem.description != '' &&
+        tableView == false
+      "
+    >
+      {{ taskItem.description }}
+    </div>
+
+    <div
+      class="audio_task"
+      *ngIf="taskItem.audioPath != null && taskItem.audioPath != ''"
+    >
+      <audio controls src="{{ taskItem.audioPath }}"></audio>
     </div>
   </div>
-
-  <div *ngIf="taskItem.imagePath != null && taskItem.imagePath != '' && tableView == false" class="task_image">
-    <img src="{{ taskItem.imagePath }}" class="flexable_image" alt="" />
-  </div>
-
-  <div class="priority_task" *ngIf="taskItem.priority != null && taskItem.priority != ''">
-    <div class="task__item">
-      <div class="bg__image priority__bg" *ngIf="!tableView"></div>
-      <div class="task__text"> {{ taskItem.priority }}</div>
-    </div>
 </div>
-
-  <div class="category_task" *ngIf="taskItem.category  != null && taskItem.category != ''">
-    <div class="task__item">
-      <div class="bg__image category__bg" *ngIf="!tableView"></div>
-      <div class="task__text">   {{ taskItem.category }}</div>
-    </div>
-  </div>
-
-  <div *ngIf="taskItem.deadline != null && taskItem.deadline != ''" class="deadpline__task">
-    <div class="task__item">
-      <div class="bg__image deadline_bg" *ngIf="!tableView"></div>
-      <div class="task__text">  {{ taskItem.deadline }}</div>
-    </div>
-  </div>
-
-  <div class="date_task" >
-    <div class="task__item">
-      <div class="bg__image date_bg" *ngIf="!tableView"></div>
-      <div class="task__text">  {{ taskItem.dateCreate }}</div>
-    </div>
-  </div>
-
-  <div class="description__task" *ngIf="taskItem.description != null && taskItem.description != '' && tableView == false">{{ taskItem.description }}</div>
-
-  <div class="audio_task" *ngIf="taskItem.audioPath != null && taskItem.audioPath != ''">
-    <audio
-      controls
-      src="{{taskItem.audioPath}}"
-    ></audio>
-  </div>
-</div>
-
-<!--
-<div class="task_first_line">
-  <p class="task_title">{{ taskItem.title }}</p>
-  <button
-    class="main_wnd_btn more_btn small_btn"
-    id="task_more_btn"
-    (click)="moreClick()"
-  ></button>
-</div>
-
-
-<p *ngIf="taskItem.imagePath != null && taskItem.imagePath != ''" class="task_image">
-  <img src="{{ taskItem.imagePath }}" class="flexable_image" alt="" />
-</p>
-<p class="category_task" *ngIf="taskItem.category  != null && taskItem.category != ''">{{ taskItem.category }}</p>
-<p class="priority_task" *ngIf="taskItem.priority != null && taskItem.priority != ''">{{ taskItem.priority }}</p>
-<p class="audio_task" *ngIf="taskItem.audioPath != null && taskItem.audioPath != ''">
-  <audio
-    controls
-    src="{{taskItem.audioPath}}"
-  ></audio>
-</p>
-<button *ngIf="taskItem.deadline != null && taskItem.deadline != ''" class="deadline_btn main_wnd_btn bell_btn">
-  <h3>{{ taskItem.deadline }}</h3>
-</button>
-
-<h3>{{ taskItem.dateCreate }}</h3> -->
-
-
-
