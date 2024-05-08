@@ -10,6 +10,14 @@ import { TaskListService } from '../../../../../../services/task-list.service';
 import { TaskItemWndComponent } from './components/task-item-wnd/task-item-wnd.component';
 import { TaskListWndComponent } from './components/task-list-wnd/task-list-wnd.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
+import {
+  CdkDragDrop,
+  CdkDrag,
+  CdkDropList,
+  CdkDropListGroup,
+  moveItemInArray,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-todo',
@@ -225,6 +233,30 @@ enterValueInInput($event){
         };
   }
   );}
+
+
+
+  drop(event: CdkDragDrop<TaskItem[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      console.log('В том же контейнер поменяли местами');
+      console.log('Массив ' + event.container.data);
+      console.log('Старый индекс ' + event.previousIndex);
+      console.log('Новый индекс ' + event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+      console.log('Переатащили в другой контейнер');
+      console.log('было ' + event.previousContainer);
+      console.log('Старый индекс ' + event.previousIndex);
+      console.log('Новый индекс ' + event.currentIndex);
+    }
+  }
+
 
 }
 

@@ -110,8 +110,11 @@
 </div>
 
 <div class="main_content_section">
-  <div class="task_group_container"  [ngClass]="{'table--view' : tableView}">
+  <div class="task_group_container" cdkDropListGroup [ngClass]="{'table--view' : tableView}">
     <app-task-list
+    cdkDropList
+    [cdkDropListData]="taskLists[i].items"
+    (cdkDropListDropped)="drop($event)"
       (update)="Update()"
       [taskList]="group"
       [search]="search"
@@ -120,8 +123,10 @@
       [priorotiesSearch]="priorotiesSearch"
       [categoryesSearch]="categoryesSearch"
       [enterFilterFlag]="enterFilterFlag"
-      *ngFor="let group of taskLists"
+      *ngFor="let group of taskLists; let i = index"
       class="task_list"
     ></app-task-list>
   </div>
 </div>
+
+

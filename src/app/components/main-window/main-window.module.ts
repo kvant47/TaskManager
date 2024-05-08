@@ -22,6 +22,7 @@ import { CustomizeComponent } from './components/main-window-content/components/
 import { CategoryComponent } from './components/main-window-content/components/customize/components/category/category.component';
 import { StatusComponent } from './components/main-window-content/components/customize/components/status/status.component';
 import { PriorityComponent } from './components/main-window-content/components/customize/components/priority/priority.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 
@@ -52,6 +53,7 @@ import { PriorityComponent } from './components/main-window-content/components/c
     MainWindowRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    DragDropModule
   ]
 })
 export class MainWindowModule { }
