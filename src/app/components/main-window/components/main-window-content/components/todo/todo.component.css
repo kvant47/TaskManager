@@ -272,6 +272,9 @@ h1 {
 }
 
 .task_group_container{
+
+  width: calc(99.9%);   /* Предотварщение скролла, когда три группы и контейнер помещается в родителя */
+
   padding-bottom: 10px;
   margin-top: 5px;
   margin-bottom: 10px;

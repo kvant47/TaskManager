@@ -120,6 +120,12 @@ enterValueInInput($event){
   input.innerHTML = value.innerHTML
 }
 
+  sortByStatus($event) {
+    this.enterValueInInput($event);
+    this.sortBy = 6;
+  }
+
+
   sortByDeadline($event) {
     this.enterValueInInput($event);
     this.sortBy = 5;
